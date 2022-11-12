@@ -86,6 +86,14 @@ class flower:
     # ゲームの進行を行う関数．何ヶ月でプレイするかを引数として渡す．
     def play(self, num_month, displaymode):
         for month in range(num_month):
+            self.my_score = 0
+            self.your_score = 0
+            self.field_cards = []
+            self.my_cards = []
+            self.my_getcard = []
+            self.your_cards = []
+            self.your_getcard = []
+            self.yamafuda = []
             random.shuffle(self.cards)
 
             if ((self.oya == 0) & (month % 2 == 0)) | ((self.oya == 1) & (month % 2 == 1)):  # プレイヤーが親
@@ -288,17 +296,23 @@ class flower:
                     # 返り値はリスト[[五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，[猪鹿蝶，タネ枚数]，[赤短，タン枚数]，[青短，タン枚数]，[タネ，タネ枚数]，[タン，タン枚数]，[カス，カス枚数]], こいこい]
                     # その役が成立していれば1，していなければ0が入る．
                     # こいこいステータス:    0:こいこい前    1:こいこい後    2:こいこいしない or こいこい後役が揃う
-                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard, self.my_score)
+                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard, self.my_score, 0)
                     
                     print("your score: {}".format(self.my_score))
                     
-                    '''
-                    # こいこいステータス == 2 なら敵のターンへ
+                    
+                    # こいこいステータス == 2 なら次の月へ
                     if self.my_yaku[1] == 2:
                         self.my_total_score += self.my_score
-                        print("end of month {}. your score is {}, enemy's score is {}".format(month, self.my_total_score, self.your_total_score))
-                        continue
-                    '''
+                        print("\n\nend of month {}.".format(month+1))
+                        print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
+                        print("---------------------------------------\n\n")
+                        
+                        cv2.imshow("stage", self.stage)
+                        cv2.waitKey(0)
+                        #cv2.destroyAllWindows()
+                        break
+                    
                     
                     
                     
@@ -461,9 +475,21 @@ class flower:
                     #cv2.destroyAllWindows()
                     
                     
-                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard, self.your_score)
+                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard, self.your_score, 1)
                     
                     print("Enemy's score: {}".format(self.your_score))
+                    
+                    # こいこいステータス == 2 なら次の月へ
+                    if self.your_yaku[1] == 2:
+                        self.your_total_score += self.your_score
+                        print("\n\nend of month {}.".format(month+1))
+                        print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
+                        print("---------------------------------------\n\n")
+                        
+                        cv2.imshow("stage", self.stage)
+                        cv2.waitKey(0)
+                        #cv2.destroyAllWindows()
+                        break
                     
                     
                     
@@ -549,7 +575,7 @@ class flower:
                     
                     # その他の場合
                     else:
-                        print("ERROR 3")
+                        print("ERROR 5")
                     
                     print("Enemy's get cards:  {}".format(self.your_getcard))
                     
@@ -623,7 +649,7 @@ class flower:
                     
                     # その他の場合
                     else:
-                        print("ERROR 2")
+                        print("ERROR 6")
                     
                     
                     print("Enemy's get cards:  {}".format(self.your_getcard))
@@ -634,9 +660,21 @@ class flower:
                     #cv2.destroyAllWindows()
                     
                     
-                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard, self.your_score)
+                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard, self.your_score, 1)
                     
                     print("Enemy's score: {}".format(self.your_score))
+                    
+                    # こいこいステータス == 2 なら次の月へ
+                    if self.your_yaku[1] == 2:
+                        self.your_total_score += self.your_score
+                        print("\n\nend of month {}.".format(month+1))
+                        print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
+                        print("---------------------------------------\n\n")
+                        
+                        cv2.imshow("stage", self.stage)
+                        cv2.waitKey(0)
+                        #cv2.destroyAllWindows()
+                        break
 
 
 
@@ -716,7 +754,7 @@ class flower:
                     
                     # その他の場合
                     else:
-                        print("ERROR 1")
+                        print("ERROR 7")
                     
                     
                     print("Your get cards:  {}".format(self.my_getcard))
@@ -795,7 +833,7 @@ class flower:
                     
                     # その他の場合
                     else:
-                        print("ERROR 2")
+                        print("ERROR 8")
                     
                     
                     print("Your get cards:  {}".format(self.my_getcard))
@@ -813,23 +851,53 @@ class flower:
                     # 役が含まれるかの判定と，こいこいするかのinputはdetect_yakuで行う．
                     # 返り値はリスト[[五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，[猪鹿蝶，タネ枚数]，[赤短，タン枚数]，[青短，タン枚数]，[タネ，タネ枚数]，[タン，タン枚数]，[カス，カス枚数]], こいこい]
                     # その役が成立していれば1，していなければ0が入る．
-                    # こいこいステータス:    0:こいこい前    1:こいこい後    2:こいこいしない or こいこい後役が揃う
-                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard, self.my_score)
+                    # こいこいステータス:    0:こいこい前，1:こいこい後→月継続    2:こいこいしない or こいこい後役が揃う→月終了
+                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard, self.my_score, 0)
                     
                     print("your score: {}".format(self.my_score))
+                    
+                    # こいこいステータス == 2 なら次の月へ
+                    if self.my_yaku[1] == 2:
+                        self.my_total_score += self.my_score
+                        print("\n\nend of month {}.".format(month+1))
+                        print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
+                        print("---------------------------------------\n\n")
+                        
+                        cv2.imshow("stage", self.stage)
+                        cv2.waitKey(0)
+                        #cv2.destroyAllWindows()
+                        break
 
 
+
             
             
-            print("\n\nend of month")
-            
+            else:
+                print("\n\nend of month {}".format(month+1))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                
+                cv2.imshow("stage", self.stage)
+                cv2.waitKey(0)
+                #cv2.destroyAllWindows()
+            continue
+        
+        
+        print("\n\nend of game")
+        print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
+        if self.my_total_score > self.your_total_score:
+            print("You win!!!")
+        elif self.my_total_score < self.your_total_score:
+            print("Enemy win!!!")
+        else:
+            print("Draw...")
 
 
         
 if __name__ == '__main__':
     hanafuda = flower()
     hanafuda.oya_decision()
-    hanafuda.play(1, 1)  # 何ヶ月でプレイするかを渡す．第2引数はdisplay_modeで，0なら相手の手札を見せない，1なら見せる
+    hanafuda.play(2, 0)  # 何ヶ月でプレイするかを渡す．第2引数はdisplay_modeで，0なら相手の手札を見せない，1なら見せる
     
     cv2.waitKey(0)
     cv2.destroyAllWindows()

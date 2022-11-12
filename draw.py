@@ -183,6 +183,7 @@ def draw_oya_decision(stage, my_card, your_card):
 
 # 月始まりに，自分の手札と場のカード(+相手の手札)を表示する描画関数
 def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
+    stage = draw_init()
     dst_stage = stage.copy()
 
     # 文字表示領域をリセット
@@ -198,6 +199,7 @@ def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
         elif i == 1:
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=CARD_COLOR, thickness=-1)
     
+    field_cards.sort()
     for i in range(len(field_cards)):
         coords = COORDS_FIELD[i]
         coords_moji = COORDS_FIELD_MOJI[i]
@@ -205,6 +207,7 @@ def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
         dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[field_card]
         cv2.putText(dst_stage, str(field_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
     
+    my_cards.sort()
     for i in range(len(my_cards)):
         coords = COORDS_MY_CARDS[i]
         coords_moji = COORDS_MY_CARDS_MOJI[i]
@@ -213,6 +216,7 @@ def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
         cv2.putText(dst_stage, str(my_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
     
     # displaymode=0なら相手の手札を表示しない
+    your_cards.sort()
     if displaymode == 0:
         for i in range(len(your_cards)):
             coords = COORDS_YOUR_CARDS[i]
@@ -251,6 +255,7 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
         elif i == 1:
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=CARD_COLOR, thickness=-1)
             
+    field_cards.sort()
     num_field_card = len(field_cards)
     for i in range(len(COORDS_FIELD)):
         coords = COORDS_FIELD[i]
@@ -263,6 +268,7 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
     
+    my_cards.sort()
     num_my_card = len(my_cards)
     for i in range(len(COORDS_MY_CARDS)):
         coords = COORDS_MY_CARDS[i]
@@ -276,12 +282,17 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)        
     
     # displaymode=0なら相手の手札を表示しない
+    your_cards.sort()
+    num_your_cards = len(your_cards)
     if displaymode == 0:
-        for i in range(len(your_cards)):
+        for i in range(len(COORDS_YOUR_CARDS)):
             coords = COORDS_YOUR_CARDS[i]
-            dst_stage = cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=CARD_COLOR, thickness=-1)
+            if i < num_your_cards:
+                dst_stage = cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=CARD_COLOR, thickness=-1)
+            else:
+                cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
+                cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)        
     else:
-        num_your_cards = len(your_cards)
         for i in range(len(COORDS_YOUR_CARDS)):
             coords = COORDS_YOUR_CARDS[i]
             coords_moji = COORDS_YOUR_CARDS_MOJI[i]
@@ -370,7 +381,8 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
                 cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
         elif i == 1:
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=CARD_COLOR, thickness=-1)
-            
+    
+    field_cards.sort()
     num_field_card = len(field_cards)
     for i in range(len(COORDS_FIELD)):
         coords = COORDS_FIELD[i]
@@ -383,6 +395,7 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
     
+    my_cards.sort()
     num_my_card = len(my_cards)
     for i in range(len(COORDS_MY_CARDS)):
         coords = COORDS_MY_CARDS[i]
@@ -396,12 +409,17 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)        
     
     # displaymode=0なら相手の手札を表示しない
+    your_cards.sort()
+    num_your_cards = len(your_cards)
     if displaymode == 0:
-        for i in range(len(your_cards)):
+        for i in range(len(COORDS_YOUR_CARDS)):
             coords = COORDS_YOUR_CARDS[i]
-            dst_stage = cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=CARD_COLOR, thickness=-1)
+            if i < num_your_cards:
+                dst_stage = cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=CARD_COLOR, thickness=-1)
+            else:
+                cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
+                cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
     else:
-        num_your_cards = len(your_cards)
         for i in range(len(COORDS_YOUR_CARDS)):
             coords = COORDS_YOUR_CARDS[i]
             coords_moji = COORDS_YOUR_CARDS_MOJI[i]
@@ -479,5 +497,5 @@ if __name__ == '__main__':
 # DONE 手札・場のカードを獲得したときに，そのカードの表示を消す 　　現状放置なので無限カード増殖してる
 # DONE 獲得カードの枠を増やす：tane5→10, tan5→10, kasu10→16???
 # DONE カードの番号を表示する：自分の手札・相手の手札・場のカード
-# macで試してみて表示エリアの大きさの確認
+# DONE ちょっと小さいけど macで試してみて表示エリアの大きさの確認
 # DONE 山札から引いたカードを表示する
