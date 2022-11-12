@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
-def detect_yaku(getcards, score):
+# プレイヤーならenemy_flag=0, 敵ならenemy_flag=1
+def detect_yaku(getcards, score, enemy_flag):
     # 返り値はリスト[[五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，[猪鹿蝶，タネ枚数]，[赤短，タン枚数]，[青短，タン枚数]，[タネ，タネ枚数]，[タン，タン枚数]，[カス，カス枚数]], こいこい]
     yaku_list = [[0, 0, 0, 0, 0, 0, [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 0]
     
@@ -135,23 +135,29 @@ def detect_yaku(getcards, score):
         
     
     # 得点が上がった場合
-    # こいこいステータス0ならこいこいするかを聞く → するなら1，しないなら2
-    # こいこいステータス1 → 2に変更
-    if new_score > score:
+    # こいこいステータス0ならこいこいするかを聞く → こいこいするなら1→次のターンへ，しないなら2→次の月へ
+    # こいこいステータス1なら → 2に変更
+    if enemy_flag == 0:
+        if new_score > score:
+            if yaku_list[1] == 0:
+                while True:
+                    key = int(input("DO KOIKOI?  Yes: 1  No: 0   :"))
+                    if key == 1:
+                        yaku_list[1] = 1
+                        break
+                    elif key == 0:
+                        yaku_list[1] = 2
+                        break
+                    else:
+                        print("type only 0 or 1")
+            elif yaku_list[1] == 1:
+                yaku_list[1] = 2
+    elif enemy_flag == 1:
         if yaku_list[1] == 0:
-            while True:
-                key = int(input("DO KOIKOI?  Yes: 1  No: 0   :"))
-                if key == 1:
-                    yaku_list[1] = 1
-                    break
-                elif key == 0:
-                    yaku_list[1] = 2
-                    break
-                else:
-                    print("type only 0 or 1")
+            print("DO KOIKOI")
+            yaku_list[1] = 1
         elif yaku_list[1] == 1:
             yaku_list[1] = 2
-        
     
     
     return yaku_list, new_score
