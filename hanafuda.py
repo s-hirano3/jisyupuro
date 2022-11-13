@@ -5,7 +5,7 @@
 import random
 import cv2
 #from enemy_move import enemy_move
-from detect_yaku import detect_yaku
+from detect_yaku import *
 from draw import *
 
 
@@ -871,7 +871,7 @@ class flower:
 
 
             
-            
+            # 「こいこいしない」という選択で月が終わらなかった場合
             else:
                 print("\n\nend of month {}".format(month+1))
                 print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
@@ -904,3 +904,8 @@ if __name__ == '__main__':
     
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+
+# TODO
+# 別関数化したこいこい関数を使ったより正確なこいこい処理
+# 手四・くっつき処理を追加
