@@ -135,6 +135,7 @@ def detect_yaku(getcards, score, enemy_flag):
         
     
     # 得点が上がった場合
+    # enemy_flag==0 なら自分，enemy_flag==1なら敵
     # こいこいステータス0ならこいこいするかを聞く → こいこいするなら1→次のターンへ，しないなら2→次の月へ
     # こいこいステータス1なら → 2に変更
     if enemy_flag == 0:
@@ -163,9 +164,19 @@ def detect_yaku(getcards, score, enemy_flag):
     return yaku_list, new_score
 
 
+def koikoi():
+    aiueo = 0
+    return aiueo
+
+
 if __name__ == '__main__':
     cards = list(map(int, input().split()))
     print(cards)
     yaku, score = detect_yaku(cards, 0)
     print(yaku)
     print(score)
+
+
+
+# TODO
+# こいこい機能を分離して別関数化
