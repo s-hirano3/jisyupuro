@@ -895,9 +895,12 @@ class flower:
 
         
 if __name__ == '__main__':
+    month = int(input("Type play month:  "))
+    displaymode = int(input("Type displaymode 0:not disp, 1:disp :  "))
+    
     hanafuda = flower()
     hanafuda.oya_decision()
-    hanafuda.play(2, 0)  # 何ヶ月でプレイするかを渡す．第2引数はdisplay_modeで，0なら相手の手札を見せない，1なら見せる
+    hanafuda.play(month, displaymode)  # 何ヶ月でプレイするかを渡す．第2引数はdisplay_modeで，0なら相手の手札を見せない，1なら見せる
     
     cv2.waitKey(0)
     cv2.destroyAllWindows()
