@@ -19,11 +19,13 @@ class flower:
         self.my_getcard = []
         self.my_score = 0
         self.my_total_score = 0
+        self.my_koikoi_flag = 0
         
         self.your_cards = []
         self.your_getcard = []
         self.your_score = 0
         self.your_total_score = 0
+        self.your_koikoi_flag = 0
         
         self.field_cards = []
 
@@ -41,8 +43,10 @@ class flower:
     
     # 親決めを行う関数
     def oya_decision(self):
+        print("\nOya decision")
         while True:
-            random.shuffle(self.cards)
+            for i in range(random.randint(1,10)):
+                random.shuffle(self.cards)
             
             while True:
                 key = int(input("Type number from 1 to 48: "))
@@ -93,8 +97,11 @@ class flower:
             self.my_getcard = []
             self.your_cards = []
             self.your_getcard = []
+            self.my_koikoi_flag = 0
+            self.your_koikoi_flag = 0
             self.yamafuda = []
-            random.shuffle(self.cards)
+            for i in range(random.randint(1,10)):
+                random.shuffle(self.cards)
 
             if ((self.oya == 0) & (month % 2 == 0)) | ((self.oya == 1) & (month % 2 == 1)):  # プレイヤーが親
                 print("MONTH {}:  You are oya.".format(month+1))
@@ -120,6 +127,126 @@ class flower:
             cv2.waitKey(0)
             
             self.yamafuda = self.cards[24:]
+            
+            
+            
+            # 四手・くっつき判定用変数作成
+            my_cards_month_dict = {}
+            your_cards_month_dict = {}
+            for i in range(8):
+                my_card_month = self.my_cards[i] // 10
+                if my_card_month not in my_cards_month_dict.keys():
+                    my_cards_month_dict[my_card_month] = 1
+                else:
+                    my_cards_month_dict[my_card_month] += 1
+                
+                your_card_month = self.your_cards[i] // 10
+                if your_card_month not in your_cards_month_dict.keys():
+                    your_cards_month_dict[your_card_month] = 1
+                else:
+                    your_cards_month_dict[your_card_month] += 1
+            my_site = 0
+            your_site = 0
+            my_kuttuki = []
+            your_kuttuki = []
+            for value in my_cards_month_dict.values():
+                if value == 4:
+                    my_site = 1
+                if value == 2:
+                    my_kuttuki.append(1)
+                else:
+                    my_kuttuki.append(0)
+            for value in your_cards_month_dict.values():
+                if value == 4:
+                    your_site = 1
+                if value == 2:
+                    your_kuttuki.append(1)
+                else:
+                    your_kuttuki.append(0)
+            my_kuttuki_flag = 1
+            your_kuttuki_flag = 1
+            for i in range(len(my_kuttuki)):
+                if my_kuttuki[i] == 0:
+                    my_kuttuki_flag = 0
+                    break
+            for i in range(len(your_kuttuki)):
+                if your_kuttuki[i] == 0:
+                    your_kuttuki_flag = 0
+                    break
+            #print(my_site, your_site, my_kuttuki_flag, your_kuttuki_flag)
+            
+            # 四手・くっつきダブル
+            if (my_site == 1) & (your_kuttuki_flag == 1):
+                print("\nYou are SITE and enemy is KUTTUKI")
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue
+            elif (my_kuttuki_flag == 1) & (your_site == 1):
+                print("\nYou are KUTTUKI and enemy is SITE")
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue
+            
+            # 四手判定
+            if (my_site == 1) & (your_site == 1):
+                print("\nYou and enemy are SITE")
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue
+            elif (my_site == 1) & (your_site == 0):
+                print("\nYou are SITE")
+                self.my_score = 6
+                self.my_total_score += self.my_score
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue
+            elif (my_site == 0) & (your_site == 1):
+                print("\nEnemy is SITE")
+                self.your_score = 6
+                self.your_total_score += self.your_score
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue
+            
+            # くっつき判定
+            if (my_kuttuki_flag == 1) & (your_kuttuki_flag == 1):
+                print("\nYou and enemy are KUTTUKI")
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue                
+            elif (my_kuttuki_flag == 1) & (your_kuttuki_flag == 0):
+                print("\nYou are KUTTUKI")
+                self.my_score = 6
+                self.my_total_score += self.my_score
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue                
+            elif (my_kuttuki_flag == 0) & (your_kuttuki_flag == 1):
+                print("\nEnemy is KUTTUKI")
+                self.your_score = 6
+                self.your_total_score += self.your_score
+                print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
+                print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
+                print("---------------------------------------\n\n")
+                continue                
+                
+                
+            
 
 
             # お互いに8枚出したらゲーム終了，次の月に
@@ -293,18 +420,26 @@ class flower:
                     
                     # 獲得したカードをdetect_yakuに渡す．こいこい判定のため，前ターンの得点も渡す（初めて役がそろったときにこいこいするかを聞く）
                     # 役が含まれるかの判定と，こいこいするかのinputはdetect_yakuで行う．
-                    # 返り値はリスト[[五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，[猪鹿蝶，タネ枚数]，[赤短，タン枚数]，[青短，タン枚数]，[タネ，タネ枚数]，[タン，タン枚数]，[カス，カス枚数]], こいこい]
+                    # 返り値はリスト[五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，[猪鹿蝶，タネ枚数]，[赤短，タン枚数]，[青短，タン枚数]，[タネ，タネ枚数]，[タン，タン枚数]，[カス，カス枚数]]
                     # その役が成立していれば1，していなければ0が入る．
                     # こいこいステータス:    0:こいこい前    1:こいこい後    2:こいこいしない or こいこい後役が揃う
-                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard, self.my_score, 0)
-                    
+                    tmp_score = self.my_score
+                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard)
                     print("your score: {}".format(self.my_score))
+                    print("koikoi status : you {}, enemy {}".format(self.my_koikoi_flag, self.your_koikoi_flag))
                     
+                    if self.my_score > tmp_score:
+                        if self.your_koikoi_flag == 0:
+                            self.my_koikoi_flag = koikoi(self.my_koikoi_flag, 0)
+                        elif self.your_koikoi_flag == 1:
+                            self.my_koikoi_flag = 2
+                            self.my_score = self.my_score * 2
                     
                     # こいこいステータス == 2 なら次の月へ
-                    if self.my_yaku[1] == 2:
+                    if self.my_koikoi_flag == 2:
                         self.my_total_score += self.my_score
                         print("\n\nend of month {}.".format(month+1))
+                        print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
                         
@@ -474,15 +609,23 @@ class flower:
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
                     
-                    
-                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard, self.your_score, 1)
-                    
+                    tmp_score = self.your_score
+                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard)                    
                     print("Enemy's score: {}".format(self.your_score))
+                    print("koikoi status : you {}, enemy {}".format(self.my_koikoi_flag, self.your_koikoi_flag))
                     
+                    if self.your_score > tmp_score:
+                        if self.my_koikoi_flag == 0:
+                            self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
+                        elif self.my_koikoi_flag == 1:
+                            self.your_koikoi_flag = 2
+                            self.your_score = self.your_score * 2
+                                        
                     # こいこいステータス == 2 なら次の月へ
-                    if self.your_yaku[1] == 2:
+                    if self.your_koikoi_flag == 2:
                         self.your_total_score += self.your_score
                         print("\n\nend of month {}.".format(month+1))
+                        print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
                         
@@ -503,7 +646,7 @@ class flower:
                 
                 elif ((self.oya == 0) & (month % 2 == 1)) | ((self.oya == 1) & (month % 2 == 0)):  # 敵が親
                     # 敵のターン
-                    print("\n---- Enemy's turn : select -----\n")
+                    print("\n\n\n---- Enemy's turn : select -----\n")
                     print("enemy's card: {}".format(self.your_cards))
                     print("field cards: {}".format(self.field_cards))
                     your_cards_month = []
@@ -659,15 +802,23 @@ class flower:
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
                     
-                    
-                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard, self.your_score, 1)
-                    
+                    tmp_score = self.your_score
+                    self.your_yaku, self.your_score = detect_yaku(self.your_getcard)
                     print("Enemy's score: {}".format(self.your_score))
+                    print("koikoi status : you {}, enemy {}".format(self.my_koikoi_flag, self.your_koikoi_flag))
                     
+                    if self.your_score > tmp_score:
+                        if self.my_koikoi_flag == 0:
+                            self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
+                        elif self.my_koikoi_flag == 1:
+                            self.your_koikoi_flag = 2
+                            self.your_score = self.your_score * 2
+                                        
                     # こいこいステータス == 2 なら次の月へ
-                    if self.your_yaku[1] == 2:
+                    if self.your_koikoi_flag == 2:
                         self.your_total_score += self.your_score
                         print("\n\nend of month {}.".format(month+1))
+                        print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
                         
@@ -852,14 +1003,23 @@ class flower:
                     # 返り値はリスト[[五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，[猪鹿蝶，タネ枚数]，[赤短，タン枚数]，[青短，タン枚数]，[タネ，タネ枚数]，[タン，タン枚数]，[カス，カス枚数]], こいこい]
                     # その役が成立していれば1，していなければ0が入る．
                     # こいこいステータス:    0:こいこい前，1:こいこい後→月継続    2:こいこいしない or こいこい後役が揃う→月終了
-                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard, self.my_score, 0)
-                    
+                    tmp_score = self.my_score
+                    self.my_yaku, self.my_score = detect_yaku(self.my_getcard)
                     print("your score: {}".format(self.my_score))
+                    print("koikoi status : you {}, enemy {}".format(self.my_koikoi_flag, self.your_koikoi_flag))
+                    
+                    if self.my_score > tmp_score:
+                        if self.your_koikoi_flag == 0:
+                            self.my_koikoi_flag = koikoi(self.my_koikoi_flag, 0)
+                        elif self.your_koikoi_flag == 1:
+                            self.my_koikoi_flag = 2
+                            self.my_score = self.my_score * 2
                     
                     # こいこいステータス == 2 なら次の月へ
-                    if self.my_yaku[1] == 2:
+                    if self.my_koikoi_flag == 2:
                         self.my_total_score += self.my_score
                         print("\n\nend of month {}.".format(month+1))
+                        print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
                         
@@ -873,7 +1033,13 @@ class flower:
             
             # 「こいこいしない」という選択で月が終わらなかった場合
             else:
+                if self.my_koikoi_flag == 1:
+                    self.my_total_score += self.my_score
+                elif self.your_koikoi_flag == 1:
+                    self.your_total_score += self.your_score
+                
                 print("\n\nend of month {}".format(month+1))
+                print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                 print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
                 print("---------------------------------------\n\n")
                 
@@ -907,5 +1073,5 @@ if __name__ == '__main__':
 
 
 # TODO
-# 別関数化したこいこい関数を使ったより正確なこいこい処理
-# 手四・くっつき処理を追加
+# DONE 別関数化したこいこい関数を使ったより正確なこいこい処理
+# DONE 手四・くっつき処理を追加
