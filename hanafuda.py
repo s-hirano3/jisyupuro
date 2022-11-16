@@ -3,10 +3,12 @@
 
 
 import random
+import datetime
 import cv2
 #from enemy_move import enemy_move
 from detect_yaku import *
 from draw import *
+from write_log import *
 
 
 class flower:
@@ -89,6 +91,18 @@ class flower:
     
     # ゲームの進行を行う関数．何ヶ月でプレイするかを引数として渡す．
     def play(self, num_month, displaymode):
+        
+        # logファイル設定
+        dt_now = datetime.datetime.now()
+        file_name = './log/' + dt_now.strftime('%Y%m%d-%H%M%S') + '_' + str(num_month) + '_' + str(displaymode) + '.txt'
+        f = open(file_name, 'w')
+        f.write(dt_now.strftime('%Y-%m-%d %H:%M:%S') + '\n\n')
+        f.write('oya mode(0:player is oya of odd month, 1:player is oya of even month)\n' + str(self.oya) + '\n\n')
+        
+
+        
+        
+         
         for month in range(num_month):
             self.my_score = 0
             self.your_score = 0
@@ -128,6 +142,10 @@ class flower:
             
             self.yamafuda = self.cards[24:]
             
+            f.write('--------------------\n')
+            f.write('initial condition\n')
+            f = write_log_init(f, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+            f.write('--------------------\n\n')
             
             
             # 四手・くっつき判定用変数作成
@@ -335,6 +353,11 @@ class flower:
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
                     
+                    f.write('--------------------\n')
+                    f.write('your turn : select\n')
+                    f = write_log(f, month, i,  self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
+                    
                     
                     
                     # 山札から1枚引くするターン
@@ -433,7 +456,13 @@ class flower:
                             self.my_koikoi_flag = koikoi(self.my_koikoi_flag, 0)
                         elif self.your_koikoi_flag == 1:
                             self.my_koikoi_flag = 2
-                            self.my_score = self.my_score * 2
+                            self.my_score = self.my_score * 2                    
+                            
+                    f.write('--------------------\n')
+                    f.write('your turn : draw\n')
+                    f = write_log(f, month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
+                    
                     
                     # こいこいステータス == 2 なら次の月へ
                     if self.my_koikoi_flag == 2:
@@ -442,6 +471,11 @@ class flower:
                         print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
+                        
+                        f.write('--------------------\n')
+                        f.write('result of month\n')
+                        f = write_result_month(f, month, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                        f.write('--------------------\n\n\n\n')
                         
                         cv2.imshow("stage", self.stage)
                         cv2.waitKey(0)
@@ -534,6 +568,11 @@ class flower:
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
                     
+                    f.write('--------------------\n')
+                    f.write('enemy turn : select\n')
+                    f = write_log(f, month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
+                    
                     
                     
                     
@@ -614,6 +653,11 @@ class flower:
                     print("Enemy's score: {}".format(self.your_score))
                     print("koikoi status : you {}, enemy {}".format(self.my_koikoi_flag, self.your_koikoi_flag))
                     
+                    f.write('--------------------\n')
+                    f.write('enemy turn : draw\n')
+                    f = write_log(f, month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
+                    
                     if self.your_score > tmp_score:
                         if self.my_koikoi_flag == 0:
                             self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
@@ -628,6 +672,11 @@ class flower:
                         print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
+                        
+                        f.write('--------------------\n')
+                        f.write('result of month\n')
+                        f = write_result_month(f, month, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                        f.write('--------------------\n\n\n\n')
                         
                         cv2.imshow("stage", self.stage)
                         cv2.waitKey(0)
@@ -727,6 +776,10 @@ class flower:
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
                     
+                    f.write('--------------------\n')
+                    f.write('enemy turn : select\n')
+                    f = write_log(f, month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
                     
                     
                     
@@ -807,6 +860,11 @@ class flower:
                     print("Enemy's score: {}".format(self.your_score))
                     print("koikoi status : you {}, enemy {}".format(self.my_koikoi_flag, self.your_koikoi_flag))
                     
+                    f.write('--------------------\n')
+                    f.write('enemy turn : select\n')
+                    f = write_log(f, month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
+                    
                     if self.your_score > tmp_score:
                         if self.my_koikoi_flag == 0:
                             self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
@@ -821,6 +879,11 @@ class flower:
                         print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
+                        
+                        f.write('--------------------\n')
+                        f.write('result of month\n')
+                        f = write_result_month(f, month, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                        f.write('--------------------\n\n\n\n')
                         
                         cv2.imshow("stage", self.stage)
                         cv2.waitKey(0)
@@ -915,6 +978,11 @@ class flower:
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
                     
+                    f.write('--------------------\n')
+                    f.write('your turn : select\n')
+                    f = write_log(f, month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
+                    
                     
                     
                     # 山札から1枚引くするターン
@@ -1008,6 +1076,11 @@ class flower:
                     print("your score: {}".format(self.my_score))
                     print("koikoi status : you {}, enemy {}".format(self.my_koikoi_flag, self.your_koikoi_flag))
                     
+                    f.write('--------------------\n')
+                    f.write('your turn : draw\n')
+                    f = write_log(f, month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    f.write('--------------------\n\n')
+                    
                     if self.my_score > tmp_score:
                         if self.your_koikoi_flag == 0:
                             self.my_koikoi_flag = koikoi(self.my_koikoi_flag, 0)
@@ -1022,6 +1095,11 @@ class flower:
                         print("\nYour score is {}, enemy's score is {}".format(self.my_score, self.your_score))
                         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
                         print("---------------------------------------\n\n")
+                        
+                        f.write('--------------------\n')
+                        f.write('result of month\n')
+                        f = write_result_month(f, month, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                        f.write('--------------------\n\n\n\n')
                         
                         cv2.imshow("stage", self.stage)
                         cv2.waitKey(0)
@@ -1043,20 +1121,37 @@ class flower:
                 print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))  
                 print("---------------------------------------\n\n")
                 
+                f.write('--------------------\n')
+                f.write('result of month\n')
+                f = write_result_month(f, month, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                f.write('--------------------\n\n\n\n')
+                
                 cv2.imshow("stage", self.stage)
                 cv2.waitKey(0)
                 #cv2.destroyAllWindows()
             continue
         
         
+        
         print("\n\nend of game")
         print("Your total score is {}, enemy's total score is {}".format(self.my_total_score, self.your_total_score))
+        f.write('\n\n--------------------\n')
+        f.write('result of game\n')
+        
         if self.my_total_score > self.your_total_score:
-            print("You win!!!")
+            print("You Win!!!")
+            f.write('You Win\n')
         elif self.my_total_score < self.your_total_score:
-            print("Enemy win!!!")
+            print("Enemy Win!!!")
+            f.write('Enemy Win\n')
         else:
             print("Draw...")
+            f.write('Draw')
+            
+        f = write_result_game(f, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+        f.write('--------------------\n\n')        
+    
+        f.close()
 
 
         
@@ -1075,3 +1170,5 @@ if __name__ == '__main__':
 # TODO
 # DONE 別関数化したこいこい関数を使ったより正確なこいこい処理
 # DONE 手四・くっつき処理を追加
+
+# log出力機能を追加
