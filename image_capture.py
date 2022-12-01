@@ -37,8 +37,9 @@ def transform_cutting(img, points):
 capture = cv2.VideoCapture(1)  # MacでiPhoneをつないで，iPhoneを外付けカメラとして使う場合
 
 cv2.namedWindow("Capture")
-
+number = 0
 while True:
+    number += 1
     ret, frame_original = capture.read()
     frame = frame_original.copy()
     
@@ -61,16 +62,27 @@ while True:
                                 
         for i in range(len(areas)):
             coords = areas[i]
-            card = transform_cutting(frame, coords)
-            window_name = "wrap" + str(i)
-            
+            card  = transform_cutting(frame, coords)
+
             card_resize = cv2.resize(card, dsize=(292,468))
-            cv2.imshow(window_name, card_resize)
+            # window_name = "wrap" + str(i)
+            # cv2.imshow(window_name, card_resize)
 
             card_resize = cv2.cvtColor(card_resize, cv2.COLOR_BGR2GRAY)
-            bitwise_xor = cv2.bitwise_xor(card_resize, card_image_dict[53])
-            cv2.imshow("bitwise", bitwise_xor)
-            print(np.mean(bitwise_xor))
+            
+            min_xor = 255
+            min_key = 0
+            for key, card_sample in card_image_dict.items():
+                bitwise_xor = cv2.bitwise_xor(card_resize, card_sample)
+                if np.mean(bitwise_xor) < min_xor:
+                    min_xor = np.mean(bitwise_xor)
+                    min_key = key
+            center = np.mean(coords, axis=0).astype(np.uint16)
+            # print(center)
+            # print(coords)
+            cv2.putText(frame, str(min_key), (center[0],center[1]), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=3.0, color=(0,255,255), thickness=20, lineType=cv2.LINE_4)
+            print("{} judge : {}".format(number, min_key))
+                
 
 
         
