@@ -6,11 +6,12 @@ import numpy as np
 
 cards = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44,51,52,53,54,61,62,63,64,
          71,72,73,74,81,82,83,84,91,92,93,94,101,102,103,104,111,112,113,114,121,122,123,124]
-card_image = []
+card_image_dict = {}
 for i in range(len(cards)):
     file_name = "hanafuda_image/" + str(cards[i]) + ".png"
-    card = cv2.imread(file_name)
-    card_image.append(card)
+    card = cv2.resize(cv2.imread(file_name), dsize=(292,468))
+    card = cv2.cvtColor(card, cv2.COLOR_BGR2GRAY)
+    card_image_dict[cards[i]] = card
 
 
 def transform_cutting(img, points):
@@ -65,6 +66,13 @@ while True:
             
             card_resize = cv2.resize(card, dsize=(292,468))
             cv2.imshow(window_name, card_resize)
+
+            card_resize = cv2.cvtColor(card_resize, cv2.COLOR_BGR2GRAY)
+            bitwise_xor = cv2.bitwise_xor(card_resize, card_image_dict[53])
+            cv2.imshow("bitwise", bitwise_xor)
+            print(np.mean(bitwise_xor))
+
+
         
         cv2.drawContours(frame, areas, -1, (0,0,255), 3)
         
