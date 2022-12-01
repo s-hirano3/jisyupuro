@@ -78,10 +78,8 @@ while True:
                     min_xor = np.mean(bitwise_xor)
                     min_key = key
             center = np.mean(coords, axis=0).astype(np.uint16)
-            # print(center)
-            # print(coords)
             cv2.putText(frame, str(min_key), (center[0],center[1]), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=3.0, color=(0,255,255), thickness=20, lineType=cv2.LINE_4)
-            print("{} judge : {}".format(number, min_key))
+            # print("{} judge : {}".format(number, min_key))
                 
 
 
