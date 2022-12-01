@@ -32,7 +32,8 @@ def transform_cutting(img, points):
     trans = cv2.getPerspectiveTransform(points, dst)
     return cv2.warpPerspective(img, trans, (int(width), int(height)))
 
-capture = cv2.VideoCapture(0)
+# capture = cv2.VideoCapture(0)  # Ubuntuで動かす場合
+capture = cv2.VideoCapture(1)  # MacでiPhoneをつないで，iPhoneを外付けカメラとして使う場合
 
 cv2.namedWindow("Capture")
 
@@ -41,7 +42,7 @@ while True:
     frame = frame_original.copy()
     
     frame_canny = cv2.Canny(frame, 200, 100)
-    image, contours, hierarchy = cv2.findContours(frame_canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(frame_canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     if contours:
         areas = []
@@ -76,7 +77,7 @@ while True:
     # cv2.moveWindow("Original", 700, 10)
     
     cv2.imshow("Capture", frame)
-    cv2.moveWindow("Capture", 700, 10)
+
     
     c = cv2.waitKey(2)
     if c == 27:
