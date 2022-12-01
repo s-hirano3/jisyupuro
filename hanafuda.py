@@ -11,7 +11,7 @@ from draw import *
 from write_log import *
 
 
-class flower:
+class Hanafuda():
     
     def __init__(self):
         self.cards = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44,51,52,53,54,61,62,63,64,
@@ -39,7 +39,7 @@ class flower:
         #cv2.destroyAllWindows()
         
         
-
+    
         
     
     
@@ -88,9 +88,9 @@ class flower:
     
     
     
-    
     # ゲームの進行を行う関数．何ヶ月でプレイするかを引数として渡す．
     def play(self, num_month, displaymode):
+        
         
         # logファイル設定
         dt_now = datetime.datetime.now()
@@ -100,8 +100,6 @@ class flower:
         f.write('oya mode(0:player is oya of odd month, 1:player is oya of even month)\n' + str(self.oya) + '\n\n')
         
 
-        
-        
          
         for month in range(num_month):
             self.my_score = 0
@@ -283,11 +281,13 @@ class flower:
                         else:
                             print("{} is not your cards.".format(select_key))
 
-                    
                     select_month = select_key // 10
                     field_months = []
                     for i in range(len(self.field_cards)):
                         field_months.append(self.field_cards[i] // 10)
+                    
+                    flush_card_list = []
+                    flush_card_list.append(select_key)
 
                                        
                     # 選んだカードと同じ月のカードが場に何枚あるかで処理を変える
@@ -306,6 +306,8 @@ class flower:
 
                         self.my_getcard.append(select_key)
                         self.my_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
 
                     # 3枚の場合．全取り
                     elif field_months.count(select_month) == 3:
@@ -320,6 +322,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.my_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合．場のどのカードを取るかを選択させる
                     elif field_months.count(select_month) == 2:
@@ -340,6 +344,8 @@ class flower:
 
                         self.my_getcard.append(select_key)
                         self.my_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -349,6 +355,7 @@ class flower:
                     print("Your get cards:  {}".format(self.my_getcard))
                     
                     self.stage = draw_play_tefuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, displaymode)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
@@ -379,6 +386,9 @@ class flower:
                     field_months = []
                     for i in range(len(self.field_cards)):
                         field_months.append(self.field_cards[i] // 10)
+                        
+                    flush_card_list = []
+                    flush_card_list.append(draw_card)
 
                                        
                     # 山札から引いたカードと同じ月のカードが場に何枚あるかで処理を変える
@@ -394,6 +404,8 @@ class flower:
 
                         self.my_getcard.append(draw_card)
                         self.my_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
 
                     # 3枚の場合．全取り
                     elif field_months.count(draw_month) == 3:
@@ -406,6 +418,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.my_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合．場のどのカードを取るかを選択させる
                     elif field_months.count(draw_month) == 2:
@@ -424,6 +438,8 @@ class flower:
 
                         self.my_getcard.append(draw_card)
                         self.my_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -434,6 +450,7 @@ class flower:
                     
                     # 描画
                     self.stage = draw_play_yamafuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, draw_card, displaymode, timing=1)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destoryAllWindows()
@@ -509,6 +526,9 @@ class flower:
                     select_month_enemy = select_card_enemy // 10
                     print("enemy select:  {}".format(select_card_enemy))
                     
+                    flush_card_list = []
+                    flush_card_list.append(select_card_enemy)
+                    
                                       
                     # 選んだカードと同じ月のカードの枚数で処理を変える
                     # 0枚の場合
@@ -526,6 +546,8 @@ class flower:
                         
                         self.your_getcard.append(select_card_enemy)
                         self.your_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
                     
                     # 3枚の場合
                     elif field_months.count(select_month_enemy) == 3:
@@ -540,6 +562,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.your_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合
                     elif field_months.count(select_month_enemy) == 2:
@@ -556,6 +580,8 @@ class flower:
                         
                         self.your_getcard.append(select_card_enemy)
                         self.your_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -564,6 +590,7 @@ class flower:
                     print("Enemy's get cards:  {}".format(self.your_getcard))
                     
                     self.stage = draw_play_tefuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, displaymode)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
@@ -595,6 +622,9 @@ class flower:
                     field_months = []
                     for i in range(len(self.field_cards)):
                         field_months.append(self.field_cards[i] // 10)
+                        
+                    flush_card_list = []
+                    flush_card_list.append(draw_card_enemy)
 
                                        
                     # 山札から引いたカードと同じ月のカードが場に何枚あるかで処理を変える
@@ -610,6 +640,8 @@ class flower:
 
                         self.your_getcard.append(draw_card_enemy)
                         self.your_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
 
                     # 3枚の場合．全取り
                     elif field_months.count(draw_month_enemy) == 3:
@@ -622,6 +654,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.your_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合．場のどのカードを取るかを選択させる
                     elif field_months.count(draw_month_enemy) == 2:
@@ -635,6 +669,8 @@ class flower:
 
                         self.your_getcard.append(draw_card_enemy)
                         self.your_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -644,6 +680,7 @@ class flower:
                     print("Enemy's get cards:  {}".format(self.your_getcard))
                     
                     self.stage = draw_play_yamafuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, draw_card_enemy, displaymode, timing=1)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
@@ -717,6 +754,9 @@ class flower:
                     select_month_enemy = select_card_enemy // 10
                     print("enemy select:  {}".format(select_card_enemy))
                     
+                    flush_card_list = []
+                    flush_card_list.append(select_card_enemy)
+                    
                                       
                     # 選んだカードと同じ月のカードの枚数で処理を変える
                     # 0枚の場合
@@ -734,6 +774,8 @@ class flower:
                         
                         self.your_getcard.append(select_card_enemy)
                         self.your_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
                     
                     # 3枚の場合
                     elif field_months.count(select_month_enemy) == 3:
@@ -748,6 +790,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.your_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合
                     elif field_months.count(select_month_enemy) == 2:
@@ -764,6 +808,8 @@ class flower:
                         
                         self.your_getcard.append(select_card_enemy)
                         self.your_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -772,6 +818,7 @@ class flower:
                     print("Enemy's get cards:  {}".format(self.your_getcard))
                     
                     self.stage = draw_play_tefuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, displaymode)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
@@ -791,6 +838,9 @@ class flower:
                     # yamafudaの先頭を取り出し，削除
                     draw_card_enemy = self.yamafuda.pop(0)
                     print("enemy draw:  {}".format(draw_card_enemy))
+                    
+                    flush_card_list = []
+                    flush_card_list.append(draw_card_enemy)
                     
                     # 描画
                     self.stage = draw_play_yamafuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, draw_card_enemy, displaymode, timing=0)
@@ -817,6 +867,8 @@ class flower:
 
                         self.your_getcard.append(draw_card_enemy)
                         self.your_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
 
                     # 3枚の場合．全取り
                     elif field_months.count(draw_month_enemy) == 3:
@@ -829,6 +881,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.your_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合．場のどのカードを取るかを選択させる
                     elif field_months.count(draw_month_enemy) == 2:
@@ -842,6 +896,8 @@ class flower:
 
                         self.your_getcard.append(draw_card_enemy)
                         self.your_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -851,6 +907,7 @@ class flower:
                     print("Enemy's get cards:  {}".format(self.your_getcard))
                     
                     self.stage = draw_play_yamafuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, draw_card_enemy, displaymode, timing=1)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
@@ -913,7 +970,9 @@ class flower:
                     field_months = []
                     for i in range(len(self.field_cards)):
                         field_months.append(self.field_cards[i] // 10)
-
+                        
+                    flush_card_list = []
+                    flush_card_list.append(select_key)
                                        
                     # 選んだカードと同じ月のカードが場に何枚あるかで処理を変える
                     # 0枚の場合．選んだカードを場に置く
@@ -931,6 +990,8 @@ class flower:
 
                         self.my_getcard.append(select_key)
                         self.my_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
 
                     # 3枚の場合．全取り
                     elif field_months.count(select_month) == 3:
@@ -945,6 +1006,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.my_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合．場のどのカードを取るかを選択させる
                     elif field_months.count(select_month) == 2:
@@ -965,6 +1028,8 @@ class flower:
 
                         self.my_getcard.append(select_key)
                         self.my_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -974,6 +1039,7 @@ class flower:
                     print("Your get cards:  {}".format(self.my_getcard))
                     
                     self.stage = draw_play_tefuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, displaymode)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destroyAllWindows()
@@ -1004,7 +1070,9 @@ class flower:
                     field_months = []
                     for i in range(len(self.field_cards)):
                         field_months.append(self.field_cards[i] // 10)
-
+                        
+                    flush_card_list = []
+                    flush_card_list.append(draw_card)
                                        
                     # 山札から引いたカードと同じ月のカードが場に何枚あるかで処理を変える
                     # 0枚の場合．引いたカードを場に置いて終了
@@ -1019,6 +1087,8 @@ class flower:
 
                         self.my_getcard.append(draw_card)
                         self.my_getcard.append(get_card_from_field)
+                        
+                        flush_card_list.append(get_card_from_field)
 
                     # 3枚の場合．全取り
                     elif field_months.count(draw_month) == 3:
@@ -1031,6 +1101,8 @@ class flower:
                         for i in range(3):
                             self.field_cards.remove(get_cards_from_field[i])
                             self.my_getcard.append(get_cards_from_field[i])
+                            
+                            flush_card_list.append(get_cards_from_field[i])
                     
                     # 2枚の場合．場のどのカードを取るかを選択させる
                     elif field_months.count(draw_month) == 2:
@@ -1049,6 +1121,8 @@ class flower:
 
                         self.my_getcard.append(draw_card)
                         self.my_getcard.append(select_from_kouho)
+                        
+                        flush_card_list.append(select_from_kouho)
                     
                     # その他の場合
                     else:
@@ -1059,6 +1133,7 @@ class flower:
                     
                     # 描画
                     self.stage = draw_play_yamafuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, draw_card, displaymode, timing=1)
+                    self.stage = flush(self.stage, flush_card_list)
                     cv2.imshow("stage", self.stage)
                     cv2.waitKey(0)
                     #cv2.destoryAllWindows()
@@ -1159,7 +1234,7 @@ if __name__ == '__main__':
     month = int(input("Type play month:  "))
     displaymode = int(input("Type displaymode 0:not disp, 1:disp :  "))
     
-    hanafuda = flower()
+    hanafuda = Hanafuda()
     hanafuda.oya_decision()
     hanafuda.play(month, displaymode)  # 何ヶ月でプレイするかを渡す．第2引数はdisplay_modeで，0なら相手の手札を見せない，1なら見せる
     
@@ -1172,4 +1247,4 @@ if __name__ == '__main__':
 # DONE 手四・くっつき処理を追加
 
 # log出力機能を追加
-# 手札から出したカードを強調したい
+# DONE 手札から出したカードを強調したい

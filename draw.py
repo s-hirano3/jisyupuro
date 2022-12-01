@@ -73,11 +73,15 @@ CARDS_DICT = {11:card11, 12:card12, 13:card13, 14:card14, 21:card21, 22:card22, 
               51:card51, 52:card52, 53:card53, 54:card54, 61:card61, 62:card62, 63:card63, 64:card64, 71:card71, 72:card72, 73:card73, 74:card74, 81:card81, 82:card82, 83:card83, 84:card84,
               91:card91, 92:card92, 93:card93, 94:card94, 101:card101, 102:card102, 103:card103, 104:card104, 111:card111, 112:card112, 113:card113, 114:card114, 121:card121, 122:card122, 123:card123, 124:card124}
 
+# どの座標にカードが表示されているかを対応づけるlist
+CARDS_COORDS_LIST = [0] * 112
+
 
 # (blue, green, red)
 FIELD_COLOR = (135, 153, 0)
 CARD_COLOR = (76, 60, 167)
 WHITE = (255, 255, 255)
+RED = (0, 0, 255)
 
 
 # カード描画座標 (左上x, 左上y, 右下x, 右下y)
@@ -87,14 +91,26 @@ COORDS_FIELD = [(10, 454, 68, 546), (88, 454, 146, 546), (166, 454, 224, 546), (
 COORDS_YAMAFUDA = [(1336, 454, 1394, 546), (1414, 454, 1472, 546)]
 COORDS_MY_CARDS = [(483, 898, 541, 990), (561, 898, 619, 990), (639, 898, 697, 990), (717, 898, 775, 990), (795, 898, 853, 990), (873, 898, 931, 990), (951, 898, 1009, 990), (1029, 898, 1087, 990)]
 COORDS_MY_GETCARDS = [[(30, 624, 88, 716), (98, 624, 156, 716), (166, 624, 224, 716), (64, 736, 122, 828), (132, 736, 190, 828)],
-                      [(264, 624, 322, 716), (332, 624, 390, 716), (400, 624, 458, 716), (468, 624, 526, 716), (536, 624, 594, 716), (264, 736, 322, 828), (332, 736, 390, 828), (400, 736, 458, 828), (468, 736, 526, 828), (536, 736, 594, 828)],
-                      [(634, 624, 692, 716), (702, 624, 760, 716), (770, 624, 828, 716), (838, 624, 896, 716), (906, 624, 964, 716), (634, 736, 692, 828), (702, 736, 760, 828), (770, 736, 828, 828), (838, 736, 896, 828), (906, 736, 964, 828)],
-                      [(1004, 624, 1062, 716), (1072, 624, 1130, 716), (1140, 624, 1198, 716), (1208, 624, 1266, 716), (1276, 624, 1334, 716), (1344, 624, 1402, 716), (1412, 624, 1470, 716), (1004, 736, 1062, 828), (1072, 736, 1130, 828), (1140, 736, 1198, 828), (1208, 736, 1266, 828), (1276, 736, 1334, 828), (1344, 736, 1402, 828), (1412, 736, 1470, 828)]]
+                      [(264, 624, 322, 716), (332, 624, 390, 716), (400, 624, 458, 716), (468, 624, 526, 716), (264, 736, 322, 828), (332, 736, 390, 828), (400, 736, 458, 828), (468, 736, 526, 828)],
+                      [(576, 624, 634, 716), (644, 624, 702, 716), (712, 624, 770, 716), (780, 624, 838, 716), (848, 624, 906, 716), (576, 736, 634, 828), (644, 736, 702, 828), (712, 736, 770, 828), (780, 736, 838, 828), (848, 736, 906, 828)],
+                      [(946, 624, 1004, 716), (1014, 624, 1072, 716), (1082, 624, 1140, 716), (1150, 624, 1208, 716), (1218, 624, 1276, 716), (1286, 624, 1344, 716), (1354, 624, 1412, 716), (1422, 624, 1480, 716), (946, 736, 1004, 828), (1014, 736, 1072, 828), (1082, 736, 1140, 828), (1150, 736, 1208, 828), (1218, 736, 1276, 828), (1286, 736, 1344, 828), (1354, 736, 1412, 828), (1422, 736, 1480, 828)]]
 COORDS_YOUR_CARDS = [(483, 10, 541, 102), (561, 10, 619, 102), (639, 10, 697, 102), (717, 10, 775, 102), (795, 10, 853, 102), (873, 10, 931, 102), (951, 10, 1009, 102), (1029, 10, 1087, 102)]
 COORDS_YOUR_GETCARDS = [[(30, 172, 88, 264), (98, 172, 156, 264), (166, 172, 224, 264), (64, 284, 122, 376), (132, 284, 190, 376)],
-                        [(264, 172, 322, 264), (332, 172, 390, 264), (400, 172, 458, 264), (468, 172, 526, 264), (536, 172, 594, 264), (264, 284, 322, 376), (332, 284, 390, 376), (400, 284, 458, 376), (468, 284, 526, 376), (536, 284, 594, 376)],
-                        [(634, 172, 692, 264), (702, 172, 760, 264), (770, 172, 828, 264), (838, 172, 896, 264), (906, 172, 964, 264), (634, 284, 692, 376), (702, 284, 760, 376), (770, 284, 828, 376), (838, 284, 896, 376), (906, 284, 964, 376)],
-                        [(1004, 172, 1062, 264), (1072, 172, 1130, 264), (1140, 172, 1198, 264), (1208, 172, 1266, 264), (1276, 172, 1334, 264), (1344, 172, 1402, 264), (1412, 172, 1470, 264), (1004, 284, 1062, 376), (1072, 284, 1130, 376), (1140, 284, 1198, 376), (1208, 284, 1266, 376), (1276, 284, 1334, 376), (1344, 284, 1402, 376), (1412, 284, 1470, 376)]]
+                        [(264, 172, 322, 264), (332, 172, 390, 264), (400, 172, 458, 264), (468, 172, 526, 264), (264, 284, 322, 376), (332, 284, 390, 376), (400, 284, 458, 376), (468, 284, 526, 376)],
+                        [(576, 172, 634, 264), (644, 172, 702, 264), (712, 172, 770, 264), (780, 172, 838, 264), (848, 172, 906, 264), (576, 284, 634, 376), (644, 284, 702, 376), (712, 284, 770, 376), (780, 284, 838, 376), (848, 284, 906, 376)],
+                        [(946, 172, 1004, 264), (1014, 172, 1072, 264), (1082, 172, 1140, 264), (1150, 172, 1208, 264), (1218, 172, 1276, 264), (1286, 172, 1344, 264), (1354, 172, 1412, 264), (1422, 172, 1480, 264), (946, 284, 1004, 376), (1014, 284, 1072, 376), (1082, 284, 1140, 376), (1150, 284, 1208, 376), (1218, 284, 1276, 376), (1286, 284, 1344, 376), (1354, 284, 1412, 376), (1422, 284, 1480, 376)]]
+COORDS_ALL = [(483, 10, 541, 102), (561, 10, 619, 102), (639, 10, 697, 102), (717, 10, 775, 102), (795, 10, 853, 102), (873, 10, 931, 102), (951, 10, 1009, 102), (1029, 10, 1087, 102),
+              (30, 172, 88, 264), (98, 172, 156, 264), (166, 172, 224, 264), (64, 284, 122, 376), (132, 284, 190, 376),
+              (264, 172, 322, 264), (332, 172, 390, 264), (400, 172, 458, 264), (468, 172, 526, 264), (264, 284, 322, 376), (332, 284, 390, 376), (400, 284, 458, 376), (468, 284, 526, 376),
+              (576, 172, 634, 264), (644, 172, 702, 264), (712, 172, 770, 264), (780, 172, 838, 264), (848, 172, 906, 264), (576, 284, 634, 376), (644, 284, 702, 376), (712, 284, 770, 376), (780, 284, 838, 376), (848, 284, 906, 376),
+              (946, 172, 1004, 264), (1014, 172, 1072, 264), (1082, 172, 1140, 264), (1150, 172, 1208, 264), (1218, 172, 1276, 264), (1286, 172, 1344, 264), (1354, 172, 1412, 264), (1422, 172, 1480, 264), (946, 284, 1004, 376), (1014, 284, 1072, 376), (1082, 284, 1140, 376), (1150, 284, 1208, 376), (1218, 284, 1276, 376), (1286, 284, 1344, 376), (1354, 284, 1412, 376), (1422, 284, 1480, 376),
+              (10, 454, 68, 546), (88, 454, 146, 546), (166, 454, 224, 546), (244, 454, 302, 546), (322, 454, 380, 546), (400, 454, 458, 546), (478, 454, 536, 546), (556, 454, 614, 546), (634, 454, 692, 546), (712, 454, 770, 546), (790, 454, 848, 546), (868, 454, 926, 546), (946, 454, 1004, 546), (1024, 454, 1082, 546), (1102, 454, 1160, 546), (1180, 454, 1238, 546),
+              (1336, 454, 1394, 546), (1414, 454, 1472, 546),
+              (30, 624, 88, 716), (98, 624, 156, 716), (166, 624, 224, 716), (64, 736, 122, 828), (132, 736, 190, 828),
+              (264, 624, 322, 716), (332, 624, 390, 716), (400, 624, 458, 716), (468, 624, 526, 716), (264, 736, 322, 828), (332, 736, 390, 828), (400, 736, 458, 828), (468, 736, 526, 828),
+              (576, 624, 634, 716), (644, 624, 702, 716), (712, 624, 770, 716), (780, 624, 838, 716), (848, 624, 906, 716), (576, 736, 634, 828), (644, 736, 702, 828), (712, 736, 770, 828), (780, 736, 838, 828), (848, 736, 906, 828),
+              (946, 624, 1004, 716), (1014, 624, 1072, 716), (1082, 624, 1140, 716), (1150, 624, 1208, 716), (1218, 624, 1276, 716), (1286, 624, 1344, 716), (1354, 624, 1412, 716), (1422, 624, 1480, 716), (946, 736, 1004, 828), (1014, 736, 1072, 828), (1082, 736, 1140, 828), (1150, 736, 1208, 828), (1218, 736, 1276, 828), (1286, 736, 1344, 828), (1354, 736, 1412, 828), (1422, 736, 1480, 828),
+              (483, 898, 541, 990), (561, 898, 619, 990), (639, 898, 697, 990), (717, 898, 775, 990), (795, 898, 853, 990), (873, 898, 931, 990), (951, 898, 1009, 990), (1029, 898, 1087, 990)]
 
 
 # カード番号表示座標 (左上x, 左上y, 右下x, 右下y)
@@ -120,11 +136,15 @@ def draw_init():
     
     dst_stage = stage.copy()
     
+    for i in range(len(CARDS_COORDS_LIST)):
+        CARDS_COORDS_LIST[i] = 0
+    
     # 文字表示領域をリセット
     for i in range(len(COORDS_MOJI_ALL)):
         coords = COORDS_MOJI_ALL[i]
         cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
     
+    # カード描画をリセット
     for coords in COORDS_FIELD:
         cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
     
@@ -158,6 +178,9 @@ def draw_init():
 def draw_oya_decision(stage, my_card, your_card):
     dst_stage = stage.copy()
     
+    for i in range(len(CARDS_COORDS_LIST)):
+        CARDS_COORDS_LIST[i] = 0
+    
     # 文字表示領域をリセット
     for i in range(len(COORDS_MOJI_ALL)):
         coords = COORDS_MOJI_ALL[i]
@@ -167,11 +190,14 @@ def draw_oya_decision(stage, my_card, your_card):
     my_coords_moji = COORDS_YAMAFUDA_MOJI[0]
     dst_stage[my_coords[1]:my_coords[3], my_coords[0]:my_coords[2]] = CARDS_DICT[my_card]
     cv2.putText(dst_stage, str(my_card), (my_coords_moji[0],my_coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+    CARDS_COORDS_LIST[COORDS_ALL.index(my_coords)] = my_card
     
     your_coords = COORDS_YAMAFUDA[1]
     your_coords_moji = COORDS_YAMAFUDA_MOJI[1]
     dst_stage[your_coords[1]:your_coords[3], your_coords[0]:your_coords[2]] = CARDS_DICT[your_card]
     cv2.putText(dst_stage, str(your_card), (your_coords_moji[0],your_coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+    CARDS_COORDS_LIST[COORDS_ALL.index(your_coords)] = your_card
+    
     
     #v2.imshow("stage", dst_stage)
     #cv2.waitKey(0)
@@ -185,6 +211,9 @@ def draw_oya_decision(stage, my_card, your_card):
 def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
     stage = draw_init()
     dst_stage = stage.copy()
+    
+    for i in range(len(CARDS_COORDS_LIST)):
+        CARDS_COORDS_LIST[i] = 0
 
     # 文字表示領域をリセット
     for i in range(len(COORDS_MOJI_ALL)):
@@ -206,6 +235,7 @@ def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
         field_card = field_cards[i]
         dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[field_card]
         cv2.putText(dst_stage, str(field_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+        CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = field_card
     
     my_cards.sort()
     for i in range(len(my_cards)):
@@ -214,6 +244,7 @@ def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
         my_card = my_cards[i]
         dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[my_card]
         cv2.putText(dst_stage, str(my_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+        CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = my_card
     
     # displaymode=0なら相手の手札を表示しない
     your_cards.sort()
@@ -228,8 +259,9 @@ def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
             your_card = your_cards[i]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[your_card]
             cv2.putText(dst_stage, str(your_card), (coords_moji[0],coords_moji[1]+24), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+            CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = your_card
             
-            
+    
     #cv2.imshow("stage", dst_stage)
     #cv2.waitKey(0)
     #cv2.destroyAllWindows()
@@ -241,6 +273,9 @@ def draw_play_init(stage, my_cards, your_cards, field_cards, displaymode):
 # 「手札から1枚出す」ターンの終わりのタイミングで，手札・場・獲得カードを更新して表示する描画関数 
 def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, field_cards, displaymode):
     dst_stage = stage.copy()
+    
+    for i in range(len(CARDS_COORDS_LIST)):
+        CARDS_COORDS_LIST[i] = 0
     
     # 文字表示領域をリセット
     for i in range(len(COORDS_MOJI_ALL)):
@@ -264,6 +299,7 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
             field_card = field_cards[i]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[field_card]
             cv2.putText(dst_stage, str(field_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+            CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = field_card
         else:
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
@@ -277,6 +313,7 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
             my_card = my_cards[i]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[my_card]
             cv2.putText(dst_stage, str(my_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+            CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = my_card
         else:
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)        
@@ -300,6 +337,7 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
                 your_card = your_cards[i]
                 dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[your_card]
                 cv2.putText(dst_stage, str(your_card), (coords_moji[0],coords_moji[1]+24), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+                CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = your_card
             else:
                 cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
                 cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)        
@@ -326,6 +364,7 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
             coords = COORDS_MY_GETCARDS[3][count_my_getcard_kasu]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[my_getcard]
             count_my_getcard_kasu += 1
+        CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = my_getcard
     
     count_your_getcard_hikari = 0
     count_your_getcard_tane = 0
@@ -349,6 +388,8 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
             coords = COORDS_YOUR_GETCARDS[3][count_your_getcard_kasu]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[your_getcard]
             count_your_getcard_kasu += 1
+        CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = your_getcard
+    
     
     #cv2.imshow("stage", dst_stage)
     #cv2.waitKey(0)
@@ -363,6 +404,9 @@ def draw_play_tefuda(stage, my_cards, my_getcards, your_cards, your_getcards, fi
 def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, field_cards, draw_card, displaymode, timing):
     dst_stage = stage.copy()
     
+    for i in range(len(CARDS_COORDS_LIST)):
+        CARDS_COORDS_LIST[i] = 0
+    
     # 文字表示領域をリセット
     for i in range(len(COORDS_MOJI_ALL)):
         coords = COORDS_MOJI_ALL[i]
@@ -376,6 +420,7 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
             if timing == 0:
                 dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[draw_card]
                 cv2.putText(dst_stage, str(draw_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+                CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = draw_card
             else:
                 cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
                 cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
@@ -391,6 +436,7 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
             field_card = field_cards[i]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[field_card]
             cv2.putText(dst_stage, str(field_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+            CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = field_card
         else:
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
@@ -404,6 +450,7 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
             my_card = my_cards[i]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[my_card]
             cv2.putText(dst_stage, str(my_card), (coords_moji[0],coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+            CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = my_card
         else:
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
             cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)        
@@ -427,6 +474,7 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
                 your_card = your_cards[i]
                 dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[your_card]
                 cv2.putText(dst_stage, str(your_card), (coords_moji[0],coords_moji[1]+24), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+                CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = your_card
             else:
                 cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=FIELD_COLOR, thickness=-1)
                 cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)        
@@ -453,6 +501,7 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
             coords = COORDS_MY_GETCARDS[3][count_my_getcard_kasu]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[my_getcard]
             count_my_getcard_kasu += 1
+        CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = my_getcard
     
     count_your_getcard_hikari = 0
     count_your_getcard_tane = 0
@@ -475,13 +524,38 @@ def draw_play_yamafuda(stage, my_cards, my_getcards, your_cards, your_getcards, 
         if your_getcard in KASU:
             coords = COORDS_YOUR_GETCARDS[3][count_your_getcard_kasu]
             dst_stage[coords[1]:coords[3], coords[0]:coords[2]] = CARDS_DICT[your_getcard]
-            count_your_getcard_kasu += 1    
+            count_your_getcard_kasu += 1   
+        CARDS_COORDS_LIST[COORDS_ALL.index(coords)] = your_getcard 
+    
     
     #cv2.imshow("stage", dst_stage)
     #cv2.waitKey(0)
     #cv2.destroyAllWindows()
     
     return dst_stage
+
+    
+    
+# card_listに与えられた番号のカードを強調する
+def flush(stage, card_list):
+    dst_stage = stage.copy()
+        
+    for card in card_list:
+        coord_index = CARDS_COORDS_LIST.index(card)
+        coords = COORDS_ALL[coord_index]
+        cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=RED, thickness=2)
+    
+    cv2.imshow("stage", dst_stage)
+    cv2.waitKey(0)
+    
+    for card in card_list:
+        coord_index = CARDS_COORDS_LIST.index(card)
+        coords = COORDS_ALL[coord_index]
+        cv2.rectangle(dst_stage, (coords[0],coords[1]), (coords[2],coords[3]), color=WHITE, thickness=2)
+
+    return dst_stage
+        
+
     
 
 if __name__ == '__main__':
@@ -494,10 +568,10 @@ if __name__ == '__main__':
 
 
 # TODO
-# DONE 手札・場のカードを獲得したときに，そのカードの表示を消す 　　現状放置なので無限カード増殖してる
+# DONE 手札・場のカードを獲得したときに，そのカードの表示を消す(現状放置なので無限カード増殖してる)
 # DONE 獲得カードの枠を増やす：tane5→10, tan5→10, kasu10→16???
 # DONE カードの番号を表示する：自分の手札・相手の手札・場のカード
 # DONE ちょっと小さいけど macで試してみて表示エリアの大きさの確認
 # DONE 山札から引いたカードを表示する
 
-# tane 10→8 kasu 14→16
+# DONE tane 10→8 kasu 14→16

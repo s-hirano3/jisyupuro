@@ -1,0 +1,97 @@
+2022-12-01 12:18:15
+
+oya mode(0:player is oya of odd month, 1:player is oya of even month)
+1
+
+--------------------
+initial condition
+field_cards
+[13 14 24 31 41 52 102 112 ]
+yamafuda
+[93 81 84 53 103 124 74 22 111 64 43 83 51 121 94 12 122 82 61 73 113 92 123 42 ]
+my_cards
+[11 23 33 34 44 54 71 101 ]
+your_cards
+[21 32 62 63 72 91 104 114 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+--------------------
+
+--------------------
+enemy turn : select
+month
+1
+tern
+8
+field_cards
+[13 14 24 31 41 52 102 ]
+yamafuda
+[93 81 84 53 103 124 74 22 111 64 43 83 51 121 94 12 122 82 61 73 113 92 123 42 ]
+my_cards
+[11 23 33 34 44 54 71 101 ]
+your_cards
+[21 32 62 63 72 91 104 ]
+my_getcards
+[]
+your_getcards
+[114 112 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+--------------------
+
+--------------------
+enemy turn : select
+month
+1
+tern
+7
+field_cards
+[13 14 24 31 41 52 93 102 ]
+yamafuda
+[81 84 53 103 124 74 22 111 64 43 83 51 121 94 12 122 82 61 73 113 92 123 42 ]
+my_cards
+[11 23 33 34 44 54 71 101 ]
+your_cards
+[21 32 62 63 72 91 104 ]
+my_getcards
+[]
+your_getcards
+[114 112 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+--------------------
+
