@@ -14,6 +14,7 @@ for i in range(len(cards)):
     card_image_dict[cards[i]] = card
 
 
+
 def transform_cutting(img, points):
     points = sorted(points, key=lambda x:x[1])
     top = sorted(points[:2], key=lambda x:x[0])
@@ -21,17 +22,22 @@ def transform_cutting(img, points):
     points = np.array(top + bottom, dtype='float32')
     
     width = max(np.sqrt(((points[0][0]-points[2][0])**2)*2), np.sqrt(((points[1][0]-points[3][0])**2)*2))
-    height = max(np.sqrt(((points[0][1]-points[2][1])**2)*2), np.sqrt(((points[1][1]-points[3][1])**2)*2))    
-    
-    dst = np.array([
-        np.array([0, 0]),
-        np.array([width-1, 0]),
-        np.array([width-1, height-1]),
-        np.array([0, height-1]),
-        ], np.float32)
-    
+    height = max(np.sqrt(((points[0][1]-points[2][1])**2)*2), np.sqrt(((points[1][1]-points[3][1])**2)*2))
+
+
+    if height > width:    
+        dst = np.array([
+            np.array([0, 0]),
+            np.array([width-1, 0]),
+            np.array([width-1, height-1]),
+            np.array([0, height-1]),
+            ], np.float32)
+        
     trans = cv2.getPerspectiveTransform(points, dst)
     return cv2.warpPerspective(img, trans, (int(width), int(height)))
+
+
+
 
 # capture = cv2.VideoCapture(0)  # Ubuntuで動かす場合
 capture = cv2.VideoCapture(1)  # MacでiPhoneをつないで，iPhoneを外付けカメラとして使う場合
@@ -65,8 +71,8 @@ while True:
             card  = transform_cutting(frame, coords)
 
             card_resize = cv2.resize(card, dsize=(292,468))
-            # window_name = "wrap" + str(i)
-            # cv2.imshow(window_name, card_resize)
+            window_name = "wrap" + str(i)
+            cv2.imshow(window_name, card_resize)
 
             card_resize = cv2.cvtColor(card_resize, cv2.COLOR_BGR2GRAY)
             

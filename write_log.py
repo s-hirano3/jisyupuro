@@ -59,7 +59,7 @@ def write_log_init(file, field_cards, yamafuda, my_cards, your_cards, my_getcard
 
 def write_log(file, month, index, field_cards, yamafuda, my_cards, your_cards, my_getcards, your_getcards, my_score, your_score, my_total_score, your_total_score, my_koikoi, your_koikoi):
     file.write('month\n')
-    file.write(str(month+1) + '\n')
+    file.write(str(month) + '\n')
     
     file.write('tern\n')
     file.write(str(index+1) + '\n')
@@ -71,7 +71,7 @@ def write_log(file, month, index, field_cards, yamafuda, my_cards, your_cards, m
 
 def write_result_month(file, month, field_cards, yamafuda, my_cards, your_cards, my_getcards, your_getcards, my_score, your_score, my_total_score, your_total_score, my_koikoi, your_koikoi):
     file.write('month\n')
-    file.write(str(month+1) + '\n')
+    file.write(str(month) + '\n')
     
     
     file = write_log_init(file, field_cards, yamafuda, my_cards, your_cards, my_getcards, your_getcards, my_score, your_score, my_total_score, your_total_score, my_koikoi, your_koikoi)

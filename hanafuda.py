@@ -101,7 +101,7 @@ class Hanafuda():
         
 
          
-        for month in range(num_month):
+        for month in range(1,num_month+1):
             self.my_score = 0
             self.your_score = 0
             self.field_cards = []
