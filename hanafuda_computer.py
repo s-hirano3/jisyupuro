@@ -3,10 +3,10 @@
 
 import random
 import datetime
-import cv2
+import gc
 from detect_yaku import *
-from draw import *
 from write_log import *
+from enemy_move import *
 
 
 class Hanafuda():
@@ -31,13 +31,13 @@ class Hanafuda():
         self.your_cards = []
         self.your_getcard = []
         self.your_score = 0
-        self.yout_koikoi_flag = 0
+        self.your_koikoi_flag = 0
 
         self.field_cards = []
         self.yamafuda = []
 
         self.end_flag = False
-        self.winner = "Draw"
+        self.winner = "HIKIWAKE"
 
 
     
@@ -54,6 +54,23 @@ class Hanafuda():
             self.your_total_score += self.your_score
         self.f.write('my_total_score: {}, your_total_score: {}\n'.format(self.my_total_score, self.your_total_score))
 
+        self.f.write('------------------\n\n')
+
+    
+    def EndGameProcess(self):
+        if self.my_total_score > self.your_total_score:
+            winner = "Me"
+        elif self.my_total_score < self.your_total_score:
+            winner = "You"
+        elif self.my_total_score == self.your_total_score:
+            winner = "HIKIWAKE"
+
+        self.f.write('\n\n------------------\n')
+
+        self.f.write('end of game\n')
+        self.f.write('winner : {}\n'.format(winner))
+        self.f.write('my_total_score: {}, your_total_score: {}\n'.format(self.my_total_score, self.your_total_score))
+        
         self.f.write('------------------\n\n')
 
 
@@ -137,7 +154,7 @@ class Hanafuda():
             self.f.write('Enemy is SHITE\n')
             self.f.write('------------------\n')
             self.your_score = 6
-            self.winenr = "You"
+            self.winner = "You"
             self.end_flag = True
 
         # くっつきのみ
@@ -172,7 +189,7 @@ class Hanafuda():
         for i in range(len(self.field_cards)):
             field_month.append(self.field_cards[i] // 10)
         
-        
+
         # 選んだカードと同じ月のカードが場に何枚あるかで場合分け
         # 0枚
         if field_month.count(card_month) == 0:
@@ -270,14 +287,59 @@ class Hanafuda():
         draw_card = self.yamafuda.pop(0)
         self.FieldMatchingProcess(draw_card, player)
 
+    
+    def Score(self, player):
+        if player == "Me":
+            tmp_score = self.my_score
+            self.my_yaku, self.my_score = detect_yaku(self.my_getcard)
+            if self.my_score > tmp_score:
+                if self.my_koikoi_flag == 1:
+                    self.my_koikoi_flag = 2
+                    self.winner = "Me"
+                    self.end_flag = True
+                elif self.my_koikoi_flag == 0:
+                    if self.your_koikoi_flag == 1:
+                        self.my_koikoi_flag = 2
+                        self.my_score *= 2
+                        self.winner = "Me"
+                        self.end_flag = True
+                    elif self.your_koikoi_flag == 0:
+                        self.my_koikoi_flag = 1
+                        self.f.write('------------------\n')
+                        self.f.write('DO KOIKOI\n')
+                        self.f.write('my_koikoi_flag: {}, your_koikoi_flag: {}, my_score: {}, your_score: {}\n'.format(self.my_koikoi_flag, self.your_koikoi_flag, self.my_score, self.your_score))
+                        self.f.write('------------------\n')
+        
+        elif player == "You":
+            tmp_score = self.your_score
+            self.your_yaku, self.your_score = detect_yaku(self.your_getcard)
+            if self.your_score > tmp_score:
+                if self.your_koikoi_flag == 1:
+                    self.your_koikoi_flag = 2
+                    self.winner = "You"
+                    self.end_flag = True
+                elif self.your_koikoi_flag == 0:
+                    if self.my_koikoi_flag == 1:
+                        self.your_koikoi_flag = 2
+                        self.your_score *= 2
+                        self.winner = "You"
+                        self.end_flag = True
+                    elif self.my_koikoi_flag == 0:
+                        self.your_koikoi_flag = 1
+                        self.f.write('------------------\n')
+                        self.f.write('DO KOIKOI\n')
+                        self.f.write('my_koikoi_flag: {}, your_koikoi_flag: {}, my_score: {}, your_score: {}\n'.format(self.my_koikoi_flag, self.your_koikoi_flag, self.my_score, self.your_score))
+                        self.f.write('------------------\n')
+
+
 
 
     def Play(self, repetition):
 
         dt_now = datetime.datetime.now()
-        file_name = './log_computer/' + dt_now.strftime('%Y%m%d-%H%M%S') + '.txt'
+        file_name = './log_computer/log-computer-' + str(repetition) + '.txt'
         self.f = open(file_name, 'w')
-        self.f.write(dt_now.strftime('%Y-%m-%d %H:%M:%S') + '\n\n')
+        self.f.write(dt_now.strftime('%Y-%m-%d %H:%M:%S.%f') + '\n\n')
         self.f.write("")  ############ TODO log
 
         
@@ -307,7 +369,7 @@ class Hanafuda():
 
             self.f.write('------------------\n')
             self.f.write('initial condition\n')
-            self.f = write_log_init(self.f, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+            self.f = write_log_init(self.f, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
             self.f.write('------------------\n')
 
             # 四手・くっつき判定
@@ -323,51 +385,81 @@ class Hanafuda():
                     self.Tefuda("Me")
                     self.f.write('------------------\n')
                     self.f.write('my turn : Tefuda\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("Me")
                     self.f.write('------------------\n')
                     self.f.write('my turn : Draw\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
+                    self.Score("Me")
+                    if self.end_flag:
+                        self.EndMonthProcess()
+                        break
 
                     self.Tefuda("You")
                     self.f.write('------------------\n')
                     self.f.write('your turn : Tefuda\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("You")
                     self.f.write('------------------\n')
                     self.f.write('your turn : Draw\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
+                    self.Score("You")
+                    if self.end_flag:
+                        self.EndMonthProcess()
+                        break
 
                 elif (repetition * self.month) % 2 == 0:
                     self.Tefuda("You")
                     self.f.write('------------------\n')
                     self.f.write('your turn : Tefuda\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("You")
                     self.f.write('------------------\n')
                     self.f.write('your turn : Draw\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
+                    self.Score("You")
+                    if self.end_flag:
+                        self.EndMonthProcess()
+                        break
 
                     self.Tefuda("Me")
                     self.f.write('------------------\n')
                     self.f.write('my turn : Tefuda\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("Me")
                     self.f.write('------------------\n')
                     self.f.write('my turn : Draw\n')
-                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.yout_koikoi_flag)
+                    self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
+                    self.Score("Me")
+                    if self.end_flag:
+                        self.EndMonthProcess()
+                        break
+
+            # どちらも役ができない or こいこいしたが役ができない 場合
+            else:
+                if self.my_koikoi_flag == 1:
+                    self.winner = "Me"
+                elif self.your_koikoi_flag == 1:
+                    self.winner = "You"
+                self.EndMonthProcess()
+
+        # end of game        
+        self.EndGameProcess()
+            
+                
+
 
 
 
@@ -375,8 +467,13 @@ class Hanafuda():
 
 
 if __name__ == '__main__':
-    repeat = 1
+    start = 1
+    repeat = 1000
 
-    for i in range(1,repeat+1):
+    for i in range(start,start+repeat):
+        print("{} : {}".format(i, datetime.datetime.now().strftime('%Y%m%d-%H%M%S.%f')))
         hanafuda = Hanafuda()
         hanafuda.Play(i)
+
+        del hanafuda
+        gc.collect()
