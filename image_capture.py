@@ -25,13 +25,13 @@ def transform_cutting(img, points):
     height = max(np.sqrt(((points[0][1]-points[2][1])**2)*2), np.sqrt(((points[1][1]-points[3][1])**2)*2))
 
 
-    if height > width:    
-        dst = np.array([
-            np.array([0, 0]),
-            np.array([width-1, 0]),
-            np.array([width-1, height-1]),
-            np.array([0, height-1]),
-            ], np.float32)
+    
+    dst = np.array([
+        np.array([0, 0]),
+        np.array([width-1, 0]),
+        np.array([width-1, height-1]),
+        np.array([0, height-1]),
+        ], np.float32)
         
     trans = cv2.getPerspectiveTransform(points, dst)
     return cv2.warpPerspective(img, trans, (int(width), int(height)))
@@ -49,7 +49,7 @@ while True:
     ret, frame_original = capture.read()
     frame = frame_original.copy()
     
-    frame_canny = cv2.Canny(frame, 200, 100)
+    frame_canny = cv2.Canny(frame, 200, 50)
     contours, hierarchy = cv2.findContours(frame_canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     if contours:
@@ -59,7 +59,7 @@ while True:
         for cnt in contours:
             area = cv2.contourArea(cnt)
             
-            if area > 3000:
+            if area > 6000:
                 epsilon = 0.1 * cv2.arcLength(cnt, True)
                 approx = cv2.approxPolyDP(cnt, epsilon, True)
                 approx = np.squeeze(approx)
@@ -97,7 +97,7 @@ while True:
         
 
     
-    # cv2.imshow("Original", frame_boundingbox)
+    # cv2.imshow("Canny", frame_canny)
     # cv2.moveWindow("Original", 700, 10)
     
     cv2.imshow("Capture", frame)
@@ -109,3 +109,7 @@ while True:
 
 capture.release()
 cv2.destroyAllWindows()
+
+
+# TODO
+# スレッドを分けて，上下反転もチェックするように
