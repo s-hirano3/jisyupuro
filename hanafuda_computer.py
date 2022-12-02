@@ -468,7 +468,7 @@ class Hanafuda():
 
 if __name__ == '__main__':
     start = 1
-    repeat = 1000
+    repeat = 100
 
     for i in range(start,start+repeat):
         print("{} : {}".format(i, datetime.datetime.now().strftime('%Y%m%d-%H%M%S.%f')))
