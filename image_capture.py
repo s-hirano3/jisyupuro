@@ -7,11 +7,16 @@ import numpy as np
 cards = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44,51,52,53,54,61,62,63,64,
          71,72,73,74,81,82,83,84,91,92,93,94,101,102,103,104,111,112,113,114,121,122,123,124]
 card_image_dict = {}
+card_image_dict_reverse = {}
 for i in range(len(cards)):
     file_name = "hanafuda_image/" + str(cards[i]) + ".png"
-    card = cv2.resize(cv2.imread(file_name), dsize=(292,468))
+    # card = cv2.resize(cv2.imread(file_name), dsize=(292,468))
+    card = cv2.resize(cv2.imread(file_name), dsize=(58,92))
     card = cv2.cvtColor(card, cv2.COLOR_BGR2GRAY)
     card_image_dict[cards[i]] = card
+    card_reverse = cv2.rotate(card, rotateCode=cv2.ROTATE_180)
+    # card_reverse = cv2.cvtColor(card_reverse, cv2.COLOR_BGR2GRAY)
+    card_image_dict_reverse[cards[i]] = card_reverse
 
 
 
@@ -24,8 +29,6 @@ def transform_cutting(img, points):
     width = max(np.sqrt(((points[0][0]-points[2][0])**2)*2), np.sqrt(((points[1][0]-points[3][0])**2)*2))
     height = max(np.sqrt(((points[0][1]-points[2][1])**2)*2), np.sqrt(((points[1][1]-points[3][1])**2)*2))
 
-
-    
     dst = np.array([
         np.array([0, 0]),
         np.array([width-1, 0]),
@@ -70,14 +73,20 @@ while True:
             coords = areas[i]
             card  = transform_cutting(frame, coords)
 
-            card_resize = cv2.resize(card, dsize=(292,468))
-            window_name = "wrap" + str(i)
-            cv2.imshow(window_name, card_resize)
+            # card_resize = cv2.resize(card, dsize=(292,468))
+            card_resize = cv2.resize(card, dsize=(58,92))
+            # window_name = "wrap" + str(i)
+            # cv2.imshow(window_name, card_resize)
 
             card_resize = cv2.cvtColor(card_resize, cv2.COLOR_BGR2GRAY)
             
             min_xor = 255
             min_key = 0
+            for key, card_sample in card_image_dict_reverse.items():
+                bitwise_xor = cv2.bitwise_xor(card_resize, card_sample)
+                if np.mean(bitwise_xor) < min_xor:
+                    min_xor = np.mean(bitwise_xor)
+                    min_key = key
             for key, card_sample in card_image_dict.items():
                 bitwise_xor = cv2.bitwise_xor(card_resize, card_sample)
                 if np.mean(bitwise_xor) < min_xor:
@@ -112,4 +121,6 @@ cv2.destroyAllWindows()
 
 
 # TODO
-# スレッドを分けて，上下反転もチェックするように
+# スレッドを分けて処理を高速化したい
+# DONE 上下反転もチェックするように
+# 左右からも

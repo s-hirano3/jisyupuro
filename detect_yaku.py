@@ -167,6 +167,13 @@ def koikoi(koikoi_flag, enemy_flag):
     return koikoi_flag
 
 
+
+
+
+
+
+
+
 if __name__ == '__main__':
     cards = list(map(int, input().split()))
     print(cards)

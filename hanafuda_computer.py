@@ -16,7 +16,7 @@ class Hanafuda():
 
         self.my_total_score = 0
         self.your_total_score = 0
-        
+        self.score_record = []        
 
 
     def ResetParam(self):
@@ -56,7 +56,10 @@ class Hanafuda():
 
         self.f.write('------------------\n\n')
 
+        self.score_record.append((self.my_total_score, self.your_total_score))
+
     
+
     def EndGameProcess(self):
         if self.my_total_score > self.your_total_score:
             winner = "Me"
@@ -72,6 +75,9 @@ class Hanafuda():
         self.f.write('my_total_score: {}, your_total_score: {}\n'.format(self.my_total_score, self.your_total_score))
         
         self.f.write('------------------\n\n')
+
+        for i in range(len(self.score_record)):
+            self.f.write('{} {} {}\n'.format(i, self.score_record[i][0], self.score_record[i][1]))
 
 
 
