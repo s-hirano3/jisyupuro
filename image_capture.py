@@ -15,7 +15,6 @@ for i in range(len(cards)):
     card = cv2.cvtColor(card, cv2.COLOR_BGR2GRAY)
     card_image_dict[cards[i]] = card
     card_reverse = cv2.rotate(card, rotateCode=cv2.ROTATE_180)
-    # card_reverse = cv2.cvtColor(card_reverse, cv2.COLOR_BGR2GRAY)
     card_image_dict_reverse[cards[i]] = card_reverse
 
 
@@ -46,13 +45,13 @@ def transform_cutting(img, points):
 capture = cv2.VideoCapture(1)  # MacでiPhoneをつないで，iPhoneを外付けカメラとして使う場合
 
 cv2.namedWindow("Capture")
-number = 0
+
 while True:
-    number += 1
     ret, frame_original = capture.read()
     frame = frame_original.copy()
     
-    frame_canny = cv2.Canny(frame, 200, 50)
+    # frame_canny = cv2.Canny(frame, 300, 700)
+    frame_canny = cv2.Canny(frame, 50, 200)
     contours, hierarchy = cv2.findContours(frame_canny, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     if contours:
@@ -72,12 +71,7 @@ while True:
         for i in range(len(areas)):
             coords = areas[i]
             card  = transform_cutting(frame, coords)
-
-            # card_resize = cv2.resize(card, dsize=(292,468))
             card_resize = cv2.resize(card, dsize=(58,92))
-            # window_name = "wrap" + str(i)
-            # cv2.imshow(window_name, card_resize)
-
             card_resize = cv2.cvtColor(card_resize, cv2.COLOR_BGR2GRAY)
             
             min_xor = 255
@@ -94,23 +88,14 @@ while True:
                     min_key = key
             center = np.mean(coords, axis=0).astype(np.uint16)
             cv2.putText(frame, str(min_key), (center[0],center[1]), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=3.0, color=(0,255,255), thickness=20, lineType=cv2.LINE_4)
-            # print("{} judge : {}".format(number, min_key))
-                
-
-
         
         cv2.drawContours(frame, areas, -1, (0,0,255), 3)
-        
-        
-            
-        
 
     
-    # cv2.imshow("Canny", frame_canny)
-    # cv2.moveWindow("Original", 700, 10)
+    cv2.imshow("Canny", frame_canny)
+    cv2.moveWindow("Canny", 700, 10)
     
     cv2.imshow("Capture", frame)
-
     
     c = cv2.waitKey(2)
     if c == 27:

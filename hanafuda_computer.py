@@ -6,7 +6,7 @@ import datetime
 import gc
 from detect_yaku import *
 from write_log import *
-from enemy_move import *
+# from enemy_move import *
 
 
 class Hanafuda():
@@ -464,17 +464,13 @@ class Hanafuda():
         # end of game        
         self.EndGameProcess()
             
-                
-
-
-
 
 
 
 
 if __name__ == '__main__':
     start = 1
-    repeat = 100
+    repeat = int(input("Type num of games to play : "))
 
     for i in range(start,start+repeat):
         print("{} : {}".format(i, datetime.datetime.now().strftime('%Y%m%d-%H%M%S.%f')))
