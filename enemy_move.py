@@ -121,6 +121,8 @@ class EnemyMove():
                     need_card[1][i] = -1
                 if you != 4:
                     need_card[0][i] = -1
+            elif i == 2:
+                aiueo
 
 
 
