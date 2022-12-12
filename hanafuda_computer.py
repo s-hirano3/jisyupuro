@@ -6,7 +6,7 @@ import datetime
 import gc
 from detect_yaku import *
 from write_log import *
-# from enemy_move import *
+from enemy_move import *
 
 
 class Hanafuda():
@@ -38,6 +38,8 @@ class Hanafuda():
 
         self.end_flag = False
         self.winner = "HIKIWAKE"
+
+        self.EnemyAlgorithm = EnemyMove()
 
 
     
@@ -373,6 +375,8 @@ class Hanafuda():
                     self.my_cards.append(self.cards[5+i*6])
             self.yamafuda = self.cards[24:]
 
+            self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+
             self.f.write('------------------\n')
             self.f.write('initial condition\n')
             self.f = write_log_init(self.f, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
@@ -389,12 +393,14 @@ class Hanafuda():
             for i in range(8):
                 if (repetition * self.month) % 2 == 1:
                     self.Tefuda("Me")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('my turn : Tefuda\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("Me")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('my turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
@@ -405,12 +411,14 @@ class Hanafuda():
                         break
 
                     self.Tefuda("You")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('your turn : Tefuda\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("You")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('your turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
@@ -422,12 +430,14 @@ class Hanafuda():
 
                 elif (repetition * self.month) % 2 == 0:
                     self.Tefuda("You")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('your turn : Tefuda\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("You")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('your turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
@@ -438,12 +448,14 @@ class Hanafuda():
                         break
 
                     self.Tefuda("Me")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('my turn : Tefuda\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
                     self.Draw("Me")
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     self.f.write('my turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
@@ -477,5 +489,5 @@ if __name__ == '__main__':
         hanafuda = Hanafuda()
         hanafuda.Play(i)
 
-        del hanafuda
-        gc.collect()
+        # del hanafuda
+        # gc.collect()
