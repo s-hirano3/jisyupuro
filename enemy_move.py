@@ -263,7 +263,7 @@ class EnemyMove():
                 # print(new_score)
 
             else:
-                
+                aiueo
                 select_card = kouho_cards[0]
 
 
