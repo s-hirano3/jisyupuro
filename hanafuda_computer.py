@@ -253,20 +253,24 @@ class Hanafuda():
 
 
     def Tefuda(self, player):
+        self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
         if player == "Me":
-            my_cards_month = []
-            for my_card in self.my_cards:
-                my_cards_month.append(my_card // 10)
-            field_cards_month = []
-            for field_card in self.field_cards:
-                field_cards_month.append(field_card // 10)
+            select_card = self.EnemyAlgorithm.ChooseCard(player, 0)
             
-            select_card = 0
-            for i in range(len(self.my_cards)):
-                if my_cards_month[i] in field_cards_month:
-                    select_card = self.my_cards[i]
-                    break
-                select_card = self.my_cards[0]
+
+            # my_cards_month = []
+            # for my_card in self.my_cards:
+            #     my_cards_month.append(my_card // 10)
+            # field_cards_month = []
+            # for field_card in self.field_cards:
+            #     field_cards_month.append(field_card // 10)
+            
+            # select_card = 0
+            # for i in range(len(self.my_cards)):
+            #     if my_cards_month[i] in field_cards_month:
+            #         select_card = self.my_cards[i]
+            #         break
+            #     select_card = self.my_cards[0]
             
             self.my_cards.remove(select_card)
 
@@ -292,6 +296,7 @@ class Hanafuda():
         
 
     def Draw(self, player):
+        self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
         draw_card = self.yamafuda.pop(0)
         self.FieldMatchingProcess(draw_card, player)
 
@@ -345,7 +350,7 @@ class Hanafuda():
     def Play(self, repetition):
 
         dt_now = datetime.datetime.now()
-        file_name = './log_computer/log-computer-' + str(repetition) + '.txt'
+        file_name = '/Users/hiranoseigo/Downloads/log_computer3/log-computer-' + str(repetition) + '.txt'
         self.f = open(file_name, 'w')
         self.f.write(dt_now.strftime('%Y-%m-%d %H:%M:%S.%f') + '\n\n')
         self.f.write("")  ############ TODO log
@@ -489,5 +494,5 @@ if __name__ == '__main__':
         hanafuda = Hanafuda()
         hanafuda.Play(i)
 
-        # del hanafuda
-        # gc.collect()
+        del hanafuda
+        gc.collect()

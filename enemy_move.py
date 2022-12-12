@@ -70,7 +70,6 @@ class EnemyMove():
         self.DetectNeedCards()
 
 
-    
 
     def DetectNeedCards(self):
         need_card = [[0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0]]  # my, your
@@ -227,24 +226,55 @@ class EnemyMove():
                 for j in range(len(field_cards)):
                     if (kouho_cards[i] // 10) == (field_cards[j] // 10):
                         kouho_field_mathcing.append((kouho_cards[i], field_cards[j]))
+            # print(kouho_field_mathcing)
 
-            yaku_kouho = []
-            for i in range(len(kouho_field_mathcing)):
-                kouho = kouho_field_mathcing[i]
-                for key, value in YAKU_DICT.items():
-                    if kouho in value:
-                        aiueo
+            kouho_score = []
+            kouho_score_possible = []
+            if len(kouho_field_mathcing) != 0:
+                for i in range(len(kouho_field_mathcing)):
+                    score = 0
+                    score_possible = 0
+                    for j in range(2):
+                        tmp_num = 0
+                        kouho = kouho_field_mathcing[i][j]
+                        for key, value in YAKU_DICT.items():
+                            if kouho in value:
+                                if my_need_card[tmp_num] not in [-1, 0]:
+                                    if my_need_card[tmp_num] != 1:
+                                        score += YAKU_POINT[key] / my_need_card[tmp_num]
+                                    elif my_need_card[tmp_num] == 1:
+                                        score += YAKU_POINT[key]
+                                if my_need_card_possible[tmp_num] not in [-1, 0]:
+                                    if my_need_card_possible[tmp_num] != 1:
+                                        score_possible += YAKU_POINT[key] / my_need_card_possible[tmp_num]
+                                    elif my_need_card_possible[tmp_num] == 1:
+                                        score_possible += YAKU_POINT[key]
+                            tmp_num += 1
+                    kouho_score.append(score)
+                    kouho_score_possible.append(score_possible)
+                new_score = []
+                for i in range(len(kouho_score)):
+                    new_score.append(kouho_score[i]+kouho_score_possible[i]/5)
+                select_index = new_score.index(max(new_score))
+                select_card = kouho_field_mathcing[select_index][0]
+
+                # print(kouho_score)
+                # print(kouho_score_possible)
+                # print(new_score)
+
+            else:
+                
+                select_card = kouho_cards[0]
 
 
-                    
             
 
-
-
+            
         
 
+
                         
-            
+        
         
         
         
@@ -264,7 +294,19 @@ if __name__ == '__main__':
     # UpdateParam(field, yamafuda, my_cards, my_getcards, your_, your_, my_score, your_, my_total_, your_total_, my_koikoi_, your_)
     enemy.UpdateParam(0, 0, [11], [31], [121], [81], 0, 0, 0, 0, 0, 0)    
     enemy.UpdateParam(0, 0, [11,12], [31,32], [51,52], [81,82], 0, 0, 0, 0, 0, 0)
-    
+    enemy.UpdateParam([94,52,82,92,112],[123,44,34,33,24,81,71,83,42,41,32,124,111,22,14,31,84,101,54,91,13,23,63],[121,51,113,114,11,53],[72,74,103,102],[21,93,73,64,43,104,12],[61,62],0,0,4,4,0,0)
+    # enemy.UpdateParam([92,83,114,64,32,11],[111,22,14,31,84,101,54,91,13,23,63],[53],[72,74,103,102,121,123,51,52,33,34,113,112,81,82,41,42,124,122],[104,12],[61,62,93,94,43,44,21,24,73,71],1,0,4,4,1,0)
+    # enemy.UpdateParam([43,114,83,22,113,33,44,104],[62,111,12,94,122,92,101,42,82,64,123,84,34,11,91,51,71,103,31,61,73,54,81,63],[121,13,14,112,24,21,102,72],[],[93,53,23,41,32,124,52,74],[],0,0,5,4,0,0)
+    enemy.UpdateParam([23,54,84,31,74,22,81,124],[],[52,112,33,94,73,21,111,121],[],[102,61,11,41,122,103,42,101],[],0,0,7,33,0,0)
 
-    print(enemy.need_cards)
-    print(enemy.need_cards_possible)
+    print(enemy.need_cards[-1])
+    print(enemy.need_cards_possible[-1])
+
+
+
+
+# TODO
+# ChooseCard　の得点期待値で，
+#   7点以上で得点2倍を反映させる
+#   赤タン・青タン・猪鹿蝶等の追加ポイントを反映させる
+#   相手との総得点差・月で重みを変える

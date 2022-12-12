@@ -1,0 +1,10522 @@
+2022-12-12 21:54:52.629237
+
+------------------
+initial condition
+field_cards
+[121 103 102 82 22 104 83 52 ]
+yamafuda
+[71 11 81 74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 54 32 61 24 92 ]
+your_cards
+[42 93 94 62 44 111 122 13 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+1
+tern
+1
+field_cards
+[103 102 82 22 104 83 52 ]
+yamafuda
+[71 11 81 74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 54 32 61 24 92 ]
+your_cards
+[42 93 94 62 44 111 13 ]
+my_getcards
+[]
+your_getcards
+[122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+1
+tern
+1
+field_cards
+[103 102 82 22 104 83 52 71 ]
+yamafuda
+[11 81 74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 54 32 61 24 92 ]
+your_cards
+[42 93 94 62 44 111 13 ]
+my_getcards
+[]
+your_getcards
+[122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+1
+tern
+1
+field_cards
+[103 102 82 22 104 83 71 ]
+yamafuda
+[11 81 74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 24 92 ]
+your_cards
+[42 93 94 62 44 111 13 ]
+my_getcards
+[54 52 ]
+your_getcards
+[122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+1
+tern
+1
+field_cards
+[103 102 82 22 104 83 71 11 ]
+yamafuda
+[81 74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 24 92 ]
+your_cards
+[42 93 94 62 44 111 13 ]
+my_getcards
+[54 52 ]
+your_getcards
+[122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+1
+tern
+2
+field_cards
+[103 102 82 22 104 83 71 ]
+yamafuda
+[81 74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 24 92 ]
+your_cards
+[42 93 94 62 44 111 ]
+my_getcards
+[54 52 ]
+your_getcards
+[122 121 13 11 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+1
+tern
+2
+field_cards
+[103 102 22 104 83 71 ]
+yamafuda
+[74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 24 92 ]
+your_cards
+[42 93 94 62 44 111 ]
+my_getcards
+[54 52 ]
+your_getcards
+[122 121 13 11 81 82 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 0, your_koikoi_flag: 1, my_score: 0, your_score: 5
+------------------
+------------------
+my turn : Tefuda
+month
+1
+tern
+2
+field_cards
+[103 102 104 83 71 ]
+yamafuda
+[74 84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 92 ]
+your_cards
+[42 93 94 62 44 111 ]
+my_getcards
+[54 52 24 22 ]
+your_getcards
+[122 121 13 11 81 82 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+1
+tern
+2
+field_cards
+[103 102 104 83 ]
+yamafuda
+[84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 92 ]
+your_cards
+[42 93 94 62 44 111 ]
+my_getcards
+[54 52 24 22 74 71 ]
+your_getcards
+[122 121 13 11 81 82 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Tefuda
+month
+1
+tern
+3
+field_cards
+[103 102 104 83 42 ]
+yamafuda
+[84 72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 92 ]
+your_cards
+[93 94 62 44 111 ]
+my_getcards
+[54 52 24 22 74 71 ]
+your_getcards
+[122 121 13 11 81 82 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Draw
+month
+1
+tern
+3
+field_cards
+[103 102 104 42 ]
+yamafuda
+[72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[114 123 63 32 61 92 ]
+your_cards
+[93 94 62 44 111 ]
+my_getcards
+[54 52 24 22 74 71 ]
+your_getcards
+[122 121 13 11 81 82 84 83 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Tefuda
+month
+1
+tern
+3
+field_cards
+[103 102 104 42 114 ]
+yamafuda
+[72 64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 63 32 61 92 ]
+your_cards
+[93 94 62 44 111 ]
+my_getcards
+[54 52 24 22 74 71 ]
+your_getcards
+[122 121 13 11 81 82 84 83 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+1
+tern
+3
+field_cards
+[103 102 104 42 114 72 ]
+yamafuda
+[64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 63 32 61 92 ]
+your_cards
+[93 94 62 44 111 ]
+my_getcards
+[54 52 24 22 74 71 ]
+your_getcards
+[122 121 13 11 81 82 84 83 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Tefuda
+month
+1
+tern
+4
+field_cards
+[103 102 104 114 72 ]
+yamafuda
+[64 73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 63 32 61 92 ]
+your_cards
+[93 94 62 111 ]
+my_getcards
+[54 52 24 22 74 71 ]
+your_getcards
+[122 121 13 11 81 82 84 83 44 42 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Draw
+month
+1
+tern
+4
+field_cards
+[103 102 104 114 72 64 ]
+yamafuda
+[73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 63 32 61 92 ]
+your_cards
+[93 94 62 111 ]
+my_getcards
+[54 52 24 22 74 71 ]
+your_getcards
+[122 121 13 11 81 82 84 83 44 42 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Tefuda
+month
+1
+tern
+4
+field_cards
+[103 102 104 114 72 ]
+yamafuda
+[73 43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 32 61 92 ]
+your_cards
+[93 94 62 111 ]
+my_getcards
+[54 52 24 22 74 71 63 64 ]
+your_getcards
+[122 121 13 11 81 82 84 83 44 42 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+1
+tern
+4
+field_cards
+[103 102 104 114 ]
+yamafuda
+[43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 32 61 92 ]
+your_cards
+[93 94 62 111 ]
+my_getcards
+[54 52 24 22 74 71 63 64 73 72 ]
+your_getcards
+[122 121 13 11 81 82 84 83 44 42 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Tefuda
+month
+1
+tern
+5
+field_cards
+[103 102 104 ]
+yamafuda
+[43 31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 32 61 92 ]
+your_cards
+[93 94 62 ]
+my_getcards
+[54 52 24 22 74 71 63 64 73 72 ]
+your_getcards
+[122 121 13 11 81 82 84 83 44 42 111 114 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Draw
+month
+1
+tern
+5
+field_cards
+[103 102 104 43 ]
+yamafuda
+[31 51 113 101 23 124 14 21 41 12 34 91 33 112 53 ]
+my_cards
+[123 32 61 92 ]
+your_cards
+[93 94 62 ]
+my_getcards
+[54 52 24 22 74 71 63 64 73 72 ]
+your_getcards
+[122 121 13 11 81 82 84 83 44 42 111 114 ]
+my_score
+0
+your_score
+5
+my_total_score
+0
+your_total_score
+0
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+end of month 1
+winner : You
+my_score: 0, your_score: 14
+my_total_score: 0, your_total_score: 14
+------------------
+
+------------------
+initial condition
+field_cards
+[81 23 51 53 14 124 93 22 ]
+yamafuda
+[12 94 84 63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 91 112 61 32 ]
+your_cards
+[122 111 103 13 34 123 113 121 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+1
+field_cards
+[81 23 51 53 14 93 22 ]
+yamafuda
+[12 94 84 63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 91 112 61 32 ]
+your_cards
+[111 103 13 34 123 113 121 ]
+my_getcards
+[]
+your_getcards
+[122 124 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+1
+field_cards
+[81 23 51 53 93 22 ]
+yamafuda
+[94 84 63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 91 112 61 32 ]
+your_cards
+[111 103 13 34 123 113 121 ]
+my_getcards
+[]
+your_getcards
+[122 124 12 14 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+2
+tern
+1
+field_cards
+[81 23 51 53 22 ]
+yamafuda
+[94 84 63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 112 61 32 ]
+your_cards
+[111 103 13 34 123 113 121 ]
+my_getcards
+[91 93 ]
+your_getcards
+[122 124 12 14 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+2
+tern
+1
+field_cards
+[81 23 51 53 22 94 ]
+yamafuda
+[84 63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 112 61 32 ]
+your_cards
+[111 103 13 34 123 113 121 ]
+my_getcards
+[91 93 ]
+your_getcards
+[122 124 12 14 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+2
+field_cards
+[81 23 51 53 22 94 111 ]
+yamafuda
+[84 63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 112 61 32 ]
+your_cards
+[103 13 34 123 113 121 ]
+my_getcards
+[91 93 ]
+your_getcards
+[122 124 12 14 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+2
+field_cards
+[23 51 53 22 94 111 ]
+yamafuda
+[63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 112 61 32 ]
+your_cards
+[103 13 34 123 113 121 ]
+my_getcards
+[91 93 ]
+your_getcards
+[122 124 12 14 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+2
+tern
+2
+field_cards
+[23 51 53 22 94 ]
+yamafuda
+[63 33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 61 32 ]
+your_cards
+[103 13 34 123 113 121 ]
+my_getcards
+[91 93 112 111 ]
+your_getcards
+[122 124 12 14 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+2
+tern
+2
+field_cards
+[23 51 53 22 94 63 ]
+yamafuda
+[33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 61 32 ]
+your_cards
+[103 13 34 123 113 121 ]
+my_getcards
+[91 93 112 111 ]
+your_getcards
+[122 124 12 14 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+3
+field_cards
+[23 51 53 22 94 63 103 ]
+yamafuda
+[33 72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 61 32 ]
+your_cards
+[13 34 123 113 121 ]
+my_getcards
+[91 93 112 111 ]
+your_getcards
+[122 124 12 14 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+3
+field_cards
+[23 51 53 22 94 63 103 33 ]
+yamafuda
+[72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 62 101 61 32 ]
+your_cards
+[13 34 123 113 121 ]
+my_getcards
+[91 93 112 111 ]
+your_getcards
+[122 124 12 14 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+2
+tern
+3
+field_cards
+[23 51 53 22 94 103 33 ]
+yamafuda
+[72 82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 101 61 32 ]
+your_cards
+[13 34 123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 ]
+your_getcards
+[122 124 12 14 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+2
+tern
+3
+field_cards
+[23 51 53 22 94 103 33 72 ]
+yamafuda
+[82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 101 61 32 ]
+your_cards
+[13 34 123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 ]
+your_getcards
+[122 124 12 14 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+4
+field_cards
+[23 51 53 22 94 103 72 ]
+yamafuda
+[82 73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 101 61 32 ]
+your_cards
+[13 123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+4
+field_cards
+[23 51 53 22 94 103 72 82 ]
+yamafuda
+[73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 101 61 32 ]
+your_cards
+[13 123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+2
+tern
+4
+field_cards
+[23 51 53 22 94 72 82 ]
+yamafuda
+[73 42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 61 32 ]
+your_cards
+[13 123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+2
+tern
+4
+field_cards
+[23 51 53 22 94 82 ]
+yamafuda
+[42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 61 32 ]
+your_cards
+[13 123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+5
+field_cards
+[23 51 53 22 94 82 13 ]
+yamafuda
+[42 44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 61 32 ]
+your_cards
+[123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+5
+field_cards
+[23 51 53 22 94 82 13 42 ]
+yamafuda
+[44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[41 11 61 32 ]
+your_cards
+[123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+2
+tern
+5
+field_cards
+[23 51 53 22 94 82 13 ]
+yamafuda
+[44 21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[11 61 32 ]
+your_cards
+[123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+2
+tern
+5
+field_cards
+[23 51 53 22 94 82 13 44 ]
+yamafuda
+[21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[11 61 32 ]
+your_cards
+[123 113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+6
+field_cards
+[23 51 53 22 94 82 13 44 123 ]
+yamafuda
+[21 24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[11 61 32 ]
+your_cards
+[113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 ]
+your_getcards
+[122 124 12 14 84 81 34 33 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+6
+field_cards
+[51 53 22 94 82 13 44 123 ]
+yamafuda
+[24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[11 61 32 ]
+your_cards
+[113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+2
+tern
+6
+field_cards
+[51 53 22 94 82 44 123 ]
+yamafuda
+[24 114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[61 32 ]
+your_cards
+[113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+2
+tern
+6
+field_cards
+[51 53 94 82 44 123 ]
+yamafuda
+[114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[61 32 ]
+your_cards
+[113 121 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 24 22 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+7
+field_cards
+[51 53 94 82 44 ]
+yamafuda
+[114 64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[61 32 ]
+your_cards
+[113 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 24 22 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 121 123 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+7
+field_cards
+[51 53 94 82 44 114 ]
+yamafuda
+[64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[61 32 ]
+your_cards
+[113 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 24 22 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 121 123 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+2
+tern
+7
+field_cards
+[51 53 94 82 44 114 61 ]
+yamafuda
+[64 83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[32 ]
+your_cards
+[113 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 24 22 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 121 123 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+2
+tern
+7
+field_cards
+[51 53 94 82 44 114 ]
+yamafuda
+[83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[32 ]
+your_cards
+[113 ]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 24 22 64 61 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 121 123 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 1, your_koikoi_flag: 0, my_score: 1, your_score: 0
+------------------
+------------------
+your turn : Tefuda
+month
+2
+tern
+8
+field_cards
+[51 53 94 82 44 ]
+yamafuda
+[83 54 52 71 74 92 102 104 31 43 ]
+my_cards
+[32 ]
+your_cards
+[]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 24 22 64 61 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 121 123 113 114 ]
+my_score
+1
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+2
+tern
+8
+field_cards
+[51 53 94 44 ]
+yamafuda
+[54 52 71 74 92 102 104 31 43 ]
+my_cards
+[32 ]
+your_cards
+[]
+my_getcards
+[91 93 112 111 62 63 101 103 73 72 41 42 11 13 24 22 64 61 ]
+your_getcards
+[122 124 12 14 84 81 34 33 21 23 121 123 113 114 83 82 ]
+my_score
+1
+your_score
+0
+my_total_score
+0
+your_total_score
+14
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+end of month 2
+winner : You
+my_score: 1, your_score: 2
+my_total_score: 0, your_total_score: 16
+------------------
+
+------------------
+initial condition
+field_cards
+[42 41 31 124 64 101 111 33 ]
+yamafuda
+[32 82 103 52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[62 11 92 84 94 24 63 112 ]
+your_cards
+[83 43 61 81 44 113 53 74 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+1
+field_cards
+[41 31 124 64 101 111 33 ]
+yamafuda
+[32 82 103 52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[62 11 92 84 94 24 63 112 ]
+your_cards
+[83 61 81 44 113 53 74 ]
+my_getcards
+[]
+your_getcards
+[43 42 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+1
+field_cards
+[41 124 64 101 111 33 ]
+yamafuda
+[82 103 52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[62 11 92 84 94 24 63 112 ]
+your_cards
+[83 61 81 44 113 53 74 ]
+my_getcards
+[]
+your_getcards
+[43 42 32 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+1
+field_cards
+[41 124 101 111 33 ]
+yamafuda
+[82 103 52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 112 ]
+your_cards
+[83 61 81 44 113 53 74 ]
+my_getcards
+[62 64 ]
+your_getcards
+[43 42 32 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+1
+field_cards
+[41 124 101 111 33 82 ]
+yamafuda
+[103 52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 112 ]
+your_cards
+[83 61 81 44 113 53 74 ]
+my_getcards
+[62 64 ]
+your_getcards
+[43 42 32 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+2
+field_cards
+[41 124 101 111 33 ]
+yamafuda
+[103 52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 112 ]
+your_cards
+[61 81 44 113 53 74 ]
+my_getcards
+[62 64 ]
+your_getcards
+[43 42 32 31 83 82 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+2
+field_cards
+[41 124 111 33 ]
+yamafuda
+[52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 112 ]
+your_cards
+[61 81 44 113 53 74 ]
+my_getcards
+[62 64 ]
+your_getcards
+[43 42 32 31 83 82 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+2
+field_cards
+[41 124 33 ]
+yamafuda
+[52 114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 ]
+your_cards
+[61 81 44 113 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+2
+field_cards
+[41 124 33 52 ]
+yamafuda
+[114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 ]
+your_cards
+[61 81 44 113 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+3
+field_cards
+[124 33 52 ]
+yamafuda
+[114 93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 ]
+your_cards
+[61 81 113 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+3
+field_cards
+[124 33 52 114 ]
+yamafuda
+[93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[11 92 84 94 24 63 ]
+your_cards
+[61 81 113 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+3
+field_cards
+[124 33 52 114 11 ]
+yamafuda
+[93 123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[92 84 94 24 63 ]
+your_cards
+[61 81 113 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+3
+field_cards
+[124 33 52 114 11 93 ]
+yamafuda
+[123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[92 84 94 24 63 ]
+your_cards
+[61 81 113 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+4
+field_cards
+[124 33 52 11 93 ]
+yamafuda
+[123 13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[92 84 94 24 63 ]
+your_cards
+[61 81 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+4
+field_cards
+[33 52 11 93 ]
+yamafuda
+[13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[92 84 94 24 63 ]
+your_cards
+[61 81 53 74 ]
+my_getcards
+[62 64 112 111 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+4
+field_cards
+[33 52 11 ]
+yamafuda
+[13 121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[84 94 24 63 ]
+your_cards
+[61 81 53 74 ]
+my_getcards
+[62 64 112 111 92 93 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+4
+field_cards
+[33 52 ]
+yamafuda
+[121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[84 94 24 63 ]
+your_cards
+[61 81 53 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+5
+field_cards
+[33 ]
+yamafuda
+[121 34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[84 94 24 63 ]
+your_cards
+[61 81 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+5
+field_cards
+[33 121 ]
+yamafuda
+[34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[84 94 24 63 ]
+your_cards
+[61 81 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+5
+field_cards
+[33 121 84 ]
+yamafuda
+[34 91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[94 24 63 ]
+your_cards
+[61 81 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+5
+field_cards
+[121 84 ]
+yamafuda
+[91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[94 24 63 ]
+your_cards
+[61 81 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+6
+field_cards
+[121 ]
+yamafuda
+[91 54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[94 24 63 ]
+your_cards
+[61 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+6
+field_cards
+[121 91 ]
+yamafuda
+[54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[94 24 63 ]
+your_cards
+[61 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+6
+field_cards
+[121 ]
+yamafuda
+[54 73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 63 ]
+your_cards
+[61 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+6
+field_cards
+[121 54 ]
+yamafuda
+[73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 63 ]
+your_cards
+[61 74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+7
+field_cards
+[121 54 61 ]
+yamafuda
+[73 122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 63 ]
+your_cards
+[74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+7
+field_cards
+[121 54 61 73 ]
+yamafuda
+[122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 63 ]
+your_cards
+[74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+7
+field_cards
+[121 54 73 ]
+yamafuda
+[122 22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 ]
+your_cards
+[74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 63 61 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+7
+field_cards
+[54 73 ]
+yamafuda
+[22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 ]
+your_cards
+[74 ]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 63 61 122 121 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+3
+tern
+8
+field_cards
+[54 ]
+yamafuda
+[22 104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 ]
+your_cards
+[]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 63 61 122 121 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 74 73 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+3
+tern
+8
+field_cards
+[54 22 ]
+yamafuda
+[104 14 12 71 51 23 21 72 102 ]
+my_cards
+[24 ]
+your_cards
+[]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 63 61 122 121 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 74 73 ]
+my_score
+0
+your_score
+0
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 0, your_koikoi_flag: 1, my_score: 0, your_score: 2
+------------------
+------------------
+my turn : Tefuda
+month
+3
+tern
+8
+field_cards
+[54 ]
+yamafuda
+[104 14 12 71 51 23 21 72 102 ]
+my_cards
+[]
+your_cards
+[]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 63 61 122 121 24 22 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 74 73 ]
+my_score
+0
+your_score
+2
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+3
+tern
+8
+field_cards
+[54 104 ]
+yamafuda
+[14 12 71 51 23 21 72 102 ]
+my_cards
+[]
+your_cards
+[]
+my_getcards
+[62 64 112 111 92 93 13 11 34 33 94 91 63 61 122 121 24 22 ]
+your_getcards
+[43 42 32 31 83 82 103 101 44 41 113 114 123 124 53 52 81 84 74 73 ]
+my_score
+0
+your_score
+2
+my_total_score
+0
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+end of month 3
+winner : Me
+my_score: 2, your_score: 2
+my_total_score: 2, your_total_score: 16
+------------------
+
+------------------
+initial condition
+field_cards
+[82 63 53 123 101 51 92 61 ]
+yamafuda
+[93 34 113 32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[24 81 41 64 54 121 22 43 ]
+your_cards
+[23 84 13 71 74 94 11 112 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+1
+field_cards
+[63 53 123 101 51 92 61 ]
+yamafuda
+[93 34 113 32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[24 81 41 64 54 121 22 43 ]
+your_cards
+[23 13 71 74 94 11 112 ]
+my_getcards
+[]
+your_getcards
+[84 82 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+1
+field_cards
+[63 53 123 101 51 61 ]
+yamafuda
+[34 113 32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[24 81 41 64 54 121 22 43 ]
+your_cards
+[23 13 71 74 94 11 112 ]
+my_getcards
+[]
+your_getcards
+[84 82 93 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+1
+field_cards
+[53 123 101 51 61 ]
+yamafuda
+[34 113 32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[24 81 41 54 121 22 43 ]
+your_cards
+[23 13 71 74 94 11 112 ]
+my_getcards
+[64 63 ]
+your_getcards
+[84 82 93 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+1
+field_cards
+[53 123 101 51 61 34 ]
+yamafuda
+[113 32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[24 81 41 54 121 22 43 ]
+your_cards
+[23 13 71 74 94 11 112 ]
+my_getcards
+[64 63 ]
+your_getcards
+[84 82 93 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+2
+field_cards
+[53 123 101 51 61 34 23 ]
+yamafuda
+[113 32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[24 81 41 54 121 22 43 ]
+your_cards
+[13 71 74 94 11 112 ]
+my_getcards
+[64 63 ]
+your_getcards
+[84 82 93 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+2
+field_cards
+[53 123 101 51 61 34 23 113 ]
+yamafuda
+[32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[24 81 41 54 121 22 43 ]
+your_cards
+[13 71 74 94 11 112 ]
+my_getcards
+[64 63 ]
+your_getcards
+[84 82 93 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+2
+field_cards
+[53 123 101 51 61 34 113 ]
+yamafuda
+[32 12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 54 121 22 43 ]
+your_cards
+[13 71 74 94 11 112 ]
+my_getcards
+[64 63 24 23 ]
+your_getcards
+[84 82 93 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+2
+field_cards
+[53 123 101 51 61 113 ]
+yamafuda
+[12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 54 121 22 43 ]
+your_cards
+[13 71 74 94 11 112 ]
+my_getcards
+[64 63 24 23 32 34 ]
+your_getcards
+[84 82 93 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+3
+field_cards
+[53 123 101 51 61 ]
+yamafuda
+[12 62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 54 121 22 43 ]
+your_cards
+[13 71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 ]
+your_getcards
+[84 82 93 92 112 113 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+3
+field_cards
+[53 123 101 51 61 12 ]
+yamafuda
+[62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 54 121 22 43 ]
+your_cards
+[13 71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 ]
+your_getcards
+[84 82 93 92 112 113 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+3
+field_cards
+[123 101 51 61 12 ]
+yamafuda
+[62 31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 121 22 43 ]
+your_cards
+[13 71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 ]
+your_getcards
+[84 82 93 92 112 113 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+3
+field_cards
+[123 101 51 12 ]
+yamafuda
+[31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 121 22 43 ]
+your_cards
+[13 71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 ]
+your_getcards
+[84 82 93 92 112 113 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+4
+field_cards
+[123 101 51 ]
+yamafuda
+[31 102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 121 22 43 ]
+your_cards
+[71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+4
+field_cards
+[123 101 51 31 ]
+yamafuda
+[102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 121 22 43 ]
+your_cards
+[71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+4
+field_cards
+[101 51 31 ]
+yamafuda
+[102 44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 22 43 ]
+your_cards
+[71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+4
+field_cards
+[51 31 ]
+yamafuda
+[44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 22 43 ]
+your_cards
+[71 74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+5
+field_cards
+[51 31 71 ]
+yamafuda
+[44 52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 22 43 ]
+your_cards
+[74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+5
+field_cards
+[51 31 71 44 ]
+yamafuda
+[52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 41 22 43 ]
+your_cards
+[74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+5
+field_cards
+[51 31 71 ]
+yamafuda
+[52 111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 22 43 ]
+your_cards
+[74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+5
+field_cards
+[31 71 ]
+yamafuda
+[111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 22 43 ]
+your_cards
+[74 94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+6
+field_cards
+[31 ]
+yamafuda
+[111 72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 22 43 ]
+your_cards
+[94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+6
+field_cards
+[31 111 ]
+yamafuda
+[72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[81 22 43 ]
+your_cards
+[94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+6
+field_cards
+[31 111 81 ]
+yamafuda
+[72 83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[22 43 ]
+your_cards
+[94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+6
+field_cards
+[31 111 81 72 ]
+yamafuda
+[83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[22 43 ]
+your_cards
+[94 11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+7
+field_cards
+[31 111 81 72 94 ]
+yamafuda
+[83 104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[22 43 ]
+your_cards
+[11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+7
+field_cards
+[31 111 72 94 ]
+yamafuda
+[104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[22 43 ]
+your_cards
+[11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+7
+field_cards
+[31 111 72 94 22 ]
+yamafuda
+[104 33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[43 ]
+your_cards
+[11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+7
+field_cards
+[31 111 72 94 22 104 ]
+yamafuda
+[33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[43 ]
+your_cards
+[11 ]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+4
+tern
+8
+field_cards
+[31 111 72 94 22 104 11 ]
+yamafuda
+[33 91 42 21 122 14 73 114 124 103 ]
+my_cards
+[43 ]
+your_cards
+[]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+4
+tern
+8
+field_cards
+[111 72 94 22 104 11 ]
+yamafuda
+[91 42 21 122 14 73 114 124 103 ]
+my_cards
+[43 ]
+your_cards
+[]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 83 81 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+4
+tern
+8
+field_cards
+[111 72 94 22 104 11 43 ]
+yamafuda
+[91 42 21 122 14 73 114 124 103 ]
+my_cards
+[]
+your_cards
+[]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 83 81 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+4
+tern
+8
+field_cards
+[111 72 22 104 11 43 ]
+yamafuda
+[42 21 122 14 73 114 124 103 ]
+my_cards
+[]
+your_cards
+[]
+my_getcards
+[64 63 24 23 32 34 54 53 62 61 121 123 102 101 41 44 52 51 91 94 ]
+your_getcards
+[84 82 93 92 112 113 13 12 74 71 83 81 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+2
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 1, your_koikoi_flag: 0, my_score: 3, your_score: 0
+------------------
+------------------
+end of month 4
+winner : Me
+my_score: 3, your_score: 0
+my_total_score: 5, your_total_score: 16
+------------------
+
+------------------
+initial condition
+field_cards
+[101 72 91 94 11 41 51 21 ]
+yamafuda
+[14 74 44 33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[81 62 32 102 104 103 111 113 ]
+your_cards
+[63 23 61 92 43 84 13 53 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+5
+tern
+1
+field_cards
+[101 72 91 94 11 41 51 ]
+yamafuda
+[14 74 44 33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[81 62 32 102 104 103 111 113 ]
+your_cards
+[63 61 92 43 84 13 53 ]
+my_getcards
+[]
+your_getcards
+[23 21 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+5
+tern
+1
+field_cards
+[101 72 91 94 41 51 ]
+yamafuda
+[74 44 33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[81 62 32 102 104 103 111 113 ]
+your_cards
+[63 61 92 43 84 13 53 ]
+my_getcards
+[]
+your_getcards
+[23 21 14 11 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+5
+tern
+1
+field_cards
+[72 91 94 41 51 ]
+yamafuda
+[74 44 33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[81 62 32 104 103 111 113 ]
+your_cards
+[63 61 92 43 84 13 53 ]
+my_getcards
+[102 101 ]
+your_getcards
+[23 21 14 11 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+5
+tern
+1
+field_cards
+[91 94 41 51 ]
+yamafuda
+[44 33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[81 62 32 104 103 111 113 ]
+your_cards
+[63 61 92 43 84 13 53 ]
+my_getcards
+[102 101 74 72 ]
+your_getcards
+[23 21 14 11 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+5
+tern
+2
+field_cards
+[94 41 51 ]
+yamafuda
+[44 33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[81 62 32 104 103 111 113 ]
+your_cards
+[63 61 43 84 13 53 ]
+my_getcards
+[102 101 74 72 ]
+your_getcards
+[23 21 14 11 92 91 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+5
+tern
+2
+field_cards
+[94 51 ]
+yamafuda
+[33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[81 62 32 104 103 111 113 ]
+your_cards
+[63 61 43 84 13 53 ]
+my_getcards
+[102 101 74 72 ]
+your_getcards
+[23 21 14 11 92 91 44 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+5
+tern
+2
+field_cards
+[94 51 81 ]
+yamafuda
+[33 123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 32 104 103 111 113 ]
+your_cards
+[63 61 43 84 13 53 ]
+my_getcards
+[102 101 74 72 ]
+your_getcards
+[23 21 14 11 92 91 44 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+5
+tern
+2
+field_cards
+[94 51 81 33 ]
+yamafuda
+[123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 32 104 103 111 113 ]
+your_cards
+[63 61 43 84 13 53 ]
+my_getcards
+[102 101 74 72 ]
+your_getcards
+[23 21 14 11 92 91 44 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+5
+tern
+3
+field_cards
+[94 51 33 ]
+yamafuda
+[123 112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 32 104 103 111 113 ]
+your_cards
+[63 61 43 13 53 ]
+my_getcards
+[102 101 74 72 ]
+your_getcards
+[23 21 14 11 92 91 44 41 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+5
+tern
+3
+field_cards
+[94 51 33 123 ]
+yamafuda
+[112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 32 104 103 111 113 ]
+your_cards
+[63 61 43 13 53 ]
+my_getcards
+[102 101 74 72 ]
+your_getcards
+[23 21 14 11 92 91 44 41 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 0, your_koikoi_flag: 1, my_score: 0, your_score: 5
+------------------
+------------------
+my turn : Tefuda
+month
+5
+tern
+3
+field_cards
+[94 51 123 ]
+yamafuda
+[112 121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 104 103 111 113 ]
+your_cards
+[63 61 43 13 53 ]
+my_getcards
+[102 101 74 72 32 33 ]
+your_getcards
+[23 21 14 11 92 91 44 41 84 81 ]
+my_score
+0
+your_score
+5
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+5
+tern
+3
+field_cards
+[94 51 123 112 ]
+yamafuda
+[121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 104 103 111 113 ]
+your_cards
+[63 61 43 13 53 ]
+my_getcards
+[102 101 74 72 32 33 ]
+your_getcards
+[23 21 14 11 92 91 44 41 84 81 ]
+my_score
+0
+your_score
+5
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Tefuda
+month
+5
+tern
+4
+field_cards
+[94 123 112 ]
+yamafuda
+[121 24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 104 103 111 113 ]
+your_cards
+[63 61 43 13 ]
+my_getcards
+[102 101 74 72 32 33 ]
+your_getcards
+[23 21 14 11 92 91 44 41 84 81 53 51 ]
+my_score
+0
+your_score
+5
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Draw
+month
+5
+tern
+4
+field_cards
+[94 112 ]
+yamafuda
+[24 34 31 122 12 73 54 64 124 114 93 82 71 42 83 52 22 ]
+my_cards
+[62 104 103 111 113 ]
+your_cards
+[63 61 43 13 ]
+my_getcards
+[102 101 74 72 32 33 ]
+your_getcards
+[23 21 14 11 92 91 44 41 84 81 53 51 121 123 ]
+my_score
+0
+your_score
+5
+my_total_score
+5
+your_total_score
+16
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+end of month 5
+winner : You
+my_score: 0, your_score: 20
+my_total_score: 5, your_total_score: 36
+------------------
+
+------------------
+initial condition
+field_cards
+[102 93 82 11 51 34 73 24 ]
+yamafuda
+[81 111 113 63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[31 74 44 21 33 71 62 41 ]
+your_cards
+[84 14 43 114 61 123 42 83 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+6
+tern
+1
+field_cards
+[102 93 11 51 34 73 24 ]
+yamafuda
+[81 111 113 63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[31 74 44 21 33 71 62 41 ]
+your_cards
+[14 43 114 61 123 42 83 ]
+my_getcards
+[]
+your_getcards
+[84 82 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+6
+tern
+1
+field_cards
+[102 93 11 51 34 73 24 81 ]
+yamafuda
+[111 113 63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[31 74 44 21 33 71 62 41 ]
+your_cards
+[14 43 114 61 123 42 83 ]
+my_getcards
+[]
+your_getcards
+[84 82 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+6
+tern
+1
+field_cards
+[102 93 11 51 73 24 81 ]
+yamafuda
+[111 113 63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[74 44 21 33 71 62 41 ]
+your_cards
+[14 43 114 61 123 42 83 ]
+my_getcards
+[31 34 ]
+your_getcards
+[84 82 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+6
+tern
+1
+field_cards
+[102 93 11 51 73 24 81 111 ]
+yamafuda
+[113 63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[74 44 21 33 71 62 41 ]
+your_cards
+[14 43 114 61 123 42 83 ]
+my_getcards
+[31 34 ]
+your_getcards
+[84 82 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+6
+tern
+2
+field_cards
+[102 93 51 73 24 81 111 ]
+yamafuda
+[113 63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[74 44 21 33 71 62 41 ]
+your_cards
+[43 114 61 123 42 83 ]
+my_getcards
+[31 34 ]
+your_getcards
+[84 82 14 11 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+6
+tern
+2
+field_cards
+[102 93 51 73 24 81 ]
+yamafuda
+[63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[74 44 21 33 71 62 41 ]
+your_cards
+[43 114 61 123 42 83 ]
+my_getcards
+[31 34 ]
+your_getcards
+[84 82 14 11 113 111 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+6
+tern
+2
+field_cards
+[102 93 51 24 81 ]
+yamafuda
+[63 53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 21 33 71 62 41 ]
+your_cards
+[43 114 61 123 42 83 ]
+my_getcards
+[31 34 74 73 ]
+your_getcards
+[84 82 14 11 113 111 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+6
+tern
+2
+field_cards
+[102 93 51 24 81 63 ]
+yamafuda
+[53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 21 33 71 62 41 ]
+your_cards
+[43 114 61 123 42 83 ]
+my_getcards
+[31 34 74 73 ]
+your_getcards
+[84 82 14 11 113 111 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+6
+tern
+3
+field_cards
+[102 93 51 24 81 ]
+yamafuda
+[53 22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 21 33 71 62 41 ]
+your_cards
+[43 114 123 42 83 ]
+my_getcards
+[31 34 74 73 ]
+your_getcards
+[84 82 14 11 113 111 61 63 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+6
+tern
+3
+field_cards
+[102 93 24 81 ]
+yamafuda
+[22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 21 33 71 62 41 ]
+your_cards
+[43 114 123 42 83 ]
+my_getcards
+[31 34 74 73 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+6
+tern
+3
+field_cards
+[102 93 81 ]
+yamafuda
+[22 54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 33 71 62 41 ]
+your_cards
+[43 114 123 42 83 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+6
+tern
+3
+field_cards
+[102 93 81 22 ]
+yamafuda
+[54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 33 71 62 41 ]
+your_cards
+[43 114 123 42 83 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+6
+tern
+4
+field_cards
+[102 93 22 ]
+yamafuda
+[54 122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 33 71 62 41 ]
+your_cards
+[43 114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+6
+tern
+4
+field_cards
+[102 93 22 54 ]
+yamafuda
+[122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[44 33 71 62 41 ]
+your_cards
+[43 114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+6
+tern
+4
+field_cards
+[102 93 22 54 44 ]
+yamafuda
+[122 12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[33 71 62 41 ]
+your_cards
+[43 114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+6
+tern
+4
+field_cards
+[102 93 22 54 44 122 ]
+yamafuda
+[12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[33 71 62 41 ]
+your_cards
+[43 114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+6
+tern
+5
+field_cards
+[102 93 22 54 122 ]
+yamafuda
+[12 92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[33 71 62 41 ]
+your_cards
+[114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+6
+tern
+5
+field_cards
+[102 93 22 54 122 12 ]
+yamafuda
+[92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[33 71 62 41 ]
+your_cards
+[114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+6
+tern
+5
+field_cards
+[102 93 22 54 122 12 33 ]
+yamafuda
+[92 13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[71 62 41 ]
+your_cards
+[114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+6
+tern
+5
+field_cards
+[102 22 54 122 12 33 ]
+yamafuda
+[13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[71 62 41 ]
+your_cards
+[114 123 42 ]
+my_getcards
+[31 34 74 73 21 24 92 93 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+6
+tern
+6
+field_cards
+[102 22 54 12 33 ]
+yamafuda
+[13 91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[71 62 41 ]
+your_cards
+[114 42 ]
+my_getcards
+[31 34 74 73 21 24 92 93 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 123 122 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+6
+tern
+6
+field_cards
+[102 22 54 33 ]
+yamafuda
+[91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[71 62 41 ]
+your_cards
+[114 42 ]
+my_getcards
+[31 34 74 73 21 24 92 93 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 123 122 13 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 0, your_koikoi_flag: 1, my_score: 0, your_score: 1
+------------------
+------------------
+my turn : Tefuda
+month
+6
+tern
+6
+field_cards
+[102 22 54 33 71 ]
+yamafuda
+[91 104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[62 41 ]
+your_cards
+[114 42 ]
+my_getcards
+[31 34 74 73 21 24 92 93 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 123 122 13 12 ]
+my_score
+0
+your_score
+1
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+6
+tern
+6
+field_cards
+[102 22 54 33 71 91 ]
+yamafuda
+[104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[62 41 ]
+your_cards
+[114 42 ]
+my_getcards
+[31 34 74 73 21 24 92 93 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 123 122 13 12 ]
+my_score
+0
+your_score
+1
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Tefuda
+month
+6
+tern
+7
+field_cards
+[102 22 54 33 71 91 114 ]
+yamafuda
+[104 94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[62 41 ]
+your_cards
+[42 ]
+my_getcards
+[31 34 74 73 21 24 92 93 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 123 122 13 12 ]
+my_score
+0
+your_score
+1
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Draw
+month
+6
+tern
+7
+field_cards
+[22 54 33 71 91 114 ]
+yamafuda
+[94 101 23 64 124 121 103 72 112 32 52 ]
+my_cards
+[62 41 ]
+your_cards
+[42 ]
+my_getcards
+[31 34 74 73 21 24 92 93 ]
+your_getcards
+[84 82 14 11 113 111 61 63 53 51 83 81 43 44 123 122 13 12 104 102 ]
+my_score
+0
+your_score
+1
+my_total_score
+5
+your_total_score
+36
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+end of month 6
+winner : You
+my_score: 0, your_score: 2
+my_total_score: 5, your_total_score: 38
+------------------
+
+------------------
+initial condition
+field_cards
+[81 51 91 73 41 22 43 83 ]
+yamafuda
+[53 14 72 102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[101 111 21 124 34 74 122 31 ]
+your_cards
+[24 112 42 84 123 32 64 54 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+1
+field_cards
+[81 51 91 73 41 43 83 ]
+yamafuda
+[53 14 72 102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[101 111 21 124 34 74 122 31 ]
+your_cards
+[112 42 84 123 32 64 54 ]
+my_getcards
+[]
+your_getcards
+[24 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+1
+field_cards
+[81 91 73 41 43 83 ]
+yamafuda
+[14 72 102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[101 111 21 124 34 74 122 31 ]
+your_cards
+[112 42 84 123 32 64 54 ]
+my_getcards
+[]
+your_getcards
+[24 22 53 51 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+1
+field_cards
+[81 91 41 43 83 ]
+yamafuda
+[14 72 102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[101 111 21 124 34 122 31 ]
+your_cards
+[112 42 84 123 32 64 54 ]
+my_getcards
+[74 73 ]
+your_getcards
+[24 22 53 51 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+1
+field_cards
+[81 91 41 43 83 14 ]
+yamafuda
+[72 102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[101 111 21 124 34 122 31 ]
+your_cards
+[112 42 84 123 32 64 54 ]
+my_getcards
+[74 73 ]
+your_getcards
+[24 22 53 51 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+2
+field_cards
+[81 91 43 83 14 ]
+yamafuda
+[72 102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[101 111 21 124 34 122 31 ]
+your_cards
+[112 84 123 32 64 54 ]
+my_getcards
+[74 73 ]
+your_getcards
+[24 22 53 51 42 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+2
+field_cards
+[81 91 43 83 14 72 ]
+yamafuda
+[102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[101 111 21 124 34 122 31 ]
+your_cards
+[112 84 123 32 64 54 ]
+my_getcards
+[74 73 ]
+your_getcards
+[24 22 53 51 42 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+2
+field_cards
+[81 91 43 83 14 72 101 ]
+yamafuda
+[102 82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[111 21 124 34 122 31 ]
+your_cards
+[112 84 123 32 64 54 ]
+my_getcards
+[74 73 ]
+your_getcards
+[24 22 53 51 42 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+2
+field_cards
+[81 91 43 83 14 72 ]
+yamafuda
+[82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[111 21 124 34 122 31 ]
+your_cards
+[112 84 123 32 64 54 ]
+my_getcards
+[74 73 102 101 ]
+your_getcards
+[24 22 53 51 42 41 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+3
+field_cards
+[91 43 83 14 72 ]
+yamafuda
+[82 113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[111 21 124 34 122 31 ]
+your_cards
+[112 123 32 64 54 ]
+my_getcards
+[74 73 102 101 ]
+your_getcards
+[24 22 53 51 42 41 84 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+3
+field_cards
+[91 43 14 72 ]
+yamafuda
+[113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[111 21 124 34 122 31 ]
+your_cards
+[112 123 32 64 54 ]
+my_getcards
+[74 73 102 101 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+3
+field_cards
+[91 43 14 72 111 ]
+yamafuda
+[113 13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[21 124 34 122 31 ]
+your_cards
+[112 123 32 64 54 ]
+my_getcards
+[74 73 102 101 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+3
+field_cards
+[91 43 14 72 ]
+yamafuda
+[13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[21 124 34 122 31 ]
+your_cards
+[112 123 32 64 54 ]
+my_getcards
+[74 73 102 101 113 111 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+4
+field_cards
+[91 43 14 72 112 ]
+yamafuda
+[13 61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[21 124 34 122 31 ]
+your_cards
+[123 32 64 54 ]
+my_getcards
+[74 73 102 101 113 111 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+4
+field_cards
+[91 43 72 112 ]
+yamafuda
+[61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[21 124 34 122 31 ]
+your_cards
+[123 32 64 54 ]
+my_getcards
+[74 73 102 101 113 111 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+4
+field_cards
+[91 43 72 112 21 ]
+yamafuda
+[61 121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[124 34 122 31 ]
+your_cards
+[123 32 64 54 ]
+my_getcards
+[74 73 102 101 113 111 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+4
+field_cards
+[91 43 72 112 21 61 ]
+yamafuda
+[121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[124 34 122 31 ]
+your_cards
+[123 32 64 54 ]
+my_getcards
+[74 73 102 101 113 111 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+5
+field_cards
+[91 43 72 112 21 ]
+yamafuda
+[121 93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[124 34 122 31 ]
+your_cards
+[123 32 54 ]
+my_getcards
+[74 73 102 101 113 111 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+5
+field_cards
+[91 43 72 112 21 121 ]
+yamafuda
+[93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[124 34 122 31 ]
+your_cards
+[123 32 54 ]
+my_getcards
+[74 73 102 101 113 111 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+5
+field_cards
+[91 43 72 112 21 ]
+yamafuda
+[93 11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 122 31 ]
+your_cards
+[123 32 54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+5
+field_cards
+[43 72 112 21 ]
+yamafuda
+[11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 122 31 ]
+your_cards
+[123 32 54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+6
+field_cards
+[43 72 112 21 123 ]
+yamafuda
+[11 94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 122 31 ]
+your_cards
+[32 54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+6
+field_cards
+[43 72 112 21 123 11 ]
+yamafuda
+[94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 122 31 ]
+your_cards
+[32 54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+6
+field_cards
+[43 72 112 21 11 ]
+yamafuda
+[94 62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 31 ]
+your_cards
+[32 54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+6
+field_cards
+[43 72 112 21 11 94 ]
+yamafuda
+[62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 31 ]
+your_cards
+[32 54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+7
+field_cards
+[43 72 112 21 11 94 32 ]
+yamafuda
+[62 71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 31 ]
+your_cards
+[54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+7
+field_cards
+[43 72 112 21 11 94 32 62 ]
+yamafuda
+[71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[34 31 ]
+your_cards
+[54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+7
+field_cards
+[43 72 112 21 11 94 62 ]
+yamafuda
+[71 44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[31 ]
+your_cards
+[54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 34 32 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+7
+field_cards
+[43 112 21 11 94 62 ]
+yamafuda
+[44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[31 ]
+your_cards
+[54 ]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 34 32 71 72 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+7
+tern
+8
+field_cards
+[43 112 21 11 94 62 54 ]
+yamafuda
+[44 63 92 12 23 33 103 104 114 52 ]
+my_cards
+[31 ]
+your_cards
+[]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 34 32 71 72 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+7
+tern
+8
+field_cards
+[112 21 11 94 62 54 ]
+yamafuda
+[63 92 12 23 33 103 104 114 52 ]
+my_cards
+[31 ]
+your_cards
+[]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 34 32 71 72 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 44 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+7
+tern
+8
+field_cards
+[112 21 11 94 62 54 31 ]
+yamafuda
+[63 92 12 23 33 103 104 114 52 ]
+my_cards
+[]
+your_cards
+[]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 34 32 71 72 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 44 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+7
+tern
+8
+field_cards
+[112 21 11 94 54 31 ]
+yamafuda
+[92 12 23 33 103 104 114 52 ]
+my_cards
+[]
+your_cards
+[]
+my_getcards
+[74 73 102 101 113 111 124 121 93 91 122 123 34 32 71 72 63 62 ]
+your_getcards
+[24 22 53 51 42 41 84 81 82 83 13 14 64 61 44 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+5
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 1, your_koikoi_flag: 0, my_score: 1, your_score: 0
+------------------
+------------------
+end of month 7
+winner : Me
+my_score: 1, your_score: 0
+my_total_score: 6, your_total_score: 38
+------------------
+
+------------------
+initial condition
+field_cards
+[101 22 91 92 34 81 124 62 ]
+yamafuda
+[43 52 42 84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 93 71 72 61 51 32 41 ]
+your_cards
+[53 104 82 102 123 11 54 74 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+1
+field_cards
+[22 91 92 34 81 124 62 ]
+yamafuda
+[43 52 42 84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 93 71 72 61 51 32 41 ]
+your_cards
+[53 82 102 123 11 54 74 ]
+my_getcards
+[]
+your_getcards
+[104 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+1
+field_cards
+[22 91 92 34 81 124 62 43 ]
+yamafuda
+[52 42 84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 93 71 72 61 51 32 41 ]
+your_cards
+[53 82 102 123 11 54 74 ]
+my_getcards
+[]
+your_getcards
+[104 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+8
+tern
+1
+field_cards
+[22 92 34 81 124 62 43 ]
+yamafuda
+[52 42 84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 61 51 32 41 ]
+your_cards
+[53 82 102 123 11 54 74 ]
+my_getcards
+[93 91 ]
+your_getcards
+[104 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+8
+tern
+1
+field_cards
+[22 92 34 81 124 62 43 52 ]
+yamafuda
+[42 84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 61 51 32 41 ]
+your_cards
+[53 82 102 123 11 54 74 ]
+my_getcards
+[93 91 ]
+your_getcards
+[104 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+2
+field_cards
+[22 92 34 81 124 62 43 ]
+yamafuda
+[42 84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 61 51 32 41 ]
+your_cards
+[82 102 123 11 54 74 ]
+my_getcards
+[93 91 ]
+your_getcards
+[104 101 53 52 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+2
+field_cards
+[22 92 34 81 124 62 ]
+yamafuda
+[84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 61 51 32 41 ]
+your_cards
+[82 102 123 11 54 74 ]
+my_getcards
+[93 91 ]
+your_getcards
+[104 101 53 52 42 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+8
+tern
+2
+field_cards
+[22 92 34 81 124 ]
+yamafuda
+[84 114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 51 32 41 ]
+your_cards
+[82 102 123 11 54 74 ]
+my_getcards
+[93 91 61 62 ]
+your_getcards
+[104 101 53 52 42 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+8
+tern
+2
+field_cards
+[22 92 34 124 ]
+yamafuda
+[114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 51 32 41 ]
+your_cards
+[82 102 123 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 ]
+your_getcards
+[104 101 53 52 42 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 1, your_koikoi_flag: 0, my_score: 5, your_score: 0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+3
+field_cards
+[22 92 34 ]
+yamafuda
+[114 113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 51 32 41 ]
+your_cards
+[82 102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 ]
+your_getcards
+[104 101 53 52 42 43 123 124 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+3
+field_cards
+[22 92 34 114 ]
+yamafuda
+[113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[111 71 72 51 32 41 ]
+your_cards
+[82 102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 ]
+your_getcards
+[104 101 53 52 42 43 123 124 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+8
+tern
+3
+field_cards
+[22 92 34 ]
+yamafuda
+[113 21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 32 41 ]
+your_cards
+[82 102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 ]
+your_getcards
+[104 101 53 52 42 43 123 124 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+8
+tern
+3
+field_cards
+[22 92 34 113 ]
+yamafuda
+[21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 32 41 ]
+your_cards
+[82 102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 ]
+your_getcards
+[104 101 53 52 42 43 123 124 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+4
+field_cards
+[22 92 34 113 82 ]
+yamafuda
+[21 103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 32 41 ]
+your_cards
+[102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 ]
+your_getcards
+[104 101 53 52 42 43 123 124 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+4
+field_cards
+[92 34 113 82 ]
+yamafuda
+[103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 32 41 ]
+your_cards
+[102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+8
+tern
+4
+field_cards
+[92 113 82 ]
+yamafuda
+[103 44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 41 ]
+your_cards
+[102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+8
+tern
+4
+field_cards
+[92 113 82 103 ]
+yamafuda
+[44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 41 ]
+your_cards
+[102 11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+5
+field_cards
+[92 113 82 ]
+yamafuda
+[44 73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 41 ]
+your_cards
+[11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+5
+field_cards
+[92 113 82 44 ]
+yamafuda
+[73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 41 ]
+your_cards
+[11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+8
+tern
+5
+field_cards
+[92 113 82 ]
+yamafuda
+[73 13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 ]
+your_cards
+[11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+8
+tern
+5
+field_cards
+[92 113 82 73 ]
+yamafuda
+[13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 ]
+your_cards
+[11 54 74 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+6
+field_cards
+[92 113 82 ]
+yamafuda
+[13 12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 ]
+your_cards
+[11 54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+6
+field_cards
+[92 113 82 13 ]
+yamafuda
+[12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[71 72 51 ]
+your_cards
+[11 54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+8
+tern
+6
+field_cards
+[92 113 82 13 71 ]
+yamafuda
+[12 64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[72 51 ]
+your_cards
+[11 54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+8
+tern
+6
+field_cards
+[92 113 82 71 ]
+yamafuda
+[64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[72 51 ]
+your_cards
+[11 54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 12 13 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+7
+field_cards
+[92 113 82 71 11 ]
+yamafuda
+[64 23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[72 51 ]
+your_cards
+[54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 12 13 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+7
+field_cards
+[92 113 82 71 11 64 ]
+yamafuda
+[23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[72 51 ]
+your_cards
+[54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 12 13 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+8
+tern
+7
+field_cards
+[92 113 82 11 64 ]
+yamafuda
+[23 63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[51 ]
+your_cards
+[54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 12 13 72 71 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+8
+tern
+7
+field_cards
+[92 113 82 11 64 23 ]
+yamafuda
+[63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[51 ]
+your_cards
+[54 ]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 12 13 72 71 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+8
+tern
+8
+field_cards
+[92 113 82 11 64 23 54 ]
+yamafuda
+[63 94 33 24 31 121 112 83 14 122 ]
+my_cards
+[51 ]
+your_cards
+[]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 12 13 72 71 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+8
+tern
+8
+field_cards
+[92 113 82 11 23 54 ]
+yamafuda
+[94 33 24 31 121 112 83 14 122 ]
+my_cards
+[51 ]
+your_cards
+[]
+my_getcards
+[93 91 61 62 84 81 111 114 32 34 41 44 12 13 72 71 ]
+your_getcards
+[104 101 53 52 42 43 123 124 21 22 102 103 74 73 63 64 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+38
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+end of month 8
+winner : You
+my_score: 5, your_score: 2
+my_total_score: 6, your_total_score: 40
+------------------
+
+------------------
+initial condition
+field_cards
+[21 93 114 43 12 72 52 24 ]
+yamafuda
+[14 44 101 64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[23 83 51 94 111 54 112 31 ]
+your_cards
+[73 13 11 122 92 74 103 102 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+1
+field_cards
+[21 93 114 43 12 52 24 ]
+yamafuda
+[14 44 101 64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[23 83 51 94 111 54 112 31 ]
+your_cards
+[13 11 122 92 74 103 102 ]
+my_getcards
+[]
+your_getcards
+[73 72 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+1
+field_cards
+[21 93 114 43 52 24 ]
+yamafuda
+[44 101 64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[23 83 51 94 111 54 112 31 ]
+your_cards
+[13 11 122 92 74 103 102 ]
+my_getcards
+[]
+your_getcards
+[73 72 14 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+9
+tern
+1
+field_cards
+[93 114 43 52 24 ]
+yamafuda
+[44 101 64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 51 94 111 54 112 31 ]
+your_cards
+[13 11 122 92 74 103 102 ]
+my_getcards
+[23 21 ]
+your_getcards
+[73 72 14 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+9
+tern
+1
+field_cards
+[93 114 52 24 ]
+yamafuda
+[101 64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 51 94 111 54 112 31 ]
+your_cards
+[13 11 122 92 74 103 102 ]
+my_getcards
+[23 21 44 43 ]
+your_getcards
+[73 72 14 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+2
+field_cards
+[114 52 24 ]
+yamafuda
+[101 64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 51 94 111 54 112 31 ]
+your_cards
+[13 11 122 74 103 102 ]
+my_getcards
+[23 21 44 43 ]
+your_getcards
+[73 72 14 12 92 93 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+2
+field_cards
+[114 52 24 101 ]
+yamafuda
+[64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 51 94 111 54 112 31 ]
+your_cards
+[13 11 122 74 103 102 ]
+my_getcards
+[23 21 44 43 ]
+your_getcards
+[73 72 14 12 92 93 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+9
+tern
+2
+field_cards
+[114 24 101 ]
+yamafuda
+[64 34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 111 54 112 31 ]
+your_cards
+[13 11 122 74 103 102 ]
+my_getcards
+[23 21 44 43 51 52 ]
+your_getcards
+[73 72 14 12 92 93 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+9
+tern
+2
+field_cards
+[114 24 101 64 ]
+yamafuda
+[34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 111 54 112 31 ]
+your_cards
+[13 11 122 74 103 102 ]
+my_getcards
+[23 21 44 43 51 52 ]
+your_getcards
+[73 72 14 12 92 93 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+3
+field_cards
+[114 24 64 ]
+yamafuda
+[34 22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 111 54 112 31 ]
+your_cards
+[13 11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+3
+field_cards
+[114 24 64 34 ]
+yamafuda
+[22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 111 54 112 31 ]
+your_cards
+[13 11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+9
+tern
+3
+field_cards
+[24 64 34 ]
+yamafuda
+[22 113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 112 31 ]
+your_cards
+[13 11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+9
+tern
+3
+field_cards
+[64 34 ]
+yamafuda
+[113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 112 31 ]
+your_cards
+[13 11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+4
+field_cards
+[64 34 13 ]
+yamafuda
+[113 121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 112 31 ]
+your_cards
+[11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+4
+field_cards
+[64 34 13 113 ]
+yamafuda
+[121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 112 31 ]
+your_cards
+[11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+9
+tern
+4
+field_cards
+[64 34 13 ]
+yamafuda
+[121 63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 31 ]
+your_cards
+[11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+9
+tern
+4
+field_cards
+[64 34 13 121 ]
+yamafuda
+[63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 31 ]
+your_cards
+[11 122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 ]
+your_getcards
+[73 72 14 12 92 93 103 101 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+5
+field_cards
+[64 34 121 ]
+yamafuda
+[63 71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 31 ]
+your_cards
+[122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+5
+field_cards
+[34 121 ]
+yamafuda
+[71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 31 ]
+your_cards
+[122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+9
+tern
+5
+field_cards
+[121 ]
+yamafuda
+[71 33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 ]
+your_cards
+[122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+9
+tern
+5
+field_cards
+[121 71 ]
+yamafuda
+[33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 ]
+your_cards
+[122 74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+6
+field_cards
+[71 ]
+yamafuda
+[33 124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 ]
+your_cards
+[74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+6
+field_cards
+[71 33 ]
+yamafuda
+[124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[83 94 54 ]
+your_cards
+[74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+9
+tern
+6
+field_cards
+[71 33 83 ]
+yamafuda
+[124 91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[94 54 ]
+your_cards
+[74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+9
+tern
+6
+field_cards
+[71 33 83 124 ]
+yamafuda
+[91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[94 54 ]
+your_cards
+[74 102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+7
+field_cards
+[33 83 124 ]
+yamafuda
+[91 42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[94 54 ]
+your_cards
+[102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+7
+field_cards
+[33 83 124 91 ]
+yamafuda
+[42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[94 54 ]
+your_cards
+[102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+9
+tern
+7
+field_cards
+[33 83 124 ]
+yamafuda
+[42 123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[54 ]
+your_cards
+[102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 94 91 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+9
+tern
+7
+field_cards
+[33 83 124 42 ]
+yamafuda
+[123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[54 ]
+your_cards
+[102 ]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 94 91 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 74 71 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 1, your_koikoi_flag: 0, my_score: 5, your_score: 0
+------------------
+------------------
+your turn : Tefuda
+month
+9
+tern
+8
+field_cards
+[33 83 124 42 102 ]
+yamafuda
+[123 104 32 61 62 84 81 82 41 53 ]
+my_cards
+[54 ]
+your_cards
+[]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 94 91 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 74 71 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+9
+tern
+8
+field_cards
+[33 83 42 102 ]
+yamafuda
+[104 32 61 62 84 81 82 41 53 ]
+my_cards
+[54 ]
+your_cards
+[]
+my_getcards
+[23 21 44 43 51 52 111 114 22 24 112 113 31 34 94 91 ]
+your_getcards
+[73 72 14 12 92 93 103 101 11 13 63 64 122 121 74 71 123 124 ]
+my_score
+5
+your_score
+0
+my_total_score
+6
+your_total_score
+40
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+end of month 9
+winner : You
+my_score: 5, your_score: 4
+my_total_score: 6, your_total_score: 44
+------------------
+
+------------------
+initial condition
+field_cards
+[122 13 92 121 61 54 21 81 ]
+yamafuda
+[82 104 12 112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[94 51 33 71 14 42 123 31 ]
+your_cards
+[124 52 22 34 41 63 73 32 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+10
+tern
+1
+field_cards
+[13 92 121 61 54 21 81 ]
+yamafuda
+[82 104 12 112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[94 51 33 71 14 42 123 31 ]
+your_cards
+[52 22 34 41 63 73 32 ]
+my_getcards
+[]
+your_getcards
+[124 122 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+10
+tern
+1
+field_cards
+[13 92 121 61 54 21 ]
+yamafuda
+[104 12 112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[94 51 33 71 14 42 123 31 ]
+your_cards
+[52 22 34 41 63 73 32 ]
+my_getcards
+[]
+your_getcards
+[124 122 82 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+10
+tern
+1
+field_cards
+[13 121 61 54 21 ]
+yamafuda
+[104 12 112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 123 31 ]
+your_cards
+[52 22 34 41 63 73 32 ]
+my_getcards
+[94 92 ]
+your_getcards
+[124 122 82 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+10
+tern
+1
+field_cards
+[13 121 61 54 21 104 ]
+yamafuda
+[12 112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 123 31 ]
+your_cards
+[52 22 34 41 63 73 32 ]
+my_getcards
+[94 92 ]
+your_getcards
+[124 122 82 81 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+10
+tern
+2
+field_cards
+[13 121 61 21 104 ]
+yamafuda
+[12 112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 123 31 ]
+your_cards
+[22 34 41 63 73 32 ]
+my_getcards
+[94 92 ]
+your_getcards
+[124 122 82 81 52 54 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+10
+tern
+2
+field_cards
+[121 61 21 104 ]
+yamafuda
+[112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 123 31 ]
+your_cards
+[22 34 41 63 73 32 ]
+my_getcards
+[94 92 ]
+your_getcards
+[124 122 82 81 52 54 12 13 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+10
+tern
+2
+field_cards
+[61 21 104 ]
+yamafuda
+[112 114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 31 ]
+your_cards
+[22 34 41 63 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+10
+tern
+2
+field_cards
+[61 21 104 112 ]
+yamafuda
+[114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 31 ]
+your_cards
+[22 34 41 63 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+10
+tern
+3
+field_cards
+[61 104 112 ]
+yamafuda
+[114 72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 31 ]
+your_cards
+[34 41 63 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+10
+tern
+3
+field_cards
+[61 104 ]
+yamafuda
+[72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[51 33 71 14 42 31 ]
+your_cards
+[34 41 63 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+10
+tern
+3
+field_cards
+[61 104 51 ]
+yamafuda
+[72 43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 71 14 42 31 ]
+your_cards
+[34 41 63 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+10
+tern
+3
+field_cards
+[61 104 51 72 ]
+yamafuda
+[43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 71 14 42 31 ]
+your_cards
+[34 41 63 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+10
+tern
+4
+field_cards
+[104 51 72 ]
+yamafuda
+[43 23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 71 14 42 31 ]
+your_cards
+[34 41 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+10
+tern
+4
+field_cards
+[104 51 72 43 ]
+yamafuda
+[23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 71 14 42 31 ]
+your_cards
+[34 41 73 32 ]
+my_getcards
+[94 92 123 121 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+10
+tern
+4
+field_cards
+[104 51 43 ]
+yamafuda
+[23 113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 14 42 31 ]
+your_cards
+[34 41 73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+10
+tern
+4
+field_cards
+[104 51 43 23 ]
+yamafuda
+[113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 14 42 31 ]
+your_cards
+[34 41 73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+10
+tern
+5
+field_cards
+[104 51 23 ]
+yamafuda
+[113 84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 14 42 31 ]
+your_cards
+[34 73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+10
+tern
+5
+field_cards
+[104 51 23 113 ]
+yamafuda
+[84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[33 14 42 31 ]
+your_cards
+[34 73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 0, your_koikoi_flag: 1, my_score: 0, your_score: 1
+------------------
+------------------
+my turn : Tefuda
+month
+10
+tern
+5
+field_cards
+[104 51 23 113 33 ]
+yamafuda
+[84 74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[14 42 31 ]
+your_cards
+[34 73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+10
+tern
+5
+field_cards
+[104 51 23 113 33 84 ]
+yamafuda
+[74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[14 42 31 ]
+your_cards
+[34 73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Tefuda
+month
+10
+tern
+6
+field_cards
+[104 51 23 113 84 ]
+yamafuda
+[74 111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[14 42 31 ]
+your_cards
+[73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 34 33 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Draw
+month
+10
+tern
+6
+field_cards
+[104 51 23 113 84 74 ]
+yamafuda
+[111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[14 42 31 ]
+your_cards
+[73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 34 33 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Tefuda
+month
+10
+tern
+6
+field_cards
+[104 51 23 113 84 74 14 ]
+yamafuda
+[111 101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[42 31 ]
+your_cards
+[73 32 ]
+my_getcards
+[94 92 123 121 71 72 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 34 33 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+10
+tern
+6
+field_cards
+[104 51 23 84 74 14 ]
+yamafuda
+[101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[42 31 ]
+your_cards
+[73 32 ]
+my_getcards
+[94 92 123 121 71 72 111 113 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 34 33 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Tefuda
+month
+10
+tern
+7
+field_cards
+[104 51 23 84 14 ]
+yamafuda
+[101 103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[42 31 ]
+your_cards
+[32 ]
+my_getcards
+[94 92 123 121 71 72 111 113 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 34 33 73 74 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+your turn : Draw
+month
+10
+tern
+7
+field_cards
+[51 23 84 14 ]
+yamafuda
+[103 11 44 83 62 24 102 93 53 64 91 ]
+my_cards
+[42 31 ]
+your_cards
+[32 ]
+my_getcards
+[94 92 123 121 71 72 111 113 ]
+your_getcards
+[124 122 82 81 52 54 12 13 22 21 114 112 63 61 41 43 34 33 73 74 101 104 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+44
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+end of month 10
+winner : You
+my_score: 0, your_score: 5
+my_total_score: 6, your_total_score: 49
+------------------
+
+------------------
+initial condition
+field_cards
+[73 33 64 114 62 61 22 24 ]
+yamafuda
+[54 32 121 12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 52 83 101 21 122 41 81 ]
+your_cards
+[14 72 93 23 82 94 102 63 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+11
+tern
+1
+field_cards
+[33 64 114 62 61 22 24 ]
+yamafuda
+[54 32 121 12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 52 83 101 21 122 41 81 ]
+your_cards
+[14 93 23 82 94 102 63 ]
+my_getcards
+[]
+your_getcards
+[72 73 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+11
+tern
+1
+field_cards
+[33 64 114 62 61 22 24 54 ]
+yamafuda
+[32 121 12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 52 83 101 21 122 41 81 ]
+your_cards
+[14 93 23 82 94 102 63 ]
+my_getcards
+[]
+your_getcards
+[72 73 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+11
+tern
+1
+field_cards
+[33 64 114 62 61 22 24 ]
+yamafuda
+[32 121 12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 21 122 41 81 ]
+your_cards
+[14 93 23 82 94 102 63 ]
+my_getcards
+[52 54 ]
+your_getcards
+[72 73 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+11
+tern
+1
+field_cards
+[64 114 62 61 22 24 ]
+yamafuda
+[121 12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 21 122 41 81 ]
+your_cards
+[14 93 23 82 94 102 63 ]
+my_getcards
+[52 54 32 33 ]
+your_getcards
+[72 73 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+11
+tern
+2
+field_cards
+[64 114 62 61 24 ]
+yamafuda
+[121 12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 21 122 41 81 ]
+your_cards
+[14 93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 ]
+your_getcards
+[72 73 23 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+11
+tern
+2
+field_cards
+[64 114 62 61 24 121 ]
+yamafuda
+[12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 21 122 41 81 ]
+your_cards
+[14 93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 ]
+your_getcards
+[72 73 23 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+11
+tern
+2
+field_cards
+[64 114 62 61 121 ]
+yamafuda
+[12 53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 122 41 81 ]
+your_cards
+[14 93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 21 24 ]
+your_getcards
+[72 73 23 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+11
+tern
+2
+field_cards
+[64 114 62 61 121 12 ]
+yamafuda
+[53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 122 41 81 ]
+your_cards
+[14 93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 21 24 ]
+your_getcards
+[72 73 23 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+11
+tern
+3
+field_cards
+[64 114 62 61 121 ]
+yamafuda
+[53 43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 122 41 81 ]
+your_cards
+[93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 21 24 ]
+your_getcards
+[72 73 23 22 14 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+11
+tern
+3
+field_cards
+[64 114 62 61 121 53 ]
+yamafuda
+[43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 122 41 81 ]
+your_cards
+[93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 21 24 ]
+your_getcards
+[72 73 23 22 14 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+11
+tern
+3
+field_cards
+[64 114 62 61 53 ]
+yamafuda
+[43 123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 41 81 ]
+your_cards
+[93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 21 24 122 121 ]
+your_getcards
+[72 73 23 22 14 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+11
+tern
+3
+field_cards
+[64 114 62 61 53 43 ]
+yamafuda
+[123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 41 81 ]
+your_cards
+[93 82 94 102 63 ]
+my_getcards
+[52 54 32 33 21 24 122 121 ]
+your_getcards
+[72 73 23 22 14 12 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+11
+tern
+4
+field_cards
+[114 53 43 ]
+yamafuda
+[123 74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 41 81 ]
+your_cards
+[93 82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+11
+tern
+4
+field_cards
+[114 53 43 123 ]
+yamafuda
+[74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 41 81 ]
+your_cards
+[93 82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+11
+tern
+4
+field_cards
+[114 53 123 ]
+yamafuda
+[74 34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 81 ]
+your_cards
+[93 82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+11
+tern
+4
+field_cards
+[114 53 123 74 ]
+yamafuda
+[34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 81 ]
+your_cards
+[93 82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+11
+tern
+5
+field_cards
+[114 53 123 74 93 ]
+yamafuda
+[34 113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 81 ]
+your_cards
+[82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+11
+tern
+5
+field_cards
+[114 53 123 74 93 34 ]
+yamafuda
+[113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[91 83 101 81 ]
+your_cards
+[82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+11
+tern
+5
+field_cards
+[114 53 123 74 34 ]
+yamafuda
+[113 92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[83 101 81 ]
+your_cards
+[82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+11
+tern
+5
+field_cards
+[53 123 74 34 ]
+yamafuda
+[92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[83 101 81 ]
+your_cards
+[82 94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+11
+tern
+6
+field_cards
+[53 123 74 34 82 ]
+yamafuda
+[92 44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[83 101 81 ]
+your_cards
+[94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+11
+tern
+6
+field_cards
+[53 123 74 34 82 92 ]
+yamafuda
+[44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[83 101 81 ]
+your_cards
+[94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+11
+tern
+6
+field_cards
+[53 123 74 34 92 ]
+yamafuda
+[44 103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[101 81 ]
+your_cards
+[94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 83 82 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+11
+tern
+6
+field_cards
+[53 123 74 34 92 44 ]
+yamafuda
+[103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[101 81 ]
+your_cards
+[94 102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 83 82 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+11
+tern
+7
+field_cards
+[53 123 74 34 44 ]
+yamafuda
+[103 112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[101 81 ]
+your_cards
+[102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 83 82 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 94 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+11
+tern
+7
+field_cards
+[53 123 74 34 44 103 ]
+yamafuda
+[112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[101 81 ]
+your_cards
+[102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 83 82 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 94 92 ]
+my_score
+0
+your_score
+0
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 0, your_koikoi_flag: 1, my_score: 0, your_score: 1
+------------------
+------------------
+my turn : Tefuda
+month
+11
+tern
+7
+field_cards
+[53 123 74 34 44 ]
+yamafuda
+[112 31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[81 ]
+your_cards
+[102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 83 82 101 103 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 94 92 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+my turn : Draw
+month
+11
+tern
+7
+field_cards
+[53 123 74 34 44 112 ]
+yamafuda
+[31 11 111 51 71 104 124 42 13 84 ]
+my_cards
+[81 ]
+your_cards
+[102 ]
+my_getcards
+[52 54 32 33 21 24 122 121 41 43 91 93 113 114 83 82 101 103 ]
+your_getcards
+[72 73 23 22 14 12 63 64 63 62 63 61 94 92 ]
+my_score
+0
+your_score
+1
+my_total_score
+6
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+1
+------------------
+------------------
+end of month 11
+winner : Me
+my_score: 4, your_score: 1
+my_total_score: 10, your_total_score: 49
+------------------
+
+------------------
+initial condition
+field_cards
+[123 74 12 22 13 71 111 41 ]
+yamafuda
+[84 64 72 11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[14 82 94 93 61 51 121 42 ]
+your_cards
+[21 33 52 122 124 32 92 113 ]
+my_getcards
+[]
+your_getcards
+[]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+12
+tern
+1
+field_cards
+[123 74 12 13 71 111 41 ]
+yamafuda
+[84 64 72 11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[14 82 94 93 61 51 121 42 ]
+your_cards
+[33 52 122 124 32 92 113 ]
+my_getcards
+[]
+your_getcards
+[21 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+12
+tern
+1
+field_cards
+[123 74 12 13 71 111 41 84 ]
+yamafuda
+[64 72 11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[14 82 94 93 61 51 121 42 ]
+your_cards
+[33 52 122 124 32 92 113 ]
+my_getcards
+[]
+your_getcards
+[21 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+12
+tern
+1
+field_cards
+[123 74 13 71 111 41 84 ]
+yamafuda
+[64 72 11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[82 94 93 61 51 121 42 ]
+your_cards
+[33 52 122 124 32 92 113 ]
+my_getcards
+[14 12 ]
+your_getcards
+[21 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+12
+tern
+1
+field_cards
+[123 74 13 71 111 41 84 64 ]
+yamafuda
+[72 11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[82 94 93 61 51 121 42 ]
+your_cards
+[33 52 122 124 32 92 113 ]
+my_getcards
+[14 12 ]
+your_getcards
+[21 22 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+12
+tern
+2
+field_cards
+[74 13 71 111 41 84 64 ]
+yamafuda
+[72 11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[82 94 93 61 51 121 42 ]
+your_cards
+[33 52 124 32 92 113 ]
+my_getcards
+[14 12 ]
+your_getcards
+[21 22 122 123 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+12
+tern
+2
+field_cards
+[13 71 111 41 84 64 ]
+yamafuda
+[11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[82 94 93 61 51 121 42 ]
+your_cards
+[33 52 124 32 92 113 ]
+my_getcards
+[14 12 ]
+your_getcards
+[21 22 122 123 72 74 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+12
+tern
+2
+field_cards
+[13 71 111 41 64 ]
+yamafuda
+[11 31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 61 51 121 42 ]
+your_cards
+[33 52 124 32 92 113 ]
+my_getcards
+[14 12 82 84 ]
+your_getcards
+[21 22 122 123 72 74 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+12
+tern
+2
+field_cards
+[71 111 41 64 ]
+yamafuda
+[31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 61 51 121 42 ]
+your_cards
+[33 52 124 32 92 113 ]
+my_getcards
+[14 12 82 84 11 13 ]
+your_getcards
+[21 22 122 123 72 74 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+12
+tern
+3
+field_cards
+[71 41 64 ]
+yamafuda
+[31 102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 61 51 121 42 ]
+your_cards
+[33 52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 ]
+your_getcards
+[21 22 122 123 72 74 113 111 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+12
+tern
+3
+field_cards
+[71 41 64 31 ]
+yamafuda
+[102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 61 51 121 42 ]
+your_cards
+[33 52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 ]
+your_getcards
+[21 22 122 123 72 74 113 111 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+12
+tern
+3
+field_cards
+[71 41 31 ]
+yamafuda
+[102 83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 42 ]
+your_cards
+[33 52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 ]
+your_getcards
+[21 22 122 123 72 74 113 111 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+12
+tern
+3
+field_cards
+[71 41 31 102 ]
+yamafuda
+[83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 42 ]
+your_cards
+[33 52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 ]
+your_getcards
+[21 22 122 123 72 74 113 111 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+12
+tern
+4
+field_cards
+[71 41 102 ]
+yamafuda
+[83 112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 42 ]
+your_cards
+[52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+12
+tern
+4
+field_cards
+[71 41 102 83 ]
+yamafuda
+[112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 42 ]
+your_cards
+[52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+12
+tern
+4
+field_cards
+[71 102 83 ]
+yamafuda
+[112 104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 ]
+your_cards
+[52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+12
+tern
+4
+field_cards
+[71 102 83 112 ]
+yamafuda
+[104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 ]
+your_cards
+[52 124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+12
+tern
+5
+field_cards
+[71 102 83 112 52 ]
+yamafuda
+[104 114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 ]
+your_cards
+[124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+12
+tern
+5
+field_cards
+[71 83 112 52 ]
+yamafuda
+[114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 51 121 ]
+your_cards
+[124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+12
+tern
+5
+field_cards
+[71 83 112 ]
+yamafuda
+[114 73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 121 ]
+your_cards
+[124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+12
+tern
+5
+field_cards
+[71 83 ]
+yamafuda
+[73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 121 ]
+your_cards
+[124 32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 114 112 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 ]
+my_score
+0
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+0
+your_koikoi_flag
+0
+------------------
+------------------
+DO KOIKOI
+my_koikoi_flag: 1, your_koikoi_flag: 0, my_score: 1, your_score: 0
+------------------
+------------------
+your turn : Tefuda
+month
+12
+tern
+6
+field_cards
+[71 83 124 ]
+yamafuda
+[73 54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 121 ]
+your_cards
+[32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 114 112 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 ]
+my_score
+1
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+12
+tern
+6
+field_cards
+[83 124 ]
+yamafuda
+[54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 121 ]
+your_cards
+[32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 114 112 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 73 71 ]
+my_score
+1
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Tefuda
+month
+12
+tern
+6
+field_cards
+[83 ]
+yamafuda
+[54 34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 ]
+your_cards
+[32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 114 112 121 124 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 73 71 ]
+my_score
+1
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+my turn : Draw
+month
+12
+tern
+6
+field_cards
+[83 54 ]
+yamafuda
+[34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 ]
+your_cards
+[32 92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 114 112 121 124 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 73 71 ]
+my_score
+1
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Tefuda
+month
+12
+tern
+7
+field_cards
+[83 54 32 ]
+yamafuda
+[34 101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 ]
+your_cards
+[92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 114 112 121 124 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 73 71 ]
+my_score
+1
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+your turn : Draw
+month
+12
+tern
+7
+field_cards
+[83 54 ]
+yamafuda
+[101 53 63 62 91 44 24 81 43 23 103 ]
+my_cards
+[94 93 ]
+your_cards
+[92 ]
+my_getcards
+[14 12 82 84 11 13 61 64 42 41 51 52 114 112 121 124 ]
+your_getcards
+[21 22 122 123 72 74 113 111 33 31 104 102 73 71 34 32 ]
+my_score
+1
+your_score
+0
+my_total_score
+10
+your_total_score
+49
+my_koikoi_flag
+1
+your_koikoi_flag
+0
+------------------
+------------------
+end of month 12
+winner : You
+my_score: 1, your_score: 2
+my_total_score: 10, your_total_score: 51
+------------------
+
+
+
+------------------
+end of game
+winner : You
+my_total_score: 10, your_total_score: 51
+------------------
+
+0 0 14
+1 0 16
+2 2 16
+3 5 16
+4 5 36
+5 5 38
+6 6 38
+7 6 40
+8 6 44
+9 6 49
+10 10 49
+11 10 51
