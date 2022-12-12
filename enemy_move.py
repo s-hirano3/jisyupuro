@@ -196,7 +196,7 @@ class EnemyMove():
 
     # case 0: 手札から出すカードを決める
     # case 1: 手札から出した後or山札から引いた後で，月が同じ札が2枚あったとき，その2枚のうちどちらを取るかを決める
-    def ChooseCard(self, player, case):
+    def ChooseCard(self, player, case, select_from_field_kouho):
         if player == "Me":
             my_need_card = self.need_cards[-1][0]
             my_need_card_possible = self.need_cards_possible[-1][0]
@@ -277,7 +277,7 @@ class EnemyMove():
 
         
         elif case == 1:
-            aiueo
+            select_from_field_kouho
         
         return select_card
         

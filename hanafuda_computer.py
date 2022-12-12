@@ -239,12 +239,15 @@ class Hanafuda():
                 if field_card // 10 == card_month:
                     get_kouho_from_field.append(field_card)
             
-            select_from_kouho = get_kouho_from_field[0]
-            self.field_cards.remove(select_from_kouho)
             if player == "Me":
+                # enemy_move.ChooseCard使用
+                select_from_kouho = self.EnemyAlgorithm.ChooseCard(player, 1, get_kouho_from_field)
+                self.field_cards.remove(select_from_kouho)
                 self.my_getcard.append(card)
                 self.my_getcard.append(select_from_kouho)
             elif player == "You":
+                select_from_kouho = get_kouho_from_field[0]
+                self.field_cards.remove(select_from_kouho)
                 self.your_getcard.append(card)
                 self.your_getcard.append(select_from_kouho)
 
@@ -255,8 +258,8 @@ class Hanafuda():
     def Tefuda(self, player):
         self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
         if player == "Me":
-            select_card = self.EnemyAlgorithm.ChooseCard(player, 0)
-            
+            # enemy_move.ChooseCard使用
+            select_card = self.EnemyAlgorithm.ChooseCard(player, 0, 0)         
 
             # my_cards_month = []
             # for my_card in self.my_cards:
@@ -348,7 +351,7 @@ class Hanafuda():
 
 
     def Play(self, repetition, log_file_num):
-        
+
         dt_now = datetime.datetime.now()
         file_name = '/Users/hiranoseigo/Downloads/log/log_computer' + str(log_file_num) + '/log-computer-' + str(repetition) + '.txt'
         self.f = open(file_name, 'w')
