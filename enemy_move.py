@@ -89,15 +89,15 @@ class EnemyMove():
             my_append_num_possible = max(0, YAKU_LIST_NUM[yaku_num] - counter_possible)
 
             if yaku_num == 2:
-                if append_num == 0:
+                if my_append_num == 0:
                     if 111 not in my_recent_getcards:
-                        append_num = 1
+                        my_append_num = 1
                 if my_append_num_possible == 0:
                     if 111 not in my_recent_getcards_possible:
                         my_append_num_possible = 1
 
-            need_card[0].append(my_append_num)
-            need_card_possible[0].append(my_append_num_possible)
+            need_card[0][yaku_num] = my_append_num
+            need_card_possible[0][yaku_num] = my_append_num_possible
             
 
             # 相手が絶対に取れない役に-1をつける
@@ -123,6 +123,7 @@ class EnemyMove():
                     if counter >= 2:
                         need_card[1][yaku_num] = -1
         
+        
         for yaku_num in range(len(YAKU_LIST)):
             counter = 0
             counter_possible = 0
@@ -133,9 +134,47 @@ class EnemyMove():
             else:
                 for card in yaku_cards:
                     if card in your_recent_getcards:
-                        counte += 1
-                    if card in
+                        counter += 1
+                    if card in your_recent_getcards_possible:
+                        counter_possible += 1
+                    
+                your_append_num = max(0, YAKU_LIST_NUM[yaku_num] - counter)
+                your_append_num_possible = max(0, YAKU_LIST_NUM[yaku_num] - counter_possible)
 
+                if yaku_num == 2:
+                    if your_append_num == 0:
+                        if 111 not in your_recent_getcards:
+                            your_append_num = 1
+                    if your_append_num_possible == 0:
+                        if 111 not in your_recent_getcards_possible:
+                            your_append_num_possible = 1
+                
+                need_card[1][yaku_num] = your_append_num
+                need_card_possible[1][yaku_num] = your_append_num_possible
+
+                
+                # 相手が絶対に取れない役に-1をつける
+                if yaku_num in [0, 1, 4, 5, 6, 7, 8]:  # 相手に1枚でも持たれたら終了
+                    if counter >= 1:
+                        need_card[0][yaku_num] = -1
+                elif yaku_num == 3:
+                    if counter >= 2:
+                        need_card[0][yaku_num] = -1
+                elif yaku_num == 9:
+                    if counter >= 5:
+                        need_card[0][yaku_num] = -1
+                elif yaku_num == 10:
+                    if counter >= 6:
+                        need_card[0][yaku_num] = -1
+                elif yaku_num == 11:
+                    if counter >= 16:
+                        need_card[0][yaku_num] = -1
+                elif yaku_num == 2:
+                    if 111 in my_recent_getcards:
+                        need_card[0][yaku_num] = -1
+                    else:
+                        if counter >= 2:
+                            need_card[0][yaku_num] = -1
             
 
             
