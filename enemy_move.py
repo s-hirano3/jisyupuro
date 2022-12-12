@@ -13,13 +13,13 @@ TUKIMI = [81, 91]
 INOSHIKATYO = [61, 71, 101]
 AKATAN = [12, 22, 32]
 AOTAN = [62, 92, 102]
-TANE = [21, 41, 51, 61, 71, 82, 91, 101, 112]
-TAN = [12, 22, 32, 42, 52, 62, 72, 92, 102, 113]
-KASU = [13, 14, 23, 24, 33, 34, 43, 44, 53, 54, 63, 64, 73, 74, 83, 84, 91, 93, 94, 103, 104, 114, 122, 123, 124]
+TANE = [21, 41, 51, 61, 71, 82, 91, 101, 112]  # 9
+TAN = [12, 22, 32, 42, 52, 62, 72, 92, 102, 113]  # 10
+KASU = [13, 14, 23, 24, 33, 34, 43, 44, 53, 54, 63, 64, 73, 74, 83, 84, 91, 93, 94, 103, 104, 114, 122, 123, 124]  # 25
 
 # [五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，猪鹿蝶，赤短，青短，タネ，タン，カス]
-YAKU_CARDS = [GOKOU, YONKOU, AMESIKOU, SANKOU, HANAMI, TUKIMI, INOSHIKATYO, AKATAN, AOTAN, TANE, TAN, KASU]
-YAKU_CARDS_NUM = [5, 4, 4, 3, 2, 2, 3, 3, 3, 5, 5, 10]
+YAKU_LIST = [GOKOU, YONKOU, AMESIKOU, SANKOU, HANAMI, TUKIMI, INOSHIKATYO, AKATAN, AOTAN, TANE, TAN, KASU]
+YAKU_LIST_NUM = [5, 4, 4, 3, 2, 2, 3, 3, 3, 5, 5, 10]
 
 
 
@@ -66,68 +66,82 @@ class EnemyMove():
 
     
     def DetectNeedCards(self):
-        need_card = [[], []]  # my, your
-        need_card_possible = [[], []]  # my, your
+        need_card = [[0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0]]  # my, your
+        need_card_possible = [[0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0]]  # my, your
 
-        for player in range(2):
-            if player == 0:
-                getcards = self.my_getcards[-1]
-                getcards_possible = self.my_getcards[-1] + self.my_cards[-1]
-            elif player == 1:
-                getcards = self.your_getcards[-1]
-                getcards_possible = self.your_getcards[-1] + self.your_cards[-1]
+        my_recent_getcards = self.my_getcards[-1]
+        my_recent_getcards_possible = self.my_getcards[-1] + self.my_cards[-1]
+        your_recent_getcards = self.your_getcards[-1]
+        your_recent_getcards_possible = self.your_getcards[-1] + self.your_cards[-1]
 
-            for yaku_num in range(len(YAKU_CARDS)):
-                counter = 0
-                counter_possible = 0
-                YAKU = YAKU_CARDS[yaku_num]
+        for yaku_num in range(len(YAKU_LIST)):
+            counter = 0
+            counter_possible = 0
+            yaku_cards = YAKU_LIST[yaku_num]
 
-                for card in YAKU:
-                    if card in getcards:
-                        counter += 1
-                    if card in getcards_possible:
-                        counter_possible += 1
+            for card in yaku_cards:
+                if card in my_recent_getcards:
+                    counter += 1
+                if card in my_recent_getcards_possible:
+                    counter_possible += 1
 
-                append_num = max(0, YAKU_CARDS_NUM[yaku_num] - counter)
-                append_num_possible = max(0, YAKU_CARDS_NUM[yaku_num] - counter_possible)
+            my_append_num = max(0, YAKU_LIST_NUM[yaku_num] - counter)
+            my_append_num_possible = max(0, YAKU_LIST_NUM[yaku_num] - counter_possible)
 
-                # 雨四光のときは，111をイレギュラー処理
-                if yaku_num == 2:
-                    if append_num == 0:
-                        if 111 not in getcards:
-                            append_num = 1
-                    if append_num_possible == 0:
-                        if 111 not in getcards_possible:
-                            append_num_possible = 1
-                
-                # print('player: {}, yaku_num: {}, append_num: {}, append_num_possible: {}'.format(player, yaku_num, append_num, append_num_possible))
-                need_card[player].append(append_num)
-                need_card_possible[player].append(append_num_possible)
+            if yaku_num == 2:
+                if append_num == 0:
+                    if 111 not in my_recent_getcards:
+                        append_num = 1
+                if my_append_num_possible == 0:
+                    if 111 not in my_recent_getcards_possible:
+                        my_append_num_possible = 1
+
+            need_card[0].append(my_append_num)
+            need_card_possible[0].append(my_append_num_possible)
+            
+
+            # 相手が絶対に取れない役に-1をつける
+            if yaku_num in [0, 1, 4, 5, 6, 7, 8]:  # 相手に1枚でも持たれたら終了
+                if counter >= 1:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 3:
+                if counter >= 2:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 9:
+                if counter >= 5:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 10:
+                if counter >= 6:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 11:
+                if counter >= 16:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 2:
+                if 111 in my_recent_getcards:
+                    need_card[1][yaku_num] = -1
+                else:
+                    if counter >= 2:
+                        need_card[1][yaku_num] = -1
+        
+        for yaku_num in range(len(YAKU_LIST)):
+            counter = 0
+            counter_possible = 0
+            yaku_cards = YAKU_LIST[yaku_num]
+
+            if need_card[1][yaku_num] == -1:
+                continue
+            else:
+                for card in yaku_cards:
+                    if card in your_recent_getcards:
+                        counte += 1
+                    if card in
 
             
-        for i in range(len(YAKU_CARDS)):
-            me = need_card[0][i]
-            you = need_card[1][i]
 
-            # 五光
-            if i == 0:
-                if me != 5:
-                    need_card[1][i] = -1
-                if you != 5:
-                    need_card[0][i] = -1
-            # 四光
-            elif i == 1:
-                if me != 4:
-                    need_card[1][i] = -1
-                if you != 4:
-                    need_card[0][i] = -1
-            elif i == 2:
-                aiueo
-
-
-
-                
+            
                     
+            
+        
 
         self.need_cards.append(need_card)
         self.need_cards_possible.append(need_card_possible)
