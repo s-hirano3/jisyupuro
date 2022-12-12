@@ -17,6 +17,10 @@ TANE = [21, 41, 51, 61, 71, 82, 91, 101, 112]  # 9
 TAN = [12, 22, 32, 42, 52, 62, 72, 92, 102, 113]  # 10
 KASU = [13, 14, 23, 24, 33, 34, 43, 44, 53, 54, 63, 64, 73, 74, 83, 84, 91, 93, 94, 103, 104, 114, 122, 123, 124]  # 25
 
+YAKU_DICT = {"GOKOU":GOKOU, "YONKOU":YONKOU, "AMESIKOU":[11,31,81,111,121], "SANKOU":SANKOU, "HANAMI":HANAMI, "TUKIMI":TUKIMI, 
+             "INOSHIKATYO":INOSHIKATYO, "AKATAN":AKATAN, "AOTAN":AOTAN, "TANE":TANE, "TAN":TAN, "KASU":KASU}
+YAKU_POINT = {"GOKOU":10, "YONKOU":8, "AMESIKOU":7, "SANKOU":5, "HANAMI":5, "TUKIMI":5, "INOSHIKATYO":5, "AKATAN":5, "AOTAN":5, "TANE":1, "TAN":1, "KASU":1}
+
 # [五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，猪鹿蝶，赤短，青短，タネ，タン，カス]
 YAKU_LIST = [GOKOU, YONKOU, AMESIKOU, SANKOU, HANAMI, TUKIMI, INOSHIKATYO, AKATAN, AOTAN, TANE, TAN, KASU]
 YAKU_LIST_NUM = [5, 4, 4, 3, 2, 2, 3, 3, 3, 5, 5, 10]
@@ -67,6 +71,7 @@ class EnemyMove():
 
 
     
+
     def DetectNeedCards(self):
         need_card = [[0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0]]  # my, your
         need_card_possible = [[0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0]]  # my, your
@@ -190,6 +195,7 @@ class EnemyMove():
 
 
 
+
     # case 0: 手札から出すカードを決める
     # case 1: 手札から出した後or山札から引いた後で，月が同じ札が2枚あったとき，その2枚のうちどちらを取るかを決める
     def ChooseCard(self, player, case):
@@ -197,23 +203,54 @@ class EnemyMove():
             my_need_card = self.need_cards[-1][0]
             my_need_card_possible = self.need_cards_possible[-1][0]
             your_need_card = self.need_cards[-1][1]
+            kouho_cards = self.my_cards[-1]
+            # my_point = self.my_score[-1]
+            # my_total_point = self.my_total_score[-1]
+            # your_point = self.your_score[-1]
+            # your_total_point = self.your_total_score[-1]
         elif player == "You":
             my_need_card = self.need_cards[-1][1]
             my_need_card_possible = self.need_cards_possible[-1][1]
             your_need_card = self.need_cards[-1][0]
-            my_card = self.your_cards[-1]
+            kouho_cards = self.your_cards[-1]
+            # my_point = self.your_score[-1]
+            # my_total_point = self.your_total_score[-1]
+            # your_point = self.my_score[-1]
+            # your_total_score = self.my_score[-1]
+        
         
         if case == 0:
-            if player == "Me":
-                kouho_cards = self.my_cards[-1]
-            elif player == "You":
-                kouho_cards = self.your_cards[-1]
             field_cards = self.field_cards[-1]
-
-
             
-        elif case == 1:
-            aiueo
+            kouho_field_mathcing = []
+            for i in range(len(kouho_cards)):
+                for j in range(len(field_cards)):
+                    if (kouho_cards[i] // 10) == (field_cards[j] // 10):
+                        kouho_field_mathcing.append((kouho_cards[i], field_cards[j]))
+
+            yaku_kouho = []
+            for i in range(len(kouho_field_mathcing)):
+                kouho = kouho_field_mathcing[i]
+                for key, value in YAKU_DICT.items():
+                    if kouho in value:
+                        aiueo
+
+
+                    
+            
+
+
+
+        
+
+                        
+            
+        
+        
+        
+        
+        
+        return select_card
         
 
 
@@ -225,8 +262,8 @@ class EnemyMove():
 if __name__ == '__main__':
     enemy = EnemyMove()
     # UpdateParam(field, yamafuda, my_cards, my_getcards, your_, your_, my_score, your_, my_total_, your_total_, my_koikoi_, your_)
-    enemy.UpdateParam (0, 0, [11], [31], [121], [81], 0, 0, 0, 0, 0, 0)    
-    enemy.UpdateParam (0, 0, [11,12], [31,32], [51,52], [81,82], 0, 0, 0, 0, 0, 0)
+    enemy.UpdateParam(0, 0, [11], [31], [121], [81], 0, 0, 0, 0, 0, 0)    
+    enemy.UpdateParam(0, 0, [11,12], [31,32], [51,52], [81,82], 0, 0, 0, 0, 0, 0)
     
 
     print(enemy.need_cards)
