@@ -14,9 +14,11 @@ my_win = 0
 your_win = 0
 hikiwake = 0
 
+log_num = int(input("Type number of log file folder : "))
+
 for i in range(NUMBER):
     # file_name = "../log_computer/log-computer-" + str(i+1) + ".txt"
-    file_name = "/Users/hiranoseigo/Downloads/log_computer/log-computer-" + str(i+1) + ".txt"
+    file_name = "/Users/hiranoseigo/Downloads/log/log_computer" + str(log_num) + "/log-computer-" + str(i+1) + ".txt"
     f = open(file_name, "r")
     lines = f.readlines()
     

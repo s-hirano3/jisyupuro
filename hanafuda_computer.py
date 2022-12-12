@@ -347,10 +347,10 @@ class Hanafuda():
 
 
 
-    def Play(self, repetition):
-
+    def Play(self, repetition, log_file_num):
+        
         dt_now = datetime.datetime.now()
-        file_name = '/Users/hiranoseigo/Downloads/log_computer3/log-computer-' + str(repetition) + '.txt'
+        file_name = '/Users/hiranoseigo/Downloads/log/log_computer' + str(log_file_num) + '/log-computer-' + str(repetition) + '.txt'
         self.f = open(file_name, 'w')
         self.f.write(dt_now.strftime('%Y-%m-%d %H:%M:%S.%f') + '\n\n')
         self.f.write("")  ############ TODO log
@@ -488,11 +488,12 @@ class Hanafuda():
 if __name__ == '__main__':
     start = 1
     repeat = int(input("Type num of games to play : "))
+    log_file_num = int(input("Type number of log file folder : "))
 
     for i in range(start,start+repeat):
         print("{} : {}".format(i, datetime.datetime.now().strftime('%Y%m%d-%H%M%S.%f')))
         hanafuda = Hanafuda()
-        hanafuda.Play(i)
+        hanafuda.Play(i, log_file_num)
 
         del hanafuda
         gc.collect()

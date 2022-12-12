@@ -19,3 +19,23 @@ me   average: 61.9508, max: 204.0, min: 0.0
 you  average: 52.2561, max: 202.0, min: 0.0
 
 
+log_computer3/log-computer-n.txt
+n = 10000
+確定こいこい
+me: 手札選択の際得点期待値が高いものを選ぶ，手札と場に同じ月がない場合は獲得できた場合に得点期待値が最も高い札を場に出す
+you: ランダム選択
+my win: 5471, your win: 4445, hikiwake: 84
+my win: 54.71%, your win: 44.45%, hikiwake: 0.84%
+me   average: 60.0371, max: 232.0, min: 0.0
+you  average: 53.9672, max: 209.0, min: 0.0
+
+
+log_computer4/log-computer-n.txt
+n = 10000
+me: 手札選択の際得点期待値が高いものを選ぶ，手札と場に同じ月がない場合は獲得できた場合に得点期待値が最も低い札を場に出す ＝妨害戦略
+you: ランダム選択
+my win: 6199, your win: 3707, hikiwake: 94
+my win: 61.99%, your win: 37.07%, hikiwake: 0.94%
+me   average: 63.5748, max: 204.0, min: 0.0
+you  average: 48.4633, max: 190.0, min: 0.0
+

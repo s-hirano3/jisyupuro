@@ -254,30 +254,30 @@ class EnemyMove():
                 new_score = []
                 for i in range(len(kouho_score)):
                     new_score.append(kouho_score[i]+kouho_score_possible[i]/5)
-                select_index = new_score.index(max(new_score))
-                select_card = kouho_field_mathcing[select_index][0]
 
-                # print(kouho_score)
-                # print(kouho_score_possible)
-                # print(new_score)
+                select_card = kouho_field_mathcing[new_score.index(max(new_score))][0]
 
             else:
-                
-                select_card = kouho_cards[0]
+                kouho_score = []
+                for i in range(len(kouho_cards)):
+                    score = 0
+                    tmp_num = 0
+                    kouho = kouho_cards[i]
+                    for key, value in YAKU_DICT.items():
+                        if kouho in value:
+                            if your_need_card[tmp_num] not in [-1, 0]:
+                                score += YAKU_POINT[key] / your_need_card[tmp_num]
+                            elif your_need_card[tmp_num] == 1:
+                                score += YAKU_POINT[key]
+                        tmp_num += 1 
+                    kouho_score.append(score)
+
+                select_card = kouho_cards[kouho_score.index(min(kouho_score))]
 
 
-            
-
-            
         
-
-
-                        
-        
-        
-        
-        
-        
+        elif case == 1:
+            aiueo
         
         return select_card
         
