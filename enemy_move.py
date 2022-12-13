@@ -298,7 +298,40 @@ class EnemyMove():
         return select_card
         
 
+    
+    # こいこいするかを判断する．返り値はするならTrue, しないならFalse
+    def KoikoiJudge(self, player, month, turn):
+        if player == "Me":
+            my_need_card = self.need_cards[-1][0]
+            my_need_card_possible = self.need_cards_possible[-1][0]
+            your_need_card = self.need_cards[-1][1]
+            my_point = self.my_score[-1]
+            my_total_point = self.my_total_score[-1]
+            your_point = self.your_score[-1]
+            your_total_point = self.your_total_score[-1]
+        elif player == "You":
+            my_need_card = self.need_cards[-1][1]
+            my_need_card_possible = self.need_cards_possible[-1][1]
+            your_need_card = self.need_cards[-1][0]
+            my_point = self.your_score[-1]
+            my_total_point = self.your_total_score[-1]
+            your_point = self.my_score[-1]
+            your_total_point = self.my_total_score[-1]
 
+        if my_total_point > your_total_point:
+            judge = False
+        elif my_total_point < your_total_point:
+            judge = True
+        else:
+            if my_point > your_point:
+                judge = False
+            elif my_point < your_point:
+                judge = True
+            else:
+                judge = False
+
+        
+        return judge
 
 
 

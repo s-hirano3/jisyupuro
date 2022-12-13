@@ -32,6 +32,7 @@ you  average: 53.9672, max: 209.0, min: 0.0
 
 log_computer4/log-computer-n.txt
 n = 10000
+確定こいこい
 me: 手札選択の際得点期待値が高いものを選ぶ，手札と場に同じ月がない場合は獲得できた場合に得点期待値が最も低い札を場に出す ＝妨害戦略
 you: ランダム選択
 my win: 6199, your win: 3707, hikiwake: 94
@@ -41,10 +42,22 @@ you  average: 48.4633, max: 190.0, min: 0.0
 
 
 log_computer5
-n = 1000
+n = 10000
+確定こいこい
 me: 手札選択はこれまで通り，Drawターンで場に同じ月が2枚あったとき，得点期待値が最大になるものを選択するように変更
 you: ランダム選択
 my win: 6120, your win: 3798, hikiwake: 82
 my win: 61.2%, your win: 37.98%, hikiwake: 0.82%
 me   average: 63.462, max: 236.0, min: 0.0
 you  average: 49.0089, max: 175.0, min: 0.0
+
+
+log_computer6
+n = 10000
+こいこいme: 点数が相手より高ければこいこいしない，低ければこいこいする
+こいこいyou: 確定こいこい
+他の挙動は5と同じ
+my win: 6662, your win: 3279, hikiwake: 59
+my win: 66.62%, your win: 32.79%, hikiwake: 0.59%
+me   average: 51.7904, max: 182.0, min: 1.0
+you  average: 39.5514, max: 203.0, min: 0.0
