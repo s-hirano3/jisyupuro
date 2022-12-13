@@ -266,7 +266,6 @@ class EnemyMove():
 
                 select_card = kouho_cards[kouho_score.index(min(kouho_score))]
 
-
         
         elif case == 1:
             kouho_cards = []
@@ -293,9 +292,9 @@ class EnemyMove():
             for i in range(len(kouho_score)):
                 new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
             
-            select_card = kouho_cards[new_score.index(max(new_score))][1]
-        
+            select_card = kouho_cards[new_score.index(max(new_score))][1]       
 
+        
         return select_card
         
 

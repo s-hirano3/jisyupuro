@@ -39,3 +39,12 @@ my win: 61.99%, your win: 37.07%, hikiwake: 0.94%
 me   average: 63.5748, max: 204.0, min: 0.0
 you  average: 48.4633, max: 190.0, min: 0.0
 
+
+log_computer5
+n = 1000
+me: 手札選択はこれまで通り，Drawターンで場に同じ月が2枚あったとき，得点期待値が最大になるものを選択するように変更
+you: ランダム選択
+my win: 6120, your win: 3798, hikiwake: 82
+my win: 61.2%, your win: 37.98%, hikiwake: 0.82%
+me   average: 63.462, max: 236.0, min: 0.0
+you  average: 49.0089, max: 175.0, min: 0.0

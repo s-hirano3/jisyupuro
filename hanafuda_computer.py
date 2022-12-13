@@ -4,6 +4,7 @@
 import random
 import datetime
 import gc
+import os
 from detect_yaku import *
 from write_log import *
 from enemy_move import *
@@ -241,12 +242,12 @@ class Hanafuda():
             
             if player == "Me":
                 # enemy_move.ChooseCard使用
-                select_from_kouho = self.EnemyAlgorithm.ChooseCard(player, 1, get_kouho_from_field)
+                select_from_kouho = self.EnemyAlgorithm.ChooseCard(player, 1, card, get_kouho_from_field)
                 self.field_cards.remove(select_from_kouho)
                 self.my_getcard.append(card)
                 self.my_getcard.append(select_from_kouho)
             elif player == "You":
-                select_from_kouho = get_kouho_from_field[0]
+                select_from_kouho = get_kouho_from_field[random.randrange(2)]
                 self.field_cards.remove(select_from_kouho)
                 self.your_getcard.append(card)
                 self.your_getcard.append(select_from_kouho)
@@ -257,9 +258,10 @@ class Hanafuda():
 
     def Tefuda(self, player):
         self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+        
         if player == "Me":
             # enemy_move.ChooseCard使用
-            select_card = self.EnemyAlgorithm.ChooseCard(player, 0, 0)         
+            select_card = self.EnemyAlgorithm.ChooseCard(player, 0, 0, 0)         
 
             # my_cards_month = []
             # for my_card in self.my_cards:
@@ -300,6 +302,7 @@ class Hanafuda():
 
     def Draw(self, player):
         self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+
         draw_card = self.yamafuda.pop(0)
         self.FieldMatchingProcess(draw_card, player)
 
@@ -489,9 +492,20 @@ class Hanafuda():
 
 
 if __name__ == '__main__':
+    dir_path = "/Users/hiranoseigo/Downloads/log"
+    log_num_list = []
+    filelist = os.listdir(dir_path)
+    for file in filelist:
+        if file[:12] == "log_computer":
+            log_num_list.append(int(file[12:]))
+    log_file_num = max(log_num_list) + 1
+
+    os.mkdir(dir_path + "/log_computer" + str(log_file_num))
+    
+
     start = 1
     repeat = int(input("Type num of games to play : "))
-    log_file_num = int(input("Type number of log file folder : "))
+    
 
     for i in range(start,start+repeat):
         print("{} : {}".format(i, datetime.datetime.now().strftime('%Y%m%d-%H%M%S.%f')))
