@@ -307,7 +307,7 @@ class Hanafuda():
         self.FieldMatchingProcess(draw_card, player)
 
     
-    def Score(self, player, turn):
+    def Score(self, player, turn, repetition):
         if player == "Me":
             tmp_score = self.my_score
             self.my_yaku, self.my_score = detect_yaku(self.my_getcard)
@@ -324,7 +324,7 @@ class Hanafuda():
                         self.end_flag = True
                     elif self.your_koikoi_flag == 0:  # 相手がこいこいしていなかったら，こいこいするかどうかを判断する
                         self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
-                        koikoi_judge = self.EnemyAlgorithm.KoikoiJudge(player, self.month, turn)
+                        koikoi_judge = self.EnemyAlgorithm.KoikoiJudge(player, self.month, turn, repetition)
 
                         if koikoi_judge:  # こいこいする場合
                             self.my_koikoi_flag = 1
@@ -430,7 +430,7 @@ class Hanafuda():
                     self.f.write('my turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
-                    self.Score("Me", i)
+                    self.Score("Me", i, repetition)
                     if self.end_flag:
                         self.EndMonthProcess()
                         break
@@ -448,7 +448,7 @@ class Hanafuda():
                     self.f.write('your turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
-                    self.Score("You", i)
+                    self.Score("You", i, repetition)
                     if self.end_flag:
                         self.EndMonthProcess()
                         break
@@ -467,7 +467,7 @@ class Hanafuda():
                     self.f.write('your turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
-                    self.Score("You", i)
+                    self.Score("You", i, repetition)
                     if self.end_flag:
                         self.EndMonthProcess()
                         break
@@ -485,7 +485,7 @@ class Hanafuda():
                     self.f.write('my turn : Draw\n')
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
-                    self.Score("Me", i)
+                    self.Score("Me", i, repetition)
                     if self.end_flag:
                         self.EndMonthProcess()
                         break

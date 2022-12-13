@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import random
+
 CARDS = [11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64,
          71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101 ,102, 103, 104, 111, 112, 113, 114, 121, 122, 123, 124]
 GOKOU = [11, 31, 81, 111, 121]
@@ -67,6 +69,328 @@ class EnemyMove():
         self.yamafuda.append(yamafuda)
 
         self.DetectNeedCards()
+
+
+    
+    def DetectNeedCardsMonteCarlo(self, my_cards, my_getcards, your_cards, your_getcards):
+        need_card = [[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0]]
+        need_card_possible = [[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0]]
+
+        my_recent_getcards = my_getcards.copy()
+        my_recent_getcards_possible = my_getcards + my_cards
+
+        for yaku_num in range(len(YAKU_LIST)):
+            counter = 0
+            counter_possible = 0
+            yaku_cards = YAKU_LIST[yaku_num]
+
+            for card in yaku_cards:
+                if card in my_recent_getcards:
+                    counter += 1
+                if card in my_recent_getcards_possible:
+                    counter_possible += 1
+
+            my_append_num = max(0, YAKU_LIST_NUM[yaku_num] - counter)
+            my_append_num_possible = max(0, YAKU_LIST_NUM[yaku_num] - counter_possible)
+
+            if yaku_num == 1:
+                if my_append_num == 0:
+                    if 111 not in my_recent_getcards:
+                        my_append_num = 1
+                if my_append_num_possible == 0:
+                    if 111 not in my_recent_getcards_possible:
+                        my_append_num_possible = 1
+
+            need_card[0][yaku_num] = my_append_num
+            need_card_possible[0][yaku_num] = my_append_num_possible
+
+            if yaku_num in [0, 1, 4, 5, 6, 7, 8]:
+                if counter >= 1:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 3:
+                if counter >= 2:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 9:
+                if counter >= 5:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 10:
+                if counter >= 6:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 11:
+                if counter >= 16:
+                    need_card[1][yaku_num] = -1
+            elif yaku_num == 2:
+                if 111 in my_recent_getcards:
+                    need_card[1][yaku_num] = -1
+                else:
+                    if counter >= 2:
+                        need_card[1][yaku_num] = -1
+            
+
+        your_recent_getcards = your_getcards.copy()
+        your_recent_getcards_possible = your_getcards + your_cards
+
+        for yaku_num in range(len(YAKU_LIST)):
+            counter = 0
+            counter_possible = 0
+            yaku_cards = YAKU_LIST[yaku_num]
+
+            for card in yaku_cards:
+                if card in your_recent_getcards:
+                    counter += 1
+                if card in your_recent_getcards_possible:
+                    counter_possible += 1
+            
+            your_append_num = max(0, YAKU_LIST_NUM[yaku_num] - counter)
+            your_append_num_possible = max(0, YAKU_LIST_NUM[yaku_num] - counter_possible)
+
+            if yaku_num == 2:
+                if your_append_num == 0:
+                    if 111 not in your_recent_getcards:
+                        your_append_num = 1
+                if your_append_num_possible == 0:
+                    if 111 not in your_recent_getcards_possible:
+                        your_append_num_possible = 1
+            
+            if need_card[1][yaku_num] != -1:
+                need_card[1][yaku_num] = your_append_num
+                need_card_possible[1][yaku_num] = your_append_num_possible
+            else:
+                need_card_possible[1][yaku_num] = -1
+            
+            if yaku_num in [0, 1, 4, 5, 6, 7, 8]:
+                if counter >= 1:
+                    need_card[0][yaku_num] = -1
+                    need_card_possible[0][yaku_num] = -1
+            elif yaku_num == 3:
+                if counter >= 2:
+                    need_card[0][yaku_num] = -1
+                    need_card_possible[0][yaku_num] = -1
+            elif yaku_num == 9:
+                if counter >= 5:
+                    need_card[0][yaku_num] = -1
+                    need_card_possible[0][yaku_num] = -1
+            elif yaku_num == 10:
+                if counter >= 6:
+                    need_card[0][yaku_num] = -1
+                    need_card_possible[0][yaku_num] = -1
+            elif yaku_num == 11:
+                if counter >= 16:
+                    need_card[0][yaku_num] = -1
+                    need_card_possible[0][yaku_num] = -1
+            elif yaku_num == 2:
+                if 111 in my_recent_getcards:
+                    need_card[0][yaku_num] = -1
+                    need_card_possible[0][yaku_num] = -1
+                else:
+                    if counter >= 2:
+                        need_card[0][yaku_num] = -1
+                        need_card_possible[0][yaku_num] = -1           
+
+        return need_card, need_card_possible
+
+
+    def FieldMatchinProcess(self, my_need_card, my_need_card_possible, select_card, get_cards, field_cards):
+        select_card_month = select_card // 10
+
+        field_month = []
+        for i in range(len(field_cards)):
+            field_month.append(field_cards[i] // 10)
+
+        
+        if field_month.count(select_card_month) == 0:
+            field_cards.append(select_card)
+        
+        elif field_month.count(select_card_month) == 1:
+            tmp_index = field_month.index(select_card_month)
+            get_card_from_field = field_cards[tmp_index]
+
+            field_cards.remove(get_card_from_field)
+            get_cards.append(select_card)
+            get_cards.append(get_card_from_field)
+        
+        elif field_month.count(select_card_month) == 3:
+            get_cards_from_field = []
+            for field_card in field_cards:
+                if field_card // 10 == select_card_month:
+                    get_cards_from_field.append(field_card)
+            
+            for i in range(3):
+                field_cards.remove(get_cards_from_field[i])
+                get_cards.append(select_card)
+                get_cards.append(get_cards_from_field[i])
+
+        elif field_month.count(select_card_month) == 2:
+            get_kouho_from_field = []
+            for field_card in field_cards:
+                if field_card // 10 == select_card_month:
+                    get_kouho_from_field.append(field_card)
+            
+            kouho_cards = []
+            for i in range(2):
+                kouho_cards.append([select_card, get_kouho_from_field[i]])
+            
+            kouho_score = []
+            kouho_score_possible = []
+            for i in range(len(kouho_cards)):
+                score = 0
+                score_possible = 0
+                yaku_num = 0
+                kouho = kouho_cards[i]
+                for key, value in YAKU_DICT.items():
+                    if kouho in value:
+                        if my_need_card[yaku_num] not in [-1, 0]:
+                            score += YAKU_POINT[key] / my_need_card[yaku_num]
+                        if my_need_card_possible[yaku_num] not in [-1, 0]:
+                            score_possible += YAKU_POINT[key] / my_need_card_possible[yaku_num]
+                    yaku_num += 1
+                kouho_score.append(score)
+                kouho_score_possible.append(score_possible)
+            new_score = []
+            for i in range(len(kouho_score)):
+                new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
+            
+            select_from_kouho = kouho_cards[new_score.index(max(new_score))][1]
+            
+            field_cards.remove(select_from_kouho)
+            get_cards.append(select_card)
+            get_cards.append(select_from_kouho)
+
+        return get_cards, field_cards
+
+
+    
+    def TefudaMonteCarlo(self, my_need_card, my_need_card_possible, your_need_card, tefuda_cards, get_cards, field_cards):
+        tefuda_field_matching = []
+        for i in range(len(tefuda_cards)):
+            for j in range(len(field_cards)):
+                if (tefuda_cards[i] // 10) == (field_cards[j] // 10):
+                    tefuda_field_matching.append((tefuda_cards[i], field_cards[j]))
+        
+        tefuda_score = []
+        tefuda_score_possible = []
+        if len(tefuda_field_matching) != 0:
+            for i in range(len(tefuda_field_matching)):
+                score = 0
+                score_possible = 0
+                for j in range(2):
+                    yaku_num = 0
+                    tefuda = tefuda_field_matching[i][j]
+                    for key, value in YAKU_DICT.items():
+                        if tefuda in value:
+                            if my_need_card[yaku_num] not in [-1, 0]:
+                                score += YAKU_POINT[key] / my_need_card[yaku_num]
+                            if my_need_card_possible[yaku_num] not in [-1, 0]:
+                                score_possible += YAKU_POINT[key] / my_need_card_possible[yaku_num]                        
+                        yaku_num += 1
+                tefuda_score.append(score)
+                tefuda_score_possible.append(score_possible)
+            new_score = []
+            for i in range(len(tefuda_score)):
+                new_score.append(tefuda_score[i] + tefuda_score_possible[i]/5)
+            
+            select_card = tefuda_field_matching[new_score.index(max(new_score))][0]
+        
+        else:
+            tefuda_score = []
+            for i in range(len(tefuda_cards)):
+                score = 0
+                yaku_num = 0
+                tefuda = tefuda_cards[i]
+                for key, value in YAKU_DICT.itmes():
+                    if tefuda in value:
+                        if your_need_card[yaku_num] not in [-1, 0]:
+                            score += YAKU_POINT[key] / your_need_card[yaku_num]
+                    yaku_num += 1
+                tefuda_score.append(score)
+            
+            select_card = tefuda_cards[tefuda_score.index(min(tefuda_score))]
+
+        
+        tefuda_cards.remove(select_card)
+        get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, select_card, get_cards, field_cards)
+
+        return tefuda_cards, get_cards, field_cards
+
+
+
+    def DrawMonteCarlo(self, my_need_card, my_need_card_possible, get_cards, field_cards):
+        return 0
+
+
+
+    def MonteCarlo(self, player, repeat_num, month, turn, repetition):
+        my_cards_init = self.my_cards[-1]
+        my_getcards_init = self.my_getcards[-1]
+        your_cards_init = self.your_cards[-1]
+        your_getcards_init = self.your_getcards[-1]
+        my_score_init = self.my_score[-1]
+        my_total_score_init = self.my_total_score[-1]
+        your_score_init = self.your_score[-1]
+        your_total_score_init = self.your_total_score[-1]
+        field_cards_init = self.field_cards[-1]
+        if player == "Me":
+            siyouzumi_cards = my_cards_init + my_getcards_init + your_getcards_init + field_cards_init
+        elif player == "You":
+            siyouzumi_cards = my_getcards_init + your_cards_init + your_getcards_init + field_cards_init
+        
+        nokori_cards = []
+        for card in CARDS:
+            if card not in siyouzumi_cards:
+                nokori_cards.append(card)
+        for i in range(random.randint(1,10)):
+            random.shuffle(nokori_cards)
+
+        if (month * repetition) % 2 == 1:
+            player_list = ["Me", "You"] * (8-turn)
+            if player == "Me":
+                player_list = player_list[1:]
+            elif player == "You":
+                player_list = player_list[2:]
+        elif (month * repetition) % 2 == 0:
+            player_list = ["You", "Me"] * (8-turn)
+            if player == "You":
+                player_list = player_list[1:]
+            elif player == "Me":
+                player_list = player_list[2:]
+        
+
+        score_list = []
+        for i in range(repeat_num):
+            my_cards = my_cards_init.copy()
+            my_getcards = my_getcards_init.copy()
+            your_cards = your_cards_init.copy()
+            your_getcards = your_getcards_init.copy()
+            field_cards = field_cards_init.copy()
+            for p in player_list:
+                if p == "Me":
+                    # Tefuda
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    my_cards, my_getcards, field_cards = self.TefudaMonteCarlo(need_card[0], need_card_possible[0], need_card[1], my_cards, my_getcards, field_cards)
+
+                    # Draw
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    my_getcards, field_cards = self.DrawMonteCarlo(need_card[0], need_card_possible[0], my_getcards, field_cards)
+
+                    my_score = self.CalcScore()
+
+                elif p == "You":
+                    # Tefuda
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    your_cards, your_getcards, field_cards = self.TefudaMonteCarlo(need_card[1], need_card_possible[1], need_card[0], your_cards, your_getcards, field_cards)
+
+                    # Draw
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    self.TefudaMonteCarlo()
+                
+                if score > score_init:
+                    score_list.append(score)
+                    break
+                
+                
+
+        return score_list
+
 
 
 
@@ -300,7 +624,7 @@ class EnemyMove():
 
     
     # こいこいするかを判断する．返り値はするならTrue, しないならFalse
-    def KoikoiJudge(self, player, month, turn):
+    def KoikoiJudge(self, player, month, turn, repetition):
         if player == "Me":
             my_need_card = self.need_cards[-1][0]
             my_need_card_possible = self.need_cards_possible[-1][0]
@@ -329,7 +653,9 @@ class EnemyMove():
                 judge = True
             else:
                 judge = False
-
+        
+        if month != 12:
+            score_list = self.MonteCarlo(player, 300, month, turn, repetition)
         
         return judge
 
