@@ -196,7 +196,7 @@ class EnemyMove():
 
     # case 0: 手札から出すカードを決める
     # case 1: 手札から出した後or山札から引いた後で，月が同じ札が2枚あったとき，その2枚のうちどちらを取るかを決める
-    def ChooseCard(self, player, case, select_from_field_kouho):
+    def ChooseCard(self, player, case, draw_card, select_from_field_kouho):
         if player == "Me":
             my_need_card = self.need_cards[-1][0]
             my_need_card_possible = self.need_cards_possible[-1][0]
@@ -239,21 +239,15 @@ class EnemyMove():
                         for key, value in YAKU_DICT.items():
                             if kouho in value:
                                 if my_need_card[tmp_num] not in [-1, 0]:
-                                    if my_need_card[tmp_num] != 1:
-                                        score += YAKU_POINT[key] / my_need_card[tmp_num]
-                                    elif my_need_card[tmp_num] == 1:
-                                        score += YAKU_POINT[key]
+                                    score += YAKU_POINT[key] / my_need_card[tmp_num]
                                 if my_need_card_possible[tmp_num] not in [-1, 0]:
-                                    if my_need_card_possible[tmp_num] != 1:
-                                        score_possible += YAKU_POINT[key] / my_need_card_possible[tmp_num]
-                                    elif my_need_card_possible[tmp_num] == 1:
-                                        score_possible += YAKU_POINT[key]
+                                    score_possible += YAKU_POINT[key] / my_need_card_possible[tmp_num]
                             tmp_num += 1
                     kouho_score.append(score)
                     kouho_score_possible.append(score_possible)
                 new_score = []
                 for i in range(len(kouho_score)):
-                    new_score.append(kouho_score[i]+kouho_score_possible[i]/5)
+                    new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
 
                 select_card = kouho_field_mathcing[new_score.index(max(new_score))][0]
 
@@ -267,8 +261,6 @@ class EnemyMove():
                         if kouho in value:
                             if your_need_card[tmp_num] not in [-1, 0]:
                                 score += YAKU_POINT[key] / your_need_card[tmp_num]
-                            elif your_need_card[tmp_num] == 1:
-                                score += YAKU_POINT[key]
                         tmp_num += 1 
                     kouho_score.append(score)
 
@@ -277,8 +269,33 @@ class EnemyMove():
 
         
         elif case == 1:
-            select_from_field_kouho
+            kouho_cards = []
+            for i in range(2):
+                kouho_cards.append([draw_card, select_from_field_kouho[i]])
+            
+            kouho_score = []
+            kouho_score_possible = []
+            for i in range(len(kouho_cards)):
+                score = 0
+                score_possible = 0
+                tmp_num = 0
+                kouho = kouho_cards[i]
+                for key, value in YAKU_DICT.items():
+                    if kouho in value:
+                        if my_need_card[tmp_num] not in [-1, 0]:
+                            score += YAKU_POINT[key] / my_need_card[tmp_num]
+                        if my_need_card_possible[tmp_num] not in [-1, 0]:
+                            score_possible += YAKU_POINT / my_need_card_possible[tmp_num]
+                    tmp_num += 1
+                kouho_score.append(score)
+                kouho_score_possible.append(score_possible)
+            new_score = []
+            for i in range(len(kouho_score)):
+                new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
+            
+            select_card = kouho_cards[new_score.index(max(new_score))][1]
         
+
         return select_card
         
 
