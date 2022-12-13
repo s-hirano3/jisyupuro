@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-NUMBER = 10000
+NUMBER = 30000
 
 my_scores = np.zeros(NUMBER)
 your_scores = np.zeros(NUMBER)
@@ -49,7 +49,7 @@ for i in range(NUMBER):
 
 
 print("my win: {}, your win: {}, hikiwake: {}".format(my_win, your_win, hikiwake))
-print("my win: {}%, your win: {}%, hikiwake: {}%".format(my_win/100, your_win/100, hikiwake/100))
+print("my win: {}%, your win: {}%, hikiwake: {}%".format(my_win/NUMBER*100, your_win/NUMBER*100, hikiwake/NUMBER*100))
 
 print("me   average: {}, max: {}, min: {}".format(np.mean(my_scores), np.max(my_scores), np.min(my_scores)))
 print("you  average: {}, max: {}, min: {}".format(np.mean(your_scores), np.max(your_scores), np.min(your_scores)))

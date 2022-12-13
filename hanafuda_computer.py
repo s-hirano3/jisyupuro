@@ -325,6 +325,7 @@ class Hanafuda():
                     elif self.your_koikoi_flag == 0:  # 相手がこいこいしていなかったら，こいこいするかどうかを判断する
                         self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                         koikoi_judge = self.EnemyAlgorithm.KoikoiJudge(player, self.month, turn)
+
                         if koikoi_judge:  # こいこいする場合
                             self.my_koikoi_flag = 1
                             self.f.write('------------------\n')
@@ -499,7 +500,9 @@ class Hanafuda():
 
         # end of game        
         self.EndGameProcess()
-            
+
+        # メモリ解放？
+        del self.EnemyAlgorithm
 
 
 
@@ -525,5 +528,6 @@ if __name__ == '__main__':
         hanafuda = Hanafuda()
         hanafuda.Play(i, log_file_num)
 
+        # メモリ解放？
         del hanafuda
         gc.collect()
