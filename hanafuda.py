@@ -525,9 +525,9 @@ class Hanafuda():
                     # your_cards_month = []
                     # for your_card in self.your_cards:
                     #     your_cards_month.append(your_card // 10)
-                    # field_months = []
-                    # for field_month in self.field_cards:
-                    #     field_months.append(field_month // 10)
+                    field_months = []
+                    for field_month in self.field_cards:
+                        field_months.append(field_month // 10)
                     
                     # # 場のカードと月が一致するカードを手札の先頭から選択
                     # # ない場合は手札の先頭を出す
@@ -769,9 +769,9 @@ class Hanafuda():
                     # your_cards_month = []
                     # for your_card in self.your_cards:
                     #     your_cards_month.append(your_card // 10)
-                    # field_months = []
-                    # for field_month in self.field_cards:
-                    #     field_months.append(field_month // 10)
+                    field_months = []
+                    for field_month in self.field_cards:
+                        field_months.append(field_month // 10)
                     
                     # # 場のカードと月が一致するカードを手札の先頭から選択
                     # # ない場合は手札の先頭を出す
