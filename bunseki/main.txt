@@ -69,3 +69,26 @@ my win: 20067, your win: 9698, hikiwake: 235
 my win: 66.89%, your win: 32.32666666666667%, hikiwake: 0.7833333333333333%
 me   average: 51.93913333333333, max: 205.0, min: 0.0
 you  average: 39.36533333333333, max: 209.0, min: 0.0
+
+
+8
+n = 1000
+montecarlo_repeat = 300
+こいこいme: モンテカルロ法で300回試行・施工中の手札選択等はちゃんとする・my_score - your_score の値の平均値が正のときのみこいこいする
+こいこいyou: ランダムこいこい
+他の挙動は同じ
+my win: 693, your win: 302, hikiwake: 5
+my win: 69.3%, your win: 30.2%, hikiwake: 0.5%
+me   average: 64.047, max: 173.0, min: 1.0
+you  average: 43.392, max: 156.0, min: 1.0
+
+
+9
+n = 1000
+montecarlo_repeat = 300
+8との違いは，こいこいした場合に自分の点数が増えるならその増えた点数を，相手に点を取られた場合は取られた点の-2倍をリストに加えて，そのリストの平均値がこいこい判断時のスコア（旧点数）より高いときにこいこいするようにした
+あとは同じ
+my win: 746, your win: 247, hikiwake: 7
+my win: 74.6%, your win: 24.7%, hikiwake: 0.7000000000000001%
+me   average: 63.944, max: 179.0, min: 2.0
+you  average: 37.47, max: 164.0, min: 0.0

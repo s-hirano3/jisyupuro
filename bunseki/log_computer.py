@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-NUMBER = 30000
+NUMBER = 1000
 
 my_scores = np.zeros(NUMBER)
 your_scores = np.zeros(NUMBER)
@@ -22,6 +22,8 @@ for file in filelist:
     if file[:12] == "log_computer":
         log_num_list.append(int(file[12:]))    
 log_num = max(log_num_list)
+
+# log_num = 8
 
 
 for i in range(NUMBER):
@@ -46,6 +48,12 @@ for i in range(NUMBER):
 
     if i % 100 == 0:
         print(i)
+
+# my_scores.sort()
+# your_scores.sort()
+
+plt.hist([my_scores, your_scores], stacked=False, bins=20, label=["Rule", "Random"])
+plt.show()
 
 
 print("my win: {}, your win: {}, hikiwake: {}".format(my_win, your_win, hikiwake))
