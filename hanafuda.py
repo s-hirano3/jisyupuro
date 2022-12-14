@@ -5,7 +5,7 @@
 import random
 import datetime
 import cv2
-#from enemy_move import enemy_move
+from enemy_move import *
 from detect_yaku import *
 from draw import *
 from write_log import *
@@ -112,6 +112,9 @@ class Hanafuda():
             self.my_koikoi_flag = 0
             self.your_koikoi_flag = 0
             self.yamafuda = []
+
+            self.EnemyAlgorithm = EnemyMove()
+
             for i in range(random.randint(1,10)):
                 random.shuffle(self.cards)
 
@@ -133,13 +136,16 @@ class Hanafuda():
                     self.field_cards.append(self.cards[3+i*6])
                     self.my_cards.append(self.cards[4+i*6])
                     self.my_cards.append(self.cards[5+i*6])
-                    
+            
+
             self.stage = draw_play_init(self.stage, self.my_cards, self.your_cards, self.field_cards, displaymode)
             cv2.imshow("stage", self.stage)
             cv2.waitKey(0)
             
             self.yamafuda = self.cards[24:]
-            
+
+            self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+
             f.write('--------------------\n')
             f.write('initial condition\n')
             f = write_log_init(f, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
@@ -353,6 +359,8 @@ class Hanafuda():
                     
                     
                     print("Your get cards:  {}".format(self.my_getcard))
+
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     
                     self.stage = draw_play_tefuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, displaymode)
                     self.stage = flush(self.stage, flush_card_list)
@@ -447,6 +455,8 @@ class Hanafuda():
                     
                     
                     print("Your get cards:  {}".format(self.my_getcard))
+
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     
                     # 描画
                     self.stage = draw_play_yamafuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, draw_card, displaymode, timing=1)
@@ -507,23 +517,28 @@ class Hanafuda():
                     print("\n---- Enemy's turn : select -----\n")
                     print("enemy's card: {}".format(self.your_cards))
                     print("field cards: {}".format(self.field_cards))
-                    your_cards_month = []
-                    for your_card in self.your_cards:
-                        your_cards_month.append(your_card // 10)
-                    field_months = []
-                    for field_month in self.field_cards:
-                        field_months.append(field_month // 10)
                     
-                    # 場のカードと月が一致するカードを手札の先頭から選択
-                    # ない場合は手札の先頭を出す
-                    select_card_enemy = 0
-                    for i in range(len(self.your_cards)):
-                        if your_cards_month[i] in field_months:
-                            select_card_enemy = self.your_cards[i]
-                    if select_card_enemy == 0:
-                        select_card_enemy = self.your_cards[0]
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    select_card_enemy = self.EnemyAlgorithm.ChooseCard("You", 0, 0, 0)
+
+
+                    # your_cards_month = []
+                    # for your_card in self.your_cards:
+                    #     your_cards_month.append(your_card // 10)
+                    # field_months = []
+                    # for field_month in self.field_cards:
+                    #     field_months.append(field_month // 10)
+                    
+                    # # 場のカードと月が一致するカードを手札の先頭から選択
+                    # # ない場合は手札の先頭を出す
+                    # select_card_enemy = 0
+                    # for i in range(len(self.your_cards)):
+                    #     if your_cards_month[i] in field_months:
+                    #         select_card_enemy = self.your_cards[i]
+                    # if select_card_enemy == 0:
+                    #     select_card_enemy = self.your_cards[0]
                         
-                    select_month_enemy = select_card_enemy // 10
+                    # select_month_enemy = select_card_enemy // 10
                     print("enemy select:  {}".format(select_card_enemy))
                     
                     flush_card_list = []
@@ -574,7 +589,8 @@ class Hanafuda():
                             if field_card // 10 == select_month_enemy:
                                 get_kouho_from_field.append(field_card)
                         
-                        select_from_kouho = get_kouho_from_field[0]
+                        # select_from_kouho = get_kouho_from_field[0]
+                        select_from_kouho = self.EnemyAlgorithm.ChooseCard("You", 1, select_card_enemy, get_kouho_from_field)
                         
                         self.field_cards.remove(select_from_kouho)
                         
@@ -611,6 +627,8 @@ class Hanafuda():
                     # yamafudaの先頭を取り出し，削除
                     draw_card_enemy = self.yamafuda.pop(0)
                     print("enemy draw:  {}".format(draw_card_enemy))
+
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     
                     # 描画
                     self.stage = draw_play_yamafuda(self.stage, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.field_cards, draw_card_enemy, displaymode, timing=0)
@@ -625,6 +643,8 @@ class Hanafuda():
                         
                     flush_card_list = []
                     flush_card_list.append(draw_card_enemy)
+
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
 
                                        
                     # 山札から引いたカードと同じ月のカードが場に何枚あるかで処理を変える
@@ -664,7 +684,8 @@ class Hanafuda():
                             if field_card // 10 == draw_month_enemy:
                                 get_kouho_from_field.append(field_card)
 
-                        select_from_kouho = get_kouho_from_field[0]
+                        # select_from_kouho = get_kouho_from_field[0]
+                        select_from_kouho = self.EnemyAlgorithm.ChooseCard("You", 1, draw_card_enemy, get_kouho_from_field)
                         self.field_cards.remove(select_from_kouho)
 
                         self.your_getcard.append(draw_card_enemy)
@@ -697,7 +718,13 @@ class Hanafuda():
                     
                     if self.your_score > tmp_score:
                         if self.my_koikoi_flag == 0:
-                            self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
+                            self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                            koikoi_judge = self.EnemyAlgorithm.KoikoiJudge("You", month, i, 1)
+                            if koikoi_judge:
+                                self.your_koikoi_flag = 1
+                            else:
+                                self.your_koikoi_flag = 2
+                            # self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
                         elif self.my_koikoi_flag == 1:
                             self.your_koikoi_flag = 2
                             self.your_score = self.your_score * 2
@@ -735,21 +762,25 @@ class Hanafuda():
                     print("\n\n\n---- Enemy's turn : select -----\n")
                     print("enemy's card: {}".format(self.your_cards))
                     print("field cards: {}".format(self.field_cards))
-                    your_cards_month = []
-                    for your_card in self.your_cards:
-                        your_cards_month.append(your_card // 10)
-                    field_months = []
-                    for field_month in self.field_cards:
-                        field_months.append(field_month // 10)
                     
-                    # 場のカードと月が一致するカードを手札の先頭から選択
-                    # ない場合は手札の先頭を出す
-                    select_card_enemy = 0
-                    for i in range(len(self.your_cards)):
-                        if your_cards_month[i] in field_months:
-                            select_card_enemy = self.your_cards[i]
-                    if select_card_enemy == 0:
-                        select_card_enemy = self.your_cards[0]
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                    select_card_enemy = self.EnemyAlgorithm.ChooseCard("You", 0, 0, 0)
+
+                    # your_cards_month = []
+                    # for your_card in self.your_cards:
+                    #     your_cards_month.append(your_card // 10)
+                    # field_months = []
+                    # for field_month in self.field_cards:
+                    #     field_months.append(field_month // 10)
+                    
+                    # # 場のカードと月が一致するカードを手札の先頭から選択
+                    # # ない場合は手札の先頭を出す
+                    # select_card_enemy = 0
+                    # for i in range(len(self.your_cards)):
+                    #     if your_cards_month[i] in field_months:
+                    #         select_card_enemy = self.your_cards[i]
+                    # if select_card_enemy == 0:
+                    #     select_card_enemy = self.your_cards[0]
                         
                     select_month_enemy = select_card_enemy // 10
                     print("enemy select:  {}".format(select_card_enemy))
@@ -802,7 +833,8 @@ class Hanafuda():
                             if field_card // 10 == select_month_enemy:
                                 get_kouho_from_field.append(field_card)
                         
-                        select_from_kouho = get_kouho_from_field[0]
+                        # select_from_kouho = get_kouho_from_field[0]
+                        select_from_kouho = self.EnemyAlgorithm.ChooseCard("You", 1, select_card_enemy, get_kouho_from_field)
                         
                         self.field_cards.remove(select_from_kouho)
                         
@@ -835,9 +867,12 @@ class Hanafuda():
                     print("Enemy's card: {}".format(self.your_cards))
                     print("field cards: {}".format(self.field_cards))
                     
+
                     # yamafudaの先頭を取り出し，削除
                     draw_card_enemy = self.yamafuda.pop(0)
                     print("enemy draw:  {}".format(draw_card_enemy))
+
+                    self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     
                     flush_card_list = []
                     flush_card_list.append(draw_card_enemy)
@@ -891,7 +926,8 @@ class Hanafuda():
                             if field_card // 10 == draw_month_enemy:
                                 get_kouho_from_field.append(field_card)
 
-                        select_from_kouho = get_kouho_from_field[0]
+                        # select_from_kouho = get_kouho_from_field[0]
+                        select_from_kouho = self.EnemyAlgorithm.ChooseCard("You", 1, draw_card_enemy, get_kouho_from_field)
                         self.field_cards.remove(select_from_kouho)
 
                         self.your_getcard.append(draw_card_enemy)
@@ -924,7 +960,13 @@ class Hanafuda():
                     
                     if self.your_score > tmp_score:
                         if self.my_koikoi_flag == 0:
-                            self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
+                            self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                            koikoi_judge = self.EnemyAlgorithm.KoikoiJudge("You", month, i, 2)
+                            if koikoi_judge:
+                                self.your_koikoi_flag = 1
+                            else:
+                                self.your_koikoi_flag = 2
+                            # self.your_koikoi_flag = koikoi(self.your_koikoi_flag, 1)
                         elif self.my_koikoi_flag == 1:
                             self.your_koikoi_flag = 2
                             self.your_score = self.your_score * 2

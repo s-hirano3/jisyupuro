@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-NUMBER = 1000
+NUMBER = 2000
 
 my_scores = np.zeros(NUMBER)
 your_scores = np.zeros(NUMBER)

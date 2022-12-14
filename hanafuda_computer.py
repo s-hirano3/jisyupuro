@@ -517,9 +517,9 @@ if __name__ == '__main__':
     log_file_num = max(log_num_list) + 1
 
     os.mkdir(dir_path + "/log_computer" + str(log_file_num))
+    # log_file_num = 9
 
-
-    start = 1
+    start = 1001
     repeat = int(input("Type num of games to play : "))
     
 

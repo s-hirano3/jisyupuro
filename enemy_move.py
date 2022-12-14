@@ -53,6 +53,7 @@ class EnemyMove():
         self.need_cards_possible = []  # 手札(my/your_cards)を基準に
 
     
+    
     def UpdateParam(self, field_cards, yamafuda, my_cards, my_getcards, your_cards, your_getcards, my_score, your_score, my_total_score, your_total_score, my_koikoi_flag, your_koikoi_flag):
         self.my_cards.append(my_cards)
         self.my_getcards.append(my_getcards)
@@ -72,6 +73,7 @@ class EnemyMove():
         self.DetectNeedCards()
 
 
+    
     
     def DetectNeedCardsMonteCarlo(self, my_cards, my_getcards, your_cards, your_getcards):
         need_card = [[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0]]
@@ -191,6 +193,8 @@ class EnemyMove():
         return need_card, need_card_possible
 
 
+    
+    
     def FieldMatchinProcess(self, my_need_card, my_need_card_possible, select_card, get_cards, field_cards):
         select_card_month = select_card // 10
 
@@ -261,6 +265,8 @@ class EnemyMove():
 
 
     
+    
+    
     def TefudaMonteCarlo(self, my_need_card, my_need_card_possible, your_need_card, tefuda_cards, get_cards, field_cards):
         tefuda_field_matching = []
         for i in range(len(tefuda_cards)):
@@ -315,6 +321,8 @@ class EnemyMove():
 
 
 
+    
+    
     def DrawMonteCarlo(self, nokori_cards, my_need_card, my_need_card_possible, get_cards, field_cards):
         draw_card = nokori_cards.pop(0)
         get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, draw_card, get_cards, field_cards)
@@ -322,6 +330,8 @@ class EnemyMove():
 
 
 
+    
+    
     def MonteCarlo(self, player, repeat_num, month, turn, repetition):
         my_cards_init = self.my_cards[-1]
         my_getcards_init = self.my_getcards[-1]
@@ -548,6 +558,7 @@ class EnemyMove():
 
 
 
+    
     # case 0: 手札から出すカードを決める
     # case 1: 手札から出した後or山札から引いた後で，月が同じ札が2枚あったとき，その2枚のうちどちらを取るかを決める
     def ChooseCard(self, player, case, draw_card, select_from_field_kouho):
@@ -653,6 +664,7 @@ class EnemyMove():
         
 
     
+    
     # こいこいするかを判断する．返り値はするならTrue, しないならFalse
     def KoikoiJudge(self, player, month, turn, repetition):
         if player == "Me":
@@ -685,6 +697,7 @@ class EnemyMove():
                 judge = False
         
         if month != 12:
+            # モンテカルロ法：繰り返し300回
             score_list = self.MonteCarlo(player, 300, month, turn, repetition)
             
             if sum(score_list) / len(score_list) > my_point:
