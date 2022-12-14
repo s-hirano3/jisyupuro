@@ -538,7 +538,7 @@ class Hanafuda():
                     # if select_card_enemy == 0:
                     #     select_card_enemy = self.your_cards[0]
                         
-                    # select_month_enemy = select_card_enemy // 10
+                    select_month_enemy = select_card_enemy // 10
                     print("enemy select:  {}".format(select_card_enemy))
                     
                     flush_card_list = []
