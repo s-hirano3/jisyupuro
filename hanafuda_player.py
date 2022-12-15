@@ -520,11 +520,12 @@ class Hanafuda():
         
         repetition = self.OyaDecision()
 
-        dir_path_player = "/Users/hiranoseigo/Downloads/log/log_player"
+        # /Users/hiranoseigo/Documents/3A授業ファイル/b_演習/11_自主プロ/jisyupuro/log
+        dir_path_player = "/Users/hiranoseigo/Documents/3A授業ファイル/b_演習/11_自主プロ/jisyupuro/log/"
         log_player_file_num = 0
         filelist = os.listdir(dir_path_player)
         for file_name in filelist:
-            if file_name[10] == "log-player":
+            if file_name[4] == "log-p":
                 log_player_file_num += 1
 
         file_name = dir_path_player + "/log-player-" + str(log_player_file_num) + ".txt"
@@ -677,7 +678,10 @@ class Hanafuda():
         # end of game        
         self.EndGameProcess()
         cv2.waitKey(0)
-        # 伏せてたカードの表示
+        
+        self.stage = draw_play_tefuda(self.stage, self.your_cards, self.your_getcard, self.my_cards, self.my_getcard, self.field_cards, 1)
+        cv2.waitKey(0)
+        # cv2.destroyAllWindows()
 
         # メモリ解放？
         del self.EnemyAlgorithm

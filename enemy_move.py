@@ -698,7 +698,7 @@ class EnemyMove():
         
         if month != 12:
             # モンテカルロ法：繰り返し回数300回
-            score_list = self.MonteCarlo(player, 300, month, turn, repetition)
+            score_list = self.MonteCarlo(player, 100, month, turn, repetition)
             
             if sum(score_list) / len(score_list) > my_point:
                 judge = True

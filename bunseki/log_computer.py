@@ -124,13 +124,13 @@ plt.title("win tokuten")
 # plt.show()
 
 plt.subplot(224)
-# labels = ["Algorithm", "Random"]
-# plt.hist([my_lose_scores, your_lose_scores], stacked=False, bins=20, label=labels, range=(0,np.max(my_scores+your_scores)))
-# plt.legend()
-# plt.title("lose tokuten")
-labels = ["Algorithm-win", "Random-win", "Algorithm-lose", "Random-lose"]
-plt.hist([my_win_scores, your_win_scores, my_lose_scores, your_lose_scores], bins=20, label=labels, range=(0,np.max(my_scores+your_scores)))
+labels = ["Algorithm", "Random"]
+plt.hist([my_lose_scores, your_lose_scores], stacked=False, bins=20, label=labels, range=(0,np.max(my_scores+your_scores)))
 plt.legend()
-plt.title("tokuten when win or lose")
+plt.title("lose tokuten")
+# labels = ["Algorithm-win", "Random-win", "Algorithm-lose", "Random-lose"]
+# plt.hist([my_win_scores, your_win_scores, my_lose_scores, your_lose_scores], bins=20, label=labels, range=(0,np.max(my_scores+your_scores)))
+# plt.legend()
+# plt.title("tokuten when win or lose")
 
 plt.show()
