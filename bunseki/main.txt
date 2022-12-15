@@ -98,3 +98,70 @@ my win: 1466, your win: 522, hikiwake: 12
 my win: 73.3%, your win: 26.1%, hikiwake: 0.6%
 me   average: 62.8005, max: 179.0, min: 1.0
 you  average: 37.604, max: 164.0, min: 0.0
+
+n=6000
+my win: 4367, your win: 1591, hikiwake: 42
+my win: 72.78333333333333%, your win: 26.516666666666666%, hikiwake: 0.7000000000000001%
+me   average: 63.010333333333335, max: 224.0, min: 1.0
+you  average: 38.05833333333333, max: 164.0, min: 0.0
+
+n=1000
+my win: 7314, your win: 2623, hikiwake: 63
+my win: 73.14%, your win: 26.229999999999997%, hikiwake: 0.63%
+me   average: 63.1061, max: 224.0, min: 1.0
+you  average: 37.897, max: 164.0, min: 0.0
+
+
+
+10
+9から，montecarlo_repeat=100に変更
+n=1000
+my win: 740, your win: 250, hikiwake: 10
+my win: 74.0%, your win: 25.0%, hikiwake: 1.0%
+me   average: 62.329, max: 178.0, min: 3.0
+you  average: 37.516, max: 149.0, min: 0.0
+
+n=10000
+my win: 7421, your win: 2494, hikiwake: 85
+my win: 74.21%, your win: 24.94%, hikiwake: 0.8500000000000001%
+me   average: 63.4237, max: 217.0, min: 1.0
+you  average: 37.4958, max: 158.0, min: 0.0
+
+
+
+
+↑ここまで，repetiton*monthの偶奇をその月の親決めに使っており
+親回数が半々ではなく1/4しかなくて，プログラム("Me")に不利だった
+
+意図した仕様
+奇数回：meが1月の親，偶数回：youが1月の親　でどちらも親を月ごとに交代
+実際の仕様
+奇数回：meが1月の親で親を月ごとに交代，偶数回：youが1月の親でどの月もyouが親
+
+
+実際の仕様はme=コンピュータに不利に働いていたので問題はないかもだけど
+意図した仕様に修正した
+
+
+
+11
+montecarlo_repeat=100のままで，親決めの影響を見る
+n=10000
+
+Keika time : 5111.34885597229
+
+勝利数  me: 7423, you: 2515, hikiwake: 62
+勝率  me: 74.22999999999999%, you: 25.15%, hikiwake: 0.62%
+
+my得点情報  average: 63.9248, max: 210.0, min: 0.0
+your得点情報  average: 37.2644, max: 195.0, min: 0.0
+
+勝ったときの平均score  me: 73.07773137545466, you: 63.822266401590454
+負けたときの平均score  me: 37.33280318091451, you: 28.186851677219455
+全体の平均得失点差  me: 26.6604, you: -26.6604
+勝ったときの平均得失点差  me: 44.89087969823522, you: 26.489463220675944
+
+
+12
+montecarlo_repeat = 300
+n = 1000

@@ -352,13 +352,13 @@ class EnemyMove():
             if card not in siyouzumi_cards:
                 nokori_cards_init.append(card)
         
-        if (month * repetition) % 2 == 1:
+        if (month + repetition) % 2 == 0:
             player_list = ["Me", "You"] * (8-turn)
             if player == "Me":
                 player_list = player_list[1:]
             elif player == "You":
                 player_list = player_list[2:]
-        elif (month * repetition) % 2 == 0:
+        elif (month + repetition) % 2 == 1:
             player_list = ["You", "Me"] * (8-turn)
             if player == "You":
                 player_list = player_list[1:]
@@ -697,7 +697,7 @@ class EnemyMove():
                 judge = False
         
         if month != 12:
-            # モンテカルロ法：繰り返し300回
+            # モンテカルロ法：繰り返し回数300回
             score_list = self.MonteCarlo(player, 300, month, turn, repetition)
             
             if sum(score_list) / len(score_list) > my_point:

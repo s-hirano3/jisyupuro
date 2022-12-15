@@ -189,13 +189,13 @@ def draw_oya_decision(stage, my_card, your_card):
     my_coords = COORDS_YAMAFUDA[0]
     my_coords_moji = COORDS_YAMAFUDA_MOJI[0]
     dst_stage[my_coords[1]:my_coords[3], my_coords[0]:my_coords[2]] = CARDS_DICT[my_card]
-    cv2.putText(dst_stage, str(my_card), (my_coords_moji[0],my_coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+    cv2.putText(dst_stage, "Enemy", (my_coords_moji[0],my_coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
     CARDS_COORDS_LIST[COORDS_ALL.index(my_coords)] = my_card
     
     your_coords = COORDS_YAMAFUDA[1]
     your_coords_moji = COORDS_YAMAFUDA_MOJI[1]
     dst_stage[your_coords[1]:your_coords[3], your_coords[0]:your_coords[2]] = CARDS_DICT[your_card]
-    cv2.putText(dst_stage, str(your_card), (your_coords_moji[0],your_coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
+    cv2.putText(dst_stage, "You", (your_coords_moji[0],your_coords_moji[3]-4), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1.0, color=WHITE, thickness=2, lineType=cv2.LINE_4)
     CARDS_COORDS_LIST[COORDS_ALL.index(your_coords)] = your_card
     
     
