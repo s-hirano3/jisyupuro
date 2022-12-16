@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import random
+import copy
 from detect_yaku import *
 
 CARDS = [11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64,
@@ -80,7 +81,7 @@ class EnemyMove():
         need_card = [[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0]]
         need_card_possible = [[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0]]
 
-        my_recent_getcards = my_getcards.copy()
+        my_recent_getcards = copy.deepcopy(my_getcards)
         my_recent_getcards_possible = my_getcards + my_cards
 
         for yaku_num in range(len(YAKU_LIST)):
@@ -131,7 +132,8 @@ class EnemyMove():
                         need_card[1][yaku_num] = -1
             
 
-        your_recent_getcards = your_getcards.copy()
+        # your_recent_getcards = your_getcards.copy()
+        your_recent_getcards = copy.deepcopy(your_getcards)
         your_recent_getcards_possible = your_getcards + your_cards
 
         for yaku_num in range(len(YAKU_LIST)):
@@ -183,7 +185,7 @@ class EnemyMove():
                     need_card[0][yaku_num] = -1
                     need_card_possible[0][yaku_num] = -1
             elif yaku_num == 2:
-                if 111 in my_recent_getcards:
+                if 111 in your_recent_getcards:
                     need_card[0][yaku_num] = -1
                     need_card_possible[0][yaku_num] = -1
                 else:
@@ -389,13 +391,13 @@ class EnemyMove():
             my_score = 0
             your_score = 0
 
-            my_cards = my_cards_init.copy()
-            my_getcards = my_getcards_init.copy()
-            your_cards = your_cards_init.copy()
-            your_getcards = your_getcards_init.copy()
-            field_cards = field_cards_init.copy()
+            my_cards = copy.deepcopy(my_cards_init)
+            my_getcards = copy.deepcopy(my_getcards_init)
+            your_cards = copy.deepcopy(your_cards_init)
+            your_getcards = copy.deepcopy(your_getcards_init)
+            field_cards = copy.deepcopy(field_cards_init)
 
-            nokori_cards = nokori_cards_init.copy()
+            nokori_cards = copy.deepcopy(nokori_cards_init)
 
             for p in player_list:
                 random.shuffle(nokori_cards)
@@ -560,7 +562,7 @@ class EnemyMove():
                     need_card[0][yaku_num] = -1
                     need_card_possible[0][yaku_num] = -1
             elif yaku_num == 2:
-                if 111 in my_recent_getcards:
+                if 111 in your_recent_getcards:
                     need_card[0][yaku_num] = -1
                     need_card_possible[0][yaku_num] = -1           
                 else:
@@ -687,7 +689,7 @@ class EnemyMove():
             new_new_score = []
             for i in range(len(kouho_score)):
                 new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
-                new_new_score.appedn(new_score[i] + kouho_score_teki[i])
+                new_new_score.append(new_score[i] + kouho_score_teki[i])
             
             # select_card = kouho_cards[new_score.index(max(new_score))][1]
             select_card = kouho_cards[new_new_score.index(max(new_new_score))][1]      

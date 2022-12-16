@@ -81,6 +81,11 @@ class Hanafuda():
 
         self.f.write('------------------\n\n')
 
+        self.stage = draw_play_tefuda(self.stage, self.your_cards, self.your_getcard, self.my_cards, self.my_getcard, self.field_cards, displaymode=1)
+        cv2.imshow("stage", self.stage)
+        cv2.waitKey(0)
+        # cv2.destroyAllWindows()
+
         self.score_record.append((self.my_total_score, self.your_total_score))
 
     
@@ -265,14 +270,17 @@ class Hanafuda():
             for field_card in self.field_cards:
                 if field_card // 10 == card_month:
                     get_cards_from_field.append(field_card)
+
+            if player == "Me":
+                self.my_getcard.append(card)
+            elif player == "You":
+                self.your_getcard.append(card)
             
             for i in range(3):
                 self.field_cards.remove(get_cards_from_field[i])
                 if player == "Me":
-                    self.my_getcard.append(card)
                     self.my_getcard.append(get_cards_from_field[i])
                 elif player == "You":
-                    self.your_getcard.append(card)
                     self.your_getcard.append(get_cards_from_field[i])
                 
                 flush_card_list.append(get_cards_from_field[i])
@@ -409,6 +417,8 @@ class Hanafuda():
                             self.f.write('DO KOIKOI\n')
                             self.f.write('my_koikoi_flag: {}, your_koikoi_flag: {}, my_score: {}, your_score: {}\n'.format(self.my_koikoi_flag, self.your_koikoi_flag, self.my_score, self.your_score))
                             self.f.write('------------------\n')
+                            print("\ntokuten  enemy: {}, you: {}".format(self.my_score, self.your_score))
+                            print("goukei tokuten  enemy: {}, you: {}".format(self.my_total_score, self.your_total_score))
                             print("\n**********")
                             print("KOIKOI")
                             print("**********\n")
@@ -416,6 +426,8 @@ class Hanafuda():
                             self.my_koikoi_flag = 2
                             self.winner = "Me"
                             self.end_flag = True
+                            print("\ntokuten  enemy: {}, you: {}".format(self.my_score, self.your_score))
+                            print("goukei tokuten  enemy: {}, you: {}".format(self.my_total_score, self.your_total_score))
                             print("\n**********")
                             print("NOT KOIKOI")
                             print("**********\n")
@@ -435,7 +447,8 @@ class Hanafuda():
                         self.winner = "You"
                         self.end_flag = True
                     elif self.my_koikoi_flag == 0:
-                        # self.your_koikoi_flag = 1
+                        print("tokuten  enemy: {}, you: {}".format(self.my_score, self.your_score))
+                        print("goukei tokuten  enemy: {}, you: {}".format(self.my_total_score, self.your_total_score))
 
                         while True:
                             try:
@@ -592,7 +605,7 @@ class Hanafuda():
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     
-                    print("\n\n\n----- Computer's turn : Draw -----\n")
+                    print("\n----- Computer's turn : Draw -----\n")
                     self.Draw("Me")
                     self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
@@ -614,7 +627,7 @@ class Hanafuda():
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
                     
-                    print("\n\n\n----- Your turn : Draw -----\n")
+                    print("\n----- Your turn : Draw -----\n")
                     self.Draw("You")
                     self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
@@ -636,7 +649,7 @@ class Hanafuda():
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
-                    print("\n\n\n----- Your turn : Draw -----\n")
+                    print("\n----- Your turn : Draw -----\n")
                     self.Draw("You")
                     self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
@@ -658,7 +671,7 @@ class Hanafuda():
                     self.f = write_log(self.f, self.month, i, self.field_cards, self.yamafuda, self.my_cards, self.your_cards, self.my_getcard, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
 
-                    print("\n\n\n----- Computer's turn : Draw -----\n")
+                    print("\n----- Computer's turn : Draw -----\n")
                     self.Draw("Me")
                     self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
                     self.f.write('------------------\n')
