@@ -440,10 +440,10 @@ class Hanafuda():
                         while True:
                             try:
                                 self.your_koikoi_flag = int(input("KOIKOI?  yes:1 no:2 : "))
-                                if self.your_koikoi_flag in [0, 1]:
+                                if self.your_koikoi_flag in [1, 2]:
                                     break
                                 else:
-                                    print("Type only 0 or 1")
+                                    print("Type only 1 or 2")
                             except:
                                 print("Type integer only")
                         
@@ -461,6 +461,10 @@ class Hanafuda():
                             print("\n**********")
                             print("NOT KOIKOI")
                             print("**********\n")
+
+                        self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                        koikoi_judge = self.EnemyAlgorithm.KoikoiJudge(player, self.month, turn, repetition)
+                        print(koikoi_judge)
 
 
 

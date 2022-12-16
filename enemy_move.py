@@ -21,7 +21,8 @@ KASU = [13, 14, 23, 24, 33, 34, 43, 44, 53, 54, 63, 64, 73, 74, 83, 84, 91, 93, 
 
 YAKU_DICT = {"GOKOU":GOKOU, "YONKOU":YONKOU, "AMESIKOU":[11,31,81,111,121], "SANKOU":SANKOU, "HANAMI":HANAMI, "TUKIMI":TUKIMI, 
              "INOSHIKATYO":INOSHIKATYO, "AKATAN":AKATAN, "AOTAN":AOTAN, "TANE":TANE, "TAN":TAN, "KASU":KASU}
-YAKU_POINT = {"GOKOU":10, "YONKOU":8, "AMESIKOU":7, "SANKOU":5, "HANAMI":5, "TUKIMI":5, "INOSHIKATYO":5, "AKATAN":5, "AOTAN":5, "TANE":1, "TAN":1, "KASU":1}
+YAKU_POINT = {"GOKOU":10.0, "YONKOU":8.0, "AMESIKOU":7.0, "SANKOU":5.0, "HANAMI":5.0, "TUKIMI":5.0, "INOSHIKATYO":5.0, "AKATAN":5.0, "AOTAN":5.0, "TANE":1.0, "TAN":1.0, "KASU":1.0}
+YAKU_TMP_NUM = {"GOKOU":0, "YONKOU":1, "AMESIKOU":2, "SANKOU":3, "HANAMI":4, "TUKIMI":5, "INOSHIKATYO":6, "AKATAN":7, "AOTAN":8, "TANE":9, "TAN":10, "KASU":11}
 
 # [五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，猪鹿蝶，赤短，青短，タネ，タン，カス]
 YAKU_LIST = [GOKOU, YONKOU, AMESIKOU, SANKOU, HANAMI, TUKIMI, INOSHIKATYO, AKATAN, AOTAN, TANE, TAN, KASU]
@@ -195,7 +196,7 @@ class EnemyMove():
 
     
     
-    def FieldMatchinProcess(self, my_need_card, my_need_card_possible, select_card, get_cards, field_cards):
+    def FieldMatchinProcess(self, my_need_card, my_need_card_possible, your_need_card, select_card, get_cards, field_cards):
         select_card_month = select_card // 10
 
         field_month = []
@@ -237,25 +238,34 @@ class EnemyMove():
             
             kouho_score = []
             kouho_score_possible = []
+            kouho_score_teki = []
             for i in range(len(kouho_cards)):
                 score = 0
                 score_possible = 0
-                yaku_num = 0
-                kouho = kouho_cards[i]
-                for key, value in YAKU_DICT.items():
-                    if kouho in value:
-                        if my_need_card[yaku_num] not in [-1, 0]:
-                            score += YAKU_POINT[key] / my_need_card[yaku_num]
-                        if my_need_card_possible[yaku_num] not in [-1, 0]:
-                            score_possible += YAKU_POINT[key] / my_need_card_possible[yaku_num]
-                    yaku_num += 1
+                score_teki = 0
+                for j in range(2):
+                    kouho = kouho_cards[i][j]
+                    for key, value in YAKU_DICT.items():
+                        yaku_num = YAKU_TMP_NUM[key]
+                        if kouho in value:
+                            if my_need_card[yaku_num] not in [-1, 0]:
+                                score += YAKU_POINT[key] / my_need_card[yaku_num]
+                            if my_need_card_possible[yaku_num] not in [-1, 0]:
+                                score_possible += YAKU_POINT[key] / my_need_card_possible[yaku_num]
+                            if j == 1:
+                                if your_need_card[yaku_num] not in [-1, 0]:
+                                    score_teki += YAKU_POINT[key] / your_need_card[yaku_num]
                 kouho_score.append(score)
                 kouho_score_possible.append(score_possible)
+                kouho_score_teki.append(score_teki)
             new_score = []
+            new_new_score = []
             for i in range(len(kouho_score)):
                 new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
+                new_new_score.append(new_score[i] + kouho_score_teki[i])
             
-            select_from_kouho = kouho_cards[new_score.index(max(new_score))][1]
+            # select_from_kouho = kouho_cards[new_score.index(max(new_score))][1]
+            select_from_kouho = kouho_cards[new_new_score.index(max(new_new_score))][1]
             
             field_cards.remove(select_from_kouho)
             get_cards.append(select_card)
@@ -276,46 +286,53 @@ class EnemyMove():
         
         tefuda_score = []
         tefuda_score_possible = []
+        tefuda_score_teki = []
         if len(tefuda_field_matching) != 0:
             for i in range(len(tefuda_field_matching)):
                 score = 0
                 score_possible = 0
+                score_teki = 0
                 for j in range(2):
-                    yaku_num = 0
                     tefuda = tefuda_field_matching[i][j]
                     for key, value in YAKU_DICT.items():
+                        yaku_num = YAKU_TMP_NUM[key]
                         if tefuda in value:
                             if my_need_card[yaku_num] not in [-1, 0]:
                                 score += YAKU_POINT[key] / my_need_card[yaku_num]
                             if my_need_card_possible[yaku_num] not in [-1, 0]:
-                                score_possible += YAKU_POINT[key] / my_need_card_possible[yaku_num]                        
-                        yaku_num += 1
+                                score_possible += YAKU_POINT[key] / my_need_card_possible[yaku_num]
+                            if j == 1:
+                                if your_need_card[yaku_num] not in [-1, 0]:
+                                    score_teki += YAKU_POINT[key] / your_need_card[yaku_num]
                 tefuda_score.append(score)
                 tefuda_score_possible.append(score_possible)
+                tefuda_score_teki.append(score_teki)
             new_score = []
+            new_new_score = []
             for i in range(len(tefuda_score)):
                 new_score.append(tefuda_score[i] + tefuda_score_possible[i]/5)
+                new_new_score.append(new_score[i] + tefuda_score_teki[i])
             
-            select_card = tefuda_field_matching[new_score.index(max(new_score))][0]
+            # select_card = tefuda_field_matching[new_score.index(max(new_score))][0]
+            select_card = tefuda_field_matching[new_new_score.index(max(new_new_score))][0]
         
         else:
             tefuda_score = []
             for i in range(len(tefuda_cards)):
                 score = 0
-                yaku_num = 0
                 tefuda = tefuda_cards[i]
                 for key, value in YAKU_DICT.items():
+                    yaku_num = YAKU_TMP_NUM[key]
                     if tefuda in value:
                         if your_need_card[yaku_num] not in [-1, 0]:
                             score += YAKU_POINT[key] / your_need_card[yaku_num]
-                    yaku_num += 1
                 tefuda_score.append(score)
             
             select_card = tefuda_cards[tefuda_score.index(min(tefuda_score))]
 
         
         tefuda_cards.remove(select_card)
-        get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, select_card, get_cards, field_cards)
+        get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, your_need_card, select_card, get_cards, field_cards)
 
         return tefuda_cards, get_cards, field_cards
 
@@ -323,9 +340,9 @@ class EnemyMove():
 
     
     
-    def DrawMonteCarlo(self, nokori_cards, my_need_card, my_need_card_possible, get_cards, field_cards):
+    def DrawMonteCarlo(self, nokori_cards, my_need_card, my_need_card_possible, your_need_card, get_cards, field_cards):
         draw_card = nokori_cards.pop(0)
-        get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, draw_card, get_cards, field_cards)
+        get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, your_need_card,  draw_card, get_cards, field_cards)
         return nokori_cards, get_cards, field_cards
 
 
@@ -390,7 +407,7 @@ class EnemyMove():
 
                     # Draw
                     need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
-                    nokori_cards, my_getcards, field_cards = self.DrawMonteCarlo(nokori_cards, need_card[0], need_card_possible[0], my_getcards, field_cards)
+                    nokori_cards, my_getcards, field_cards = self.DrawMonteCarlo(nokori_cards, need_card[0], need_card_possible[0], need_card[1], my_getcards, field_cards)
 
                     my_yaku_list, my_score = detect_yaku(my_getcards)
                     # print("Me  {} {}".format(my_score_init, my_score))
@@ -402,7 +419,7 @@ class EnemyMove():
 
                     # Draw
                     need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
-                    nokori_cards, your_getcards, field_cards = self.DrawMonteCarlo(nokori_cards, need_card[1], need_card_possible[1], your_getcards, field_cards)
+                    nokori_cards, your_getcards, field_cards = self.DrawMonteCarlo(nokori_cards, need_card[1], need_card_possible[1], need_card[0], your_getcards, field_cards)
 
                     your_yaku_list, your_score = detect_yaku(your_getcards)
                     # print("You {} {}".format(your_score_init, your_score))
@@ -594,39 +611,46 @@ class EnemyMove():
 
             kouho_score = []
             kouho_score_possible = []
+            kouho_score_teki = []
             if len(kouho_field_mathcing) != 0:
                 for i in range(len(kouho_field_mathcing)):
                     score = 0
                     score_possible = 0
+                    score_teki = 0
                     for j in range(2):
-                        tmp_num = 0
                         kouho = kouho_field_mathcing[i][j]
                         for key, value in YAKU_DICT.items():
+                            tmp_num = YAKU_TMP_NUM[key]
                             if kouho in value:
                                 if my_need_card[tmp_num] not in [-1, 0]:
                                     score += YAKU_POINT[key] / my_need_card[tmp_num]
                                 if my_need_card_possible[tmp_num] not in [-1, 0]:
                                     score_possible += YAKU_POINT[key] / my_need_card_possible[tmp_num]
-                            tmp_num += 1
+                                if j == 1:
+                                    if your_need_card[tmp_num] not in [-1, 0]:
+                                        score_teki = YAKU_POINT[key] / float(your_need_card[tmp_num])
                     kouho_score.append(score)
                     kouho_score_possible.append(score_possible)
+                    kouho_score_teki.append(score_teki)
                 new_score = []
+                new_new_score = []
                 for i in range(len(kouho_score)):
                     new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
+                    new_new_score.append(new_score[i] + kouho_score_teki[i])
 
-                select_card = kouho_field_mathcing[new_score.index(max(new_score))][0]
+                # select_card = kouho_field_mathcing[new_score.index(max(new_score))][0]
+                select_card = kouho_field_mathcing[new_new_score.index(max(new_new_score))][0]
 
             else:
                 kouho_score = []
                 for i in range(len(kouho_cards)):
                     score = 0
-                    tmp_num = 0
                     kouho = kouho_cards[i]
                     for key, value in YAKU_DICT.items():
+                        tmp_num = YAKU_TMP_NUM[key]
                         if kouho in value:
                             if your_need_card[tmp_num] not in [-1, 0]:
                                 score += YAKU_POINT[key] / your_need_card[tmp_num]
-                        tmp_num += 1 
                     kouho_score.append(score)
 
                 select_card = kouho_cards[kouho_score.index(min(kouho_score))]
@@ -639,25 +663,34 @@ class EnemyMove():
             
             kouho_score = []
             kouho_score_possible = []
+            kouho_score_teki = []
             for i in range(len(kouho_cards)):
                 score = 0
                 score_possible = 0
-                tmp_num = 0
-                kouho = kouho_cards[i]
-                for key, value in YAKU_DICT.items():
-                    if kouho in value:
-                        if my_need_card[tmp_num] not in [-1, 0]:
-                            score += YAKU_POINT[key] / my_need_card[tmp_num]
-                        if my_need_card_possible[tmp_num] not in [-1, 0]:
-                            score_possible += YAKU_POINT / my_need_card_possible[tmp_num]
-                    tmp_num += 1
+                score_teki = 0
+                for j in range(2):
+                    kouho = kouho_cards[i][j]
+                    for key, value in YAKU_DICT.items():
+                        tmp_num = YAKU_TMP_NUM[key]
+                        if kouho in value:
+                            if my_need_card[tmp_num] not in [-1, 0]:
+                                score += YAKU_POINT[key] / my_need_card[tmp_num]
+                            if my_need_card_possible[tmp_num] not in [-1, 0]:
+                                score_possible += YAKU_POINT[key] / my_need_card_possible[tmp_num]
+                            if j == 1:
+                                if your_need_card[tmp_num] not in [-1, 0]:
+                                    score_teki += YAKU_POINT[key] / your_need_card[tmp_num]
                 kouho_score.append(score)
                 kouho_score_possible.append(score_possible)
+                kouho_score_teki.append(score_teki)
             new_score = []
+            new_new_score = []
             for i in range(len(kouho_score)):
                 new_score.append(kouho_score[i] + kouho_score_possible[i]/5)
+                new_new_score.appedn(new_score[i] + kouho_score_teki[i])
             
-            select_card = kouho_cards[new_score.index(max(new_score))][1]       
+            # select_card = kouho_cards[new_score.index(max(new_score))][1]
+            select_card = kouho_cards[new_new_score.index(max(new_new_score))][1]      
 
         
         return select_card
@@ -684,26 +717,30 @@ class EnemyMove():
             your_point = self.my_score[-1]
             your_total_point = self.my_total_score[-1]
 
-        if my_total_point > your_total_point:
-            judge = False
-        elif my_total_point < your_total_point:
+        
+        # モンテカルロ法：繰り返し回数300回
+        score_list = self.MonteCarlo(player, 100, month, turn, repetition)
+        print(score_list)
+        print(sum(score_list)/float(len(score_list)), my_point)
+        
+        if sum(score_list) / float(len(score_list)) > my_point:
             judge = True
         else:
-            if my_point > your_point:
-                judge = False
-            elif my_point < your_point:
-                judge = True
-            else:
-                judge = False
+            judge = False
+
         
-        if month != 12:
-            # モンテカルロ法：繰り返し回数300回
-            score_list = self.MonteCarlo(player, 100, month, turn, repetition)
-            
-            if sum(score_list) / len(score_list) > my_point:
+        if month == 12:
+            if my_total_point > your_total_point:
+                judge = False
+            elif my_total_point < your_total_point:
                 judge = True
             else:
-                judge = False
+                if my_point > your_point:
+                    judge = False
+                elif my_point < your_point:
+                    judge = True
+                else:
+                    judge = False
             
         return judge
 
