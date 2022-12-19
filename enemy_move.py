@@ -3,6 +3,7 @@
 
 import random
 import copy
+import numpy as np
 from detect_yaku import *
 
 CARDS = [11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64,
@@ -349,8 +350,7 @@ class EnemyMove():
 
 
 
-    
-    
+
     def MonteCarlo(self, player, repeat_num, month, turn, repetition):
         my_cards_init = self.my_cards[-1]
         my_getcards_init = self.my_getcards[-1]
@@ -398,6 +398,120 @@ class EnemyMove():
             field_cards = copy.deepcopy(field_cards_init)
 
             nokori_cards = copy.deepcopy(nokori_cards_init)
+
+            for p in player_list:
+                random.shuffle(nokori_cards)
+
+                if p == "Me":
+                    # Tefuda
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    my_cards, my_getcards, field_cards = self.TefudaMonteCarlo(need_card[0], need_card_possible[0], need_card[1], my_cards, my_getcards, field_cards)
+
+                    # Draw
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    nokori_cards, my_getcards, field_cards = self.DrawMonteCarlo(nokori_cards, need_card[0], need_card_possible[0], need_card[1], my_getcards, field_cards)
+
+                    my_yaku_list, my_score = detect_yaku(my_getcards)
+                    # print("Me  {} {}".format(my_score_init, my_score))
+
+                elif p == "You":
+                    # Tefuda
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    your_cards, your_getcards, field_cards = self.TefudaMonteCarlo(need_card[1], need_card_possible[1], need_card[0], your_cards, your_getcards, field_cards)
+
+                    # Draw
+                    need_card, need_card_possible = self.DetectNeedCardsMonteCarlo(my_cards, my_getcards, your_cards, your_getcards)
+                    nokori_cards, your_getcards, field_cards = self.DrawMonteCarlo(nokori_cards, need_card[1], need_card_possible[1], need_card[0], your_getcards, field_cards)
+
+                    your_yaku_list, your_score = detect_yaku(your_getcards)
+                    # print("You {} {}".format(your_score_init, your_score))
+                
+                
+                if player == "Me":  # 自分がこいこいしたとして，モンテカルロ法
+                    if my_score > my_score_init:
+                        score_list.append(my_score)
+                        break
+                    elif your_score > your_score_init:
+                        score_list.append(your_score * (-2))
+                        break
+                elif player == "You":
+                    if my_score > my_score_init:
+                        score_list.append(my_score * (-2))
+                        break
+                    elif your_score > your_score_init:
+                        score_list.append(your_score)
+                        break
+
+            else:
+                if player == "Me":
+                    score_list.append(my_score_init)
+                elif player == "You":
+                    score_list.append(your_score_init)
+
+        return score_list
+
+
+    
+    
+    def MonteCarlo_correct(self, player, repeat_num, month, turn, repetition):
+        my_cards_init = self.my_cards[-1]
+        my_getcards_init = self.my_getcards[-1]
+        your_cards_init = self.your_cards[-1]
+        your_getcards_init = self.your_getcards[-1]
+        my_score_init = self.my_score[-1]
+        my_total_score_init = self.my_total_score[-1]
+        your_score_init = self.your_score[-1]
+        your_total_score_init = self.your_total_score[-1]
+        field_cards_init = self.field_cards[-1]
+        if player == "Me":
+            siyouzumi_cards = my_cards_init + my_getcards_init + your_getcards_init + field_cards_init
+        elif player == "You":
+            siyouzumi_cards = my_getcards_init + your_cards_init + your_getcards_init + field_cards_init
+        
+        nokori_cards_init = []
+        for card in CARDS:
+            if card not in siyouzumi_cards:
+                nokori_cards_init.append(card)
+        
+        if (month + repetition) % 2 == 0:
+            player_list = ["Me", "You"] * (8-turn)
+            if player == "Me":
+                player_list = player_list[1:]
+            elif player == "You":
+                player_list = player_list[2:]
+        elif (month + repetition) % 2 == 1:
+            player_list = ["You", "Me"] * (8-turn)
+            if player == "You":
+                player_list = player_list[1:]
+            elif player == "Me":
+                player_list = player_list[2:]
+        
+
+        score_list = []
+        for i in range(repeat_num):
+            # print("start roop {}".format(i))
+            my_score = 0
+            your_score = 0
+
+            nokori_cards = copy.deepcopy(nokori_cards_init)
+
+            # 相手プレイヤーの手札は分からないので，nokori_cardsからランダムに取り出す
+            if player == "Me":
+                my_cards = copy.deepcopy(my_cards_init)
+                your_cards = []
+                for j in range(len(your_cards_init)):
+                    random.shuffle(nokori_cards)
+                    your_cards.append(nokori_cards.pop(0))
+            elif player == "You":
+                my_cards = []
+                for j in range(len(my_cards_init)):
+                    random.shuffle(nokori_cards)
+                    my_cards.append(nokori_cards.pop(0))
+                your_cards = copy.deepcopy(your_cards_init)
+            my_getcards = copy.deepcopy(my_getcards_init)
+            your_getcards = copy.deepcopy(your_getcards_init)
+            field_cards = copy.deepcopy(field_cards_init)
+            
 
             for p in player_list:
                 random.shuffle(nokori_cards)
@@ -721,11 +835,16 @@ class EnemyMove():
 
         
         # モンテカルロ法：繰り返し回数300回
-        score_list = self.MonteCarlo(player, 100, month, turn, repetition)
-        print(score_list)
-        print(sum(score_list)/float(len(score_list)), my_point)
+        score_list = self.MonteCarlo(player, 300, month, turn, repetition)
+        # print(score_list)
+        print("\nMonteCarlo predict (cheat): {}, variance: {}, current score: {}".format(np.mean(score_list), np.var(score_list), my_point))
+
+        score_list_correct = self.MonteCarlo_correct(player, 100, month, turn, repetition)
+        kitaiti_seikai = np.mean(score_list_correct)
+        # print(score_list_correct)
+        print("MonteCarlo predict: {}, variance: {}, current score: {}\n".format(kitaiti_seikai, np.var(score_list_correct), my_point))
         
-        if sum(score_list) / float(len(score_list)) > my_point:
+        if kitaiti_seikai > my_point:
             judge = True
         else:
             judge = False

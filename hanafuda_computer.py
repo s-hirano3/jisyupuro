@@ -530,10 +530,10 @@ if __name__ == '__main__':
             log_num_list.append(int(file[12:]))
     log_file_num = max(log_num_list) + 1
 
-    os.mkdir(dir_path + "/log_computer" + str(log_file_num))
-    # log_file_num = 10
+    # os.mkdir(dir_path + "/log_computer" + str(log_file_num))
+    log_file_num = 14
 
-    start = 1
+    start = 5001
     repeat = int(input("Type num of games to play : "))
 
     start_game_time = time.time()

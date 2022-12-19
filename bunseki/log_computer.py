@@ -27,7 +27,7 @@ dir_path2 = dir_path + "/log_computer" + str(log_num)
 filelist2 = os.listdir(dir_path2)
 NUMBER = len(filelist2)
 
-# NUMBER = 7500
+# NUMBER = 1000
 
 print("directory number : {}, file number : {}\n\n".format(log_num, NUMBER))
 

@@ -542,7 +542,7 @@ class Hanafuda():
         log_player_file_num = 0
         filelist = os.listdir(dir_path_player)
         for file_name in filelist:
-            if file_name[4] == "log-p":
+            if file_name[:5] == "log-p":
                 log_player_file_num += 1
 
         file_name = dir_path_player + "/log-player-" + str(log_player_file_num) + ".txt"
