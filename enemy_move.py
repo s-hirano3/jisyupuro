@@ -837,7 +837,7 @@ class EnemyMove():
         # モンテカルロ法：繰り返し回数300回
         score_list = self.MonteCarlo(player, 300, month, turn, repetition)
         # print(score_list)
-        print("\nMonteCarlo predict (cheat): {}, variance: {}, current score: {}".format(np.mean(score_list), np.var(score_list), my_point))
+        print("\nMonteCarlo predict: {}, variance: {}, current score: {} (cheat)".format(np.mean(score_list), np.var(score_list), my_point))
 
         score_list_correct = self.MonteCarlo_correct(player, 100, month, turn, repetition)
         kitaiti_seikai = np.mean(score_list_correct)

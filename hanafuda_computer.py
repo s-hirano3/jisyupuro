@@ -226,13 +226,16 @@ class Hanafuda():
                 if field_card // 10 == card_month:
                     get_cards_from_field.append(field_card)
             
+            if player == "Me":
+                self.my_getcard.append(card)
+            elif player == "You":
+                self.your_getcard.append(card)
+            
             for i in range(3):
                 self.field_cards.remove(get_cards_from_field[i])
                 if player == "Me":
-                    self.my_getcard.append(card)
                     self.my_getcard.append(get_cards_from_field[i])
                 elif player == "You":
-                    self.your_getcard.append(card)
                     self.your_getcard.append(get_cards_from_field[i])
         
         # 2枚
@@ -249,7 +252,8 @@ class Hanafuda():
                 self.my_getcard.append(card)
                 self.my_getcard.append(select_from_kouho)
             elif player == "You":
-                select_from_kouho = get_kouho_from_field[random.randrange(2)]
+                select_from_kouho = self.EnemyAlgorithm.ChooseCard(player, 1, card, get_kouho_from_field)
+                # select_from_kouho = get_kouho_from_field[random.randrange(2)]
                 self.field_cards.remove(select_from_kouho)
                 self.your_getcard.append(card)
                 self.your_getcard.append(select_from_kouho)
@@ -282,19 +286,23 @@ class Hanafuda():
             self.my_cards.remove(select_card)
 
         elif player == "You":
-            your_cards_month = []
-            for your_card in self.your_cards:
-                your_cards_month.append(your_card // 10)
-            field_cards_month = []
-            for field_card in self.field_cards:
-                field_cards_month.append(field_card // 10)
+            # 戦略的な手札選択
+            select_card = self.EnemyAlgorithm.ChooseCard(player, 0, 0, 0)
+
+            # ランダムな手札選択
+            # your_cards_month = []
+            # for your_card in self.your_cards:
+            #     your_cards_month.append(your_card // 10)
+            # field_cards_month = []
+            # for field_card in self.field_cards:
+            #     field_cards_month.append(field_card // 10)
             
-            select_card = 0
-            for i in range(len(self.your_cards)):
-                if your_cards_month[i] in field_cards_month:
-                    select_card = self.your_cards[i]
-                    break
-                select_card = self.your_cards[0]
+            # select_card = 0
+            # for i in range(len(self.your_cards)):
+            #     if your_cards_month[i] in field_cards_month:
+            #         select_card = self.your_cards[i]
+            #         break
+            #     select_card = self.your_cards[0]
             
             self.your_cards.remove(select_card)
         
@@ -365,11 +373,19 @@ class Hanafuda():
                         self.winner = "You"
                         self.end_flag = True
                     elif self.my_koikoi_flag == 0:
-                        self.your_koikoi_flag = 1
-                        self.f.write('------------------\n')
-                        self.f.write('DO KOIKOI\n')
-                        self.f.write('my_koikoi_flag: {}, your_koikoi_flag: {}, my_score: {}, your_score: {}\n'.format(self.my_koikoi_flag, self.your_koikoi_flag, self.my_score, self.your_score))
-                        self.f.write('------------------\n')
+                        # こいこいをランダムに選択
+                        self.your_koikoi_flag = random.randint(1,2)
+                        # self.your_koikoi_flag = 1
+
+                        if self.your_koikoi_flag == 1:
+                            self.f.write('------------------\n')
+                            self.f.write('DO KOIKOI\n')
+                            self.f.write('my_koikoi_flag: {}, your_koikoi_flag: {}, my_score: {}, your_score: {}\n'.format(self.my_koikoi_flag, self.your_koikoi_flag, self.my_score, self.your_score))
+                            self.f.write('------------------\n')
+                        
+                        elif self.your_koikoi_flag == 2:
+                            self.winner = "You"
+                            self.end_flag = True
 
 
 
@@ -531,9 +547,9 @@ if __name__ == '__main__':
     log_file_num = max(log_num_list) + 1
 
     # os.mkdir(dir_path + "/log_computer" + str(log_file_num))
-    log_file_num = 14
+    log_file_num = 15
 
-    start = 5001
+    start = 4001
     repeat = int(input("Type num of games to play : "))
 
     start_game_time = time.time()
@@ -543,19 +559,30 @@ if __name__ == '__main__':
     koikoi_chance_month = []
     koikoi_num_month = []
     koikoi_sinai_month = []
-    
-
-    for i in range(start,start+repeat):
-        print("{} : {}".format(i, datetime.datetime.now().strftime('%Y%m%d-%H%M%S.%f')))
-        hanafuda = Hanafuda()
-        koikoi_chance, koikoi_num, koikoi_chance_month, koikoi_num_month, koikoi_sinai_month = hanafuda.Play(i, log_file_num, koikoi_chance, koikoi_num, koikoi_chance_month, koikoi_num_month, koikoi_sinai_month)
-
-        # メモリ解放？
-        del hanafuda
-        gc.collect()
 
     
-    end_game_time = time.time()
-    print("\nKeika time : {}".format(end_game_time - start_game_time))
-    print("Koikoi chance : {}, Koikoi num : {}, wariai : {}".format(koikoi_chance, koikoi_num, koikoi_num/koikoi_chance*100))
-    print("Koikoi month average  chance : {}, num : {}, sinai : {}\n".format(np.mean(koikoi_chance_month), np.mean(koikoi_num_month), np.mean(koikoi_sinai_month)))
+    print("file: {}, start: {}, repeat: {}".format(log_file_num, start, repeat))
+    while True:
+        k = input("OK? y/n : ")
+        if k == "y":
+            break
+        elif k == "n":
+            break
+
+
+    if k == "y":
+        for i in range(start,start+repeat):
+            print("\n\n------------------------------")
+            print("{} : {}".format(i, datetime.datetime.now().strftime('%Y%m%d-%H%M%S.%f')))
+            hanafuda = Hanafuda()
+            koikoi_chance, koikoi_num, koikoi_chance_month, koikoi_num_month, koikoi_sinai_month = hanafuda.Play(i, log_file_num, koikoi_chance, koikoi_num, koikoi_chance_month, koikoi_num_month, koikoi_sinai_month)
+
+            # メモリ解放？
+            del hanafuda
+            gc.collect()
+
+        
+        end_game_time = time.time()
+        print("\nKeika time : {}".format(end_game_time - start_game_time))
+        print("Koikoi chance : {}, Koikoi num : {}, wariai : {}".format(koikoi_chance, koikoi_num, koikoi_num/koikoi_chance*100))
+        print("Koikoi month average  chance : {}, num : {}, sinai : {}\n".format(np.mean(koikoi_chance_month), np.mean(koikoi_num_month), np.mean(koikoi_sinai_month)))
