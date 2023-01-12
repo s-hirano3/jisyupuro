@@ -373,19 +373,33 @@ class Hanafuda():
                         self.winner = "You"
                         self.end_flag = True
                     elif self.my_koikoi_flag == 0:
-                        # こいこいをランダムに選択
-                        self.your_koikoi_flag = random.randint(1,2)
-                        # self.your_koikoi_flag = 1
-
-                        if self.your_koikoi_flag == 1:
+                        self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcards, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                        koikoi_judge = self.EnemyAlgorithm.KoikoiJudge(player, self.month, turn, repetition)
+                        
+                        if koikoi_judge:
+                            self.your_koikoi_flag = 1
                             self.f.write('------------------\n')
                             self.f.write('DO KOIKOI\n')
                             self.f.write('my_koikoi_flag: {}, your_koikoi_flag: {}, my_score: {}, your_score: {}\n'.format(self.my_koikoi_flag, self.your_koikoi_flag, self.my_score, self.your_score))
                             self.f.write('------------------\n')
-                        
-                        elif self.your_koikoi_flag == 2:
+                        else:
+                            self.your_koikoi_flag = 2
                             self.winner = "You"
                             self.end_flag = True
+
+                        # # こいこいをランダムに選択
+                        # self.your_koikoi_flag = random.randint(1,2)
+                        # # self.your_koikoi_flag = 1
+
+                        # if self.your_koikoi_flag == 1:
+                        #     self.f.write('------------------\n')
+                        #     self.f.write('DO KOIKOI\n')
+                        #     self.f.write('my_koikoi_flag: {}, your_koikoi_flag: {}, my_score: {}, your_score: {}\n'.format(self.my_koikoi_flag, self.your_koikoi_flag, self.my_score, self.your_score))
+                        #     self.f.write('------------------\n')
+                        
+                        # elif self.your_koikoi_flag == 2:
+                        #     self.winner = "You"
+                        #     self.end_flag = True
 
 
 
@@ -546,10 +560,10 @@ if __name__ == '__main__':
             log_num_list.append(int(file[12:]))
     log_file_num = max(log_num_list) + 1
 
-    # os.mkdir(dir_path + "/log_computer" + str(log_file_num))
-    log_file_num = 15
+    os.mkdir(dir_path + "/log_computer" + str(log_file_num))
+    # log_file_num = 15
 
-    start = 4001
+    start = 1
     repeat = int(input("Type num of games to play : "))
 
     start_game_time = time.time()
