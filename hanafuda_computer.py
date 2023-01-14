@@ -41,6 +41,10 @@ class Hanafuda():
 
         self.end_flag = False
         self.winner = "HIKIWAKE"
+        
+        self.neural_judge_init = 0
+        self.neural_judge_endofturn3 = 0
+        self.neural_judge_endofturn6 = 0
 
         self.EnemyAlgorithm = EnemyMove()
 
@@ -443,6 +447,7 @@ class Hanafuda():
             self.yamafuda = self.cards[24:]
 
             self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+            self.neural_judge_init = self.EnemyAlgorithm.neural_network_judge(0, self.your_cards, self.your_getcard, self.my_getcard, self.field_cards)
 
             self.f.write('------------------\n')
             self.f.write('initial condition\n')
@@ -458,6 +463,11 @@ class Hanafuda():
 
             # 最大で8回手札を出したら終了
             for i in range(8):
+                if i == 3:
+                    self.neural_judge_
+                elif i == 7:
+                    aiueo
+                
                 if (repetition + self.month) % 2 == 0:
                     self.Tefuda("Me")
                     self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)

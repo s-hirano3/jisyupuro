@@ -5,6 +5,9 @@ import numpy as np
 
 eta = 0.05
 
+CARD_LIST = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44,51,52,53,54,61,62,63,64,
+             71,72,73,74,81,82,83,84,91,92,93,94,101,102,103,104,111,112,113,114,121,122,123,124]
+
 
 def relu(array):
     relu_mask = np.maximum(0, array)
@@ -30,13 +33,33 @@ def label_to_fugou(label):
     return answer
 
 
+def make_learning_list(tefuda, my_getcards, your_getcards, field_cards):
+    learning_list = []
+    
+    for card in CARD_LIST:
+        l = [0, 0, 0, 0, 0]
+        if card in tefuda:
+            l[0] = 1
+        elif card in my_getcards:
+            l[1] = 1
+        elif card in your_getcards:
+            l[2] = 1
+        elif card in field_cards:
+            l[3] = 1
+        else:
+            l[4] = 0
+        
+        learning_list += l
+    
+    return learning_list
+
+
 
 
 class Model():
     def __init__(self):
         self.layers = []
         self.output = []
-        print("\neta = {}\n".format(eta))
 
     def addlayer(self, layer):
         self.layers.append(layer)

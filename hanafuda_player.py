@@ -576,6 +576,8 @@ class Hanafuda():
                     self.my_cards.append(self.cards[4+i*6])
                     self.my_cards.append(self.cards[5+i*6])
             self.yamafuda = self.cards[24:]
+            
+            print(self.EnemyAlgorithm.neural_network_judge(0, self.my_cards, self.my_getcard, self.your_getcard, self.field_cards))
 
             self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
             self.stage = draw_play_init(self.stage, self.your_cards, self.my_cards, self.field_cards, displaymode)

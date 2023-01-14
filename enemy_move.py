@@ -25,6 +25,8 @@ KASU = [13, 14, 23, 24, 33, 34, 43, 44, 53, 54, 63, 64, 73, 74, 83, 84, 91, 93, 
 YAKU_DICT = {"GOKOU":GOKOU, "YONKOU":YONKOU, "AMESIKOU":[11,31,81,111,121], "SANKOU":SANKOU, "HANAMI":HANAMI, "TUKIMI":TUKIMI, 
              "INOSHIKATYO":INOSHIKATYO, "AKATAN":AKATAN, "AOTAN":AOTAN, "TANE":TANE, "TAN":TAN, "KASU":KASU}
 YAKU_POINT = {"GOKOU":10.0, "YONKOU":8.0, "AMESIKOU":7.0, "SANKOU":5.0, "HANAMI":5.0, "TUKIMI":5.0, "INOSHIKATYO":5.0, "AKATAN":5.0, "AOTAN":5.0, "TANE":1.0, "TAN":1.0, "KASU":1.0}
+YAKU_POINT_OOGATI = {"GOKOU":15.0, "YONKOU":12.0, "AMESIKOU":10.5, "SANKOU":7.5, "HANAMI":7.5, "TUKIMI":7.5, "INOSHIKATYO":7.5, "AKATAN":7.5, "AOTAN":7.5, "TANE":1.0, "TAN":1.0, "KASU":1.0}  # 大勝ちシチュ：大物のポイント1.5倍
+YAKU_POINT_NIGEKIGI = {"GOKOU":10.0, "YONKOU":8.0, "AMESIKOU":7.0, "SANKOU":5.0, "HANAMI":5.0, "TUKIMI":5.0, "INOSHIKATYO":5.0, "AKATAN":5.0, "AOTAN":5.0, "TANE":10.0, "TAN":10.0, "KASU":10.0}  # 逃げ切りシチュ：タネ・タン・カスのポイント10倍
 YAKU_TMP_NUM = {"GOKOU":0, "YONKOU":1, "AMESIKOU":2, "SANKOU":3, "HANAMI":4, "TUKIMI":5, "INOSHIKATYO":6, "AKATAN":7, "AOTAN":8, "TANE":9, "TAN":10, "KASU":11}
 
 # [五光，四光，雨入り四光，三光，花見で一杯，月見で一杯，猪鹿蝶，赤短，青短，タネ，タン，カス]
@@ -57,6 +59,16 @@ class EnemyMove():
         self.need_cards_possible = []  # 手札(my/your_cards)を基準に
         
         
+        
+        # 学習済みニューラルネットワークモデルの読み込み
+        dims = [(240,500), (500,200), (200,100), (100,5)]
+        f = open("./param/init.txt", "r")  # init用
+        ff = f.readlines()
+        g = open("./param/end_of_turn3.txt")  # end of turn3用
+        gg = g.readlines()
+        h = open("./param/end_of_turn6.txt", "r")  # end of turn6用
+        hh = h.readlines()
+        
         self.model_init = Model()
         self.model_init.addlayer(Layer(240, 500))
         self.model_init.addlayer(Layer(500, 200))
@@ -75,9 +87,29 @@ class EnemyMove():
         self.model_endofturn6.addlayer(Layer(200, 100))
         self.model_endofturn6.addlayer(Layer(100, 5))
         
-        f = open("./machine-learning/endofturn6/weight_param_0.04.txt", "r")  # init用
-        g = open("./machine-learning/240-500-200-100-5/weight_param_0.04_まだいける.txt", "r")  # endofturn4用
-        h = open("./machine-learning/endofturn6/weight_param_0.05_initはng.txt", "r")  # endofturn6用
+        for i in range(3):
+            if i == 0:
+                model = self.model_init
+                lines = ff
+                index = [-8, -7, -6, -5]
+            elif i == 1:
+                model = self.model_endofturn3
+                lines = gg
+                index = [-4, -3, -2, -1]
+            elif i == 2:
+                model = self.model_endofturn6
+                lines = hh
+                index = [-4, -3, -2, -1]
+            
+            for j in range(4):
+                weight = lines[index[j]].split(" ")
+                weight.pop(-1)
+                for k in range(len(weight)):
+                    weight[k] = float(weight[k])
+                weight = np.reshape(np.array(weight), dims[j])
+                model.layers[j].weight = weight
+                
+
 
     
     
@@ -222,7 +254,7 @@ class EnemyMove():
 
 
     
-    
+    # モンテカルロ法の中でしか使わない
     def FieldMatchingProcess(self, my_need_card, my_need_card_possible, your_need_card, select_card, get_cards, field_cards):
         select_card_month = select_card // 10
 
@@ -859,10 +891,12 @@ class EnemyMove():
 
         
         # モンテカルロ法：繰り返し回数300回
-        score_list = self.MonteCarlo(player, 300, month, turn, repetition)
+        # 相手の手札情報も使ってしまっている間違ったモンテカルロ法
+        # score_list = self.MonteCarlo(player, 300, month, turn, repetition)
         # print(score_list)
-        print("\nMonteCarlo predict: {}, variance: {}, current score: {} (cheat)".format(np.mean(score_list), np.var(score_list), my_point))
+        # print("\nMonteCarlo predict: {}, variance: {}, current score: {} (cheat)".format(np.mean(score_list), np.var(score_list), my_point))
 
+        # 正しいモンテカルロ法
         score_list_correct = self.MonteCarlo_correct(player, 100, month, turn, repetition)
         kitaiti_seikai = np.mean(score_list_correct)
         # print(score_list_correct)
@@ -888,6 +922,23 @@ class EnemyMove():
                     judge = False
             
         return judge
+    
+    
+    
+    def neural_network_judge(self, case, tefuda, getcards, enemy_getcards, field_cards):
+        if case == 0:
+            model = self.model_init
+        elif case == 1:
+            model = self.model_endofturn3
+        elif case == 2:
+            model = self.model_endofturn6
+        
+        input_data = make_learning_list(tefuda, getcards, enemy_getcards, field_cards)
+        output_data = model.predict(input_data)
+        predict_case = 4 - np.argmax(np.array(output_data))
+        
+        return predict_case
+        
 
 
 
