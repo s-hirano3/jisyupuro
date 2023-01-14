@@ -373,8 +373,8 @@ class Hanafuda():
                         self.winner = "You"
                         self.end_flag = True
                     elif self.my_koikoi_flag == 0:
-                        self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcards, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
-                        koikoi_judge = self.EnemyAlgorithm.KoikoiJudge(player, self.month, turn, repetition)
+                        self.EnemyAlgorithm.UpdateParam(self.field_cards, self.yamafuda, self.my_cards, self.my_getcard, self.your_cards, self.your_getcard, self.my_score, self.your_score, self.my_total_score, self.your_total_score, self.my_koikoi_flag, self.your_koikoi_flag)
+                        koikoi_judge = self.EnemyAlgorithm.KoikoiJudge(player, self.month, turn, repetition)  # 戦略的なこいこい選択
                         
                         if koikoi_judge:
                             self.your_koikoi_flag = 1

@@ -5,6 +5,7 @@ import random
 import copy
 import numpy as np
 from detect_yaku import *
+from layer import *
 
 CARDS = [11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44, 51, 52, 53, 54, 61, 62, 63, 64,
          71, 72, 73, 74, 81, 82, 83, 84, 91, 92, 93, 94, 101 ,102, 103, 104, 111, 112, 113, 114, 121, 122, 123, 124]
@@ -54,6 +55,29 @@ class EnemyMove():
         # 役成立までに必要な枚数 不可能な場合は-1
         self.need_cards = []  # 確定=獲得したカード(my/your_getcards)を基準に
         self.need_cards_possible = []  # 手札(my/your_cards)を基準に
+        
+        
+        self.model_init = Model()
+        self.model_init.addlayer(Layer(240, 500))
+        self.model_init.addlayer(Layer(500, 200))
+        self.model_init.addlayer(Layer(200, 100))
+        self.model_init.addlayer(Layer_output(100, 5))
+        
+        self.model_endofturn3 = Model()
+        self.model_endofturn3.addlayer(Layer(240, 500))
+        self.model_endofturn3.addlayer(Layer(500, 200))
+        self.model_endofturn3.addlayer(Layer(200, 100))
+        self.model_endofturn3.addlayer(Layer(100, 5))
+        
+        self.model_endofturn6 = Model()
+        self.model_endofturn6.addlayer(Layer(240, 500))
+        self.model_endofturn6.addlayer(Layer(500, 200))
+        self.model_endofturn6.addlayer(Layer(200, 100))
+        self.model_endofturn6.addlayer(Layer(100, 5))
+        
+        f = open("./machine-learning/endofturn6/weight_param_0.04.txt", "r")  # init用
+        g = open("./machine-learning/240-500-200-100-5/weight_param_0.04_まだいける.txt", "r")  # endofturn4用
+        h = open("./machine-learning/endofturn6/weight_param_0.05_initはng.txt", "r")  # endofturn6用
 
     
     
@@ -199,7 +223,7 @@ class EnemyMove():
 
     
     
-    def FieldMatchinProcess(self, my_need_card, my_need_card_possible, your_need_card, select_card, get_cards, field_cards):
+    def FieldMatchingProcess(self, my_need_card, my_need_card_possible, your_need_card, select_card, get_cards, field_cards):
         select_card_month = select_card // 10
 
         field_month = []
@@ -335,7 +359,7 @@ class EnemyMove():
 
         
         tefuda_cards.remove(select_card)
-        get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, your_need_card, select_card, get_cards, field_cards)
+        get_cards, field_cards = self.FieldMatchingProcess(my_need_card, my_need_card_possible, your_need_card, select_card, get_cards, field_cards)
 
         return tefuda_cards, get_cards, field_cards
 
@@ -345,7 +369,7 @@ class EnemyMove():
     
     def DrawMonteCarlo(self, nokori_cards, my_need_card, my_need_card_possible, your_need_card, get_cards, field_cards):
         draw_card = nokori_cards.pop(0)
-        get_cards, field_cards = self.FieldMatchinProcess(my_need_card, my_need_card_possible, your_need_card,  draw_card, get_cards, field_cards)
+        get_cards, field_cards = self.FieldMatchingProcess(my_need_card, my_need_card_possible, your_need_card,  draw_card, get_cards, field_cards)
         return nokori_cards, get_cards, field_cards
 
 
